@@ -277,7 +277,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   dart.setLibraryUri(jogo_Page.JogoPage, I[3]);
   jogo_Page.JogoPageState = class JogoPageState extends framework.State$(jogo_Page.JogoPage) {
     build(context) {
-      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new text.Text.new("Home Page")}), body: new container.Container.new({height: 100, width: 100, color: colors.Colors.yellow})});
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new text.Text.new("Home Page")}), body: new container.Container.new({height: 200, width: 100, color: colors.Colors.yellow})});
     }
     static ['_#new#tearOff']() {
       return new jogo_Page.JogoPageState.new();
