@@ -12,11 +12,11 @@ class AppWidget extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           theme: ThemeData(
-              primarySwatch: Colors.blue, 
+              primarySwatch: Colors.purple, 
               brightness: AppController.instance.isDartTheme 
               ? Brightness.dark 
               : Brightness.light),
-              initialRoute: '/',
+          initialRoute: '/jogo',
           routes: {
             '/': (context) => HomePage(),
             '/jogo': (context) => JogoPage(),

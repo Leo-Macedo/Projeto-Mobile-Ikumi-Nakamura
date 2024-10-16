@@ -21,15 +21,19 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   const change_notifier = flutter_sdk.src__foundation__change_notifier;
   const scaffold = flutter_sdk.src__material__scaffold;
   const app_bar = flutter_sdk.src__material__app_bar;
-  const text = flutter_sdk.src__widgets__text;
   const container = flutter_sdk.src__widgets__container;
   const basic = flutter_sdk.src__widgets__basic;
+  const text = flutter_sdk.src__widgets__text;
+  const text_style = flutter_sdk.src__painting__text_style;
+  const media_query = flutter_sdk.src__widgets__media_query;
+  const image = flutter_sdk.src__widgets__image;
+  const box_fit = flutter_sdk.src__painting__box_fit;
+  const edge_insets = flutter_sdk.src__painting__edge_insets;
+  const scroll_view = flutter_sdk.src__widgets__scroll_view;
   const flex = flutter_sdk.src__rendering__flex;
-  const floating_action_button = flutter_sdk.src__material__floating_action_button;
-  const icon = flutter_sdk.src__widgets__icon;
-  const icons = flutter_sdk.src__material__icons;
-  const navigator = flutter_sdk.src__widgets__navigator;
   const $switch = flutter_sdk.src__material__switch;
+  const elevated_button = flutter_sdk.src__material__elevated_button;
+  const navigator = flutter_sdk.src__widgets__navigator;
   var $46zapp_entry = Object.create(dart.library);
   var main = Object.create(dart.library);
   var web_plugin_registrant = Object.create(dart.library);
@@ -56,9 +60,9 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     WidgetN: () => (T.WidgetN = dart.constFn(dart.nullable(framework.Widget)))(),
     BuildContextAndWidgetNToMaterialApp: () => (T.BuildContextAndWidgetNToMaterialApp = dart.constFn(dart.fnType(app.MaterialApp, [framework.BuildContext, T.WidgetN()])))(),
     JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
+    boolTovoid: () => (T.boolTovoid = dart.constFn(dart.fnType(dart.void, [core.bool])))(),
     ObjectN: () => (T.ObjectN = dart.constFn(dart.nullable(core.Object)))(),
-    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
-    boolTovoid: () => (T.boolTovoid = dart.constFn(dart.fnType(dart.void, [core.bool])))()
+    VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))()
   };
   const CT = Object.create({
     _: () => (C, CT)
@@ -113,7 +117,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   };
   app_Widget.AppWidget = class AppWidget extends framework.StatelessWidget {
     build(context) {
-      return new transitions.AnimatedBuilder.new({animation: app_controller.AppController.instance, builder: dart.fn((context, child) => new app.MaterialApp.new({theme: theme_data.ThemeData.new({primarySwatch: colors.Colors.blue, brightness: app_controller.AppController.instance.isDartTheme ? ui.Brightness.dark : ui.Brightness.light}), initialRoute: "/", routes: new (T.IdentityMapOfString$BuildContextToWidget()).from(["/", dart.fn(context => new home_Page.HomePage.new(), T.BuildContextToHomePage()), "/jogo", dart.fn(context => new jogo_Page.JogoPage.new(), T.BuildContextToJogoPage())])}), T.BuildContextAndWidgetNToMaterialApp())});
+      return new transitions.AnimatedBuilder.new({animation: app_controller.AppController.instance, builder: dart.fn((context, child) => new app.MaterialApp.new({theme: theme_data.ThemeData.new({primarySwatch: colors.Colors.purple, brightness: app_controller.AppController.instance.isDartTheme ? ui.Brightness.dark : ui.Brightness.light}), initialRoute: "/jogo", routes: new (T.IdentityMapOfString$BuildContextToWidget()).from(["/", dart.fn(context => new home_Page.HomePage.new(), T.BuildContextToHomePage()), "/jogo", dart.fn(context => new jogo_Page.JogoPage.new(), T.BuildContextToJogoPage())])}), T.BuildContextAndWidgetNToMaterialApp())});
     }
     static ['_#new#tearOff']() {
       return new app_Widget.AppWidget.new();
@@ -197,9 +201,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       this[counter] = value;
     }
     build(context) {
-      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new text.Text.new("Home Page"), actions: T.JSArrayOfWidget().of([new home_Page.CustomSwitch.new()])}), body: new container.Container.new({width: 1 / 0, height: 1 / 0, child: new basic.Column.new({mainAxisAlignment: flex.MainAxisAlignment.spaceAround, crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidget().of([new text.Text.new("Contador: " + dart.str(this.counter)), new container.Container.new({height: 30}), new home_Page.CustomSwitch.new()])})}), floatingActionButton: new floating_action_button.FloatingActionButton.new({child: new icon.Icon.new(icons.Icons.sports_esports), onPressed: dart.fn(() => {
-            navigator.Navigator.of(context).pushNamed(T.ObjectN(), "/jogo");
-          }, T.VoidTovoid())})});
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new container.Container.new({width: 1 / 0, child: new basic.Center.new({child: new text.Text.new("Home Page", {style: new text_style.TextStyle.new({fontSize: 30})})})})}), body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: colors.Colors.black.withOpacity(0.5)}), new container.Container.new({padding: new edge_insets.EdgeInsets.all(16), width: 1 / 0, height: 1 / 0, child: new scroll_view.ListView.new({shrinkWrap: true, children: T.JSArrayOfWidget().of([new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidget().of([new container.Container.new({height: 200}), new text.Text.new("Ikumi Nakamura", {style: new text_style.TextStyle.new({fontSize: 30, fontWeight: ui.FontWeight.bold, color: new ui.Color.fromARGB(255, 255, 255, 255)})}), new container.Container.new({height: 50}), new home_Page.Botao.new({texto: "Biografia", rota: "/jogo"}), new container.Container.new({height: 20}), new home_Page.Botao.new({texto: "Jogos", rota: "/jogo"}), new container.Container.new({height: 20}), new home_Page.Botao.new({texto: "Empresas", rota: "/jogo"}), new container.Container.new({height: 20})])})])})})])})});
     }
     static ['_#new#tearOff']() {
       return new home_Page.HomePageState.new();
@@ -256,6 +258,52 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
   dart.setLibraryUri(home_Page.CustomSwitch, I[2]);
+  var texto$ = dart.privateName(home_Page, "Botao.texto");
+  var rota$ = dart.privateName(home_Page, "Botao.rota");
+  home_Page.Botao = class Botao extends framework.StatelessWidget {
+    get texto() {
+      return this[texto$];
+    }
+    set texto(value) {
+      super.texto = value;
+    }
+    get rota() {
+      return this[rota$];
+    }
+    set rota(value) {
+      super.rota = value;
+    }
+    static ['_#new#tearOff'](opts) {
+      let texto = opts && 'texto' in opts ? opts.texto : null;
+      let rota = opts && 'rota' in opts ? opts.rota : null;
+      return new home_Page.Botao.new({texto: texto, rota: rota});
+    }
+    build(context) {
+      return new elevated_button.ElevatedButton.new({style: elevated_button.ElevatedButton.styleFrom({minimumSize: new ui.Size.new(200, 60)}), onPressed: dart.fn(() => {
+          navigator.Navigator.of(context).pushNamed(T.ObjectN(), this.rota);
+        }, T.VoidTovoid()), child: new text.Text.new(this.texto, {style: new text_style.TextStyle.new({fontSize: 20})})});
+    }
+  };
+  (home_Page.Botao.new = function(opts) {
+    let texto = opts && 'texto' in opts ? opts.texto : null;
+    let rota = opts && 'rota' in opts ? opts.rota : null;
+    this[texto$] = texto;
+    this[rota$] = rota;
+    home_Page.Botao.__proto__.new.call(this);
+    ;
+  }).prototype = home_Page.Botao.prototype;
+  dart.addTypeTests(home_Page.Botao);
+  dart.addTypeCaches(home_Page.Botao);
+  dart.setMethodSignature(home_Page.Botao, () => ({
+    __proto__: dart.getMethods(home_Page.Botao.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(home_Page.Botao, I[2]);
+  dart.setFieldSignature(home_Page.Botao, () => ({
+    __proto__: dart.getFields(home_Page.Botao.__proto__),
+    texto: dart.finalFieldType(core.String),
+    rota: dart.finalFieldType(core.String)
+  }));
   jogo_Page.JogoPage = class JogoPage extends framework.StatefulWidget {
     createState() {
       return new jogo_Page.JogoPageState.new();
@@ -277,7 +325,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   dart.setLibraryUri(jogo_Page.JogoPage, I[3]);
   jogo_Page.JogoPageState = class JogoPageState extends framework.State$(jogo_Page.JogoPage) {
     build(context) {
-      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new text.Text.new("Home Page")}), body: new container.Container.new({height: 200, width: 100, color: colors.Colors.yellow})});
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new container.Container.new({width: 1 / 0, child: new text.Text.new("Jogos", {style: new text_style.TextStyle.new({fontSize: 30})})})}), body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: new ui.Color.fromARGB(255, 188, 95, 235).withOpacity(1)}), new container.Container.new({padding: new edge_insets.EdgeInsets.all(16), width: 1 / 0, height: 1 / 0, child: new scroll_view.ListView.new({shrinkWrap: true, children: T.JSArrayOfWidget().of([new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidget().of([new jogo_Page.Jogo.new(), new jogo_Page.Jogo.new(), new jogo_Page.Jogo.new(), new jogo_Page.Jogo.new(), new jogo_Page.Jogo.new()])})])})})])})});
     }
     static ['_#new#tearOff']() {
       return new jogo_Page.JogoPageState.new();
@@ -294,6 +342,25 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
   dart.setLibraryUri(jogo_Page.JogoPageState, I[3]);
+  jogo_Page.Jogo = class Jogo extends framework.StatelessWidget {
+    build(context) {
+      return new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidget().of([new container.Container.new({height: 50}), new text.Text.new("Sapinhos Sapecas", {style: new text_style.TextStyle.new({fontSize: 30, fontWeight: ui.FontWeight.bold, color: new ui.Color.fromARGB(255, 255, 255, 255)})}), new container.Container.new({height: 20}), new basic.Center.new({child: new container.Container.new({height: 200, width: 800, child: new image.Image.asset("assets/img/sapecas.jpeg")})}), new container.Container.new({height: 20}), new text.Text.new("Sapinhos Sapecas é um jogo muito legal e maneiro que você deve salvar o seu tio sequestrado, controle os 3 sapinhos irmão: Ronaldinho, Rivaldinho e Romarinho para encontrá-lo e salvar ele dessa.\n", {style: new text_style.TextStyle.new({fontSize: 20, fontWeight: ui.FontWeight.bold, color: new ui.Color.fromARGB(255, 255, 255, 255)}), textAlign: ui.TextAlign.justify})])});
+    }
+    static ['_#new#tearOff']() {
+      return new jogo_Page.Jogo.new();
+    }
+  };
+  (jogo_Page.Jogo.new = function() {
+    jogo_Page.Jogo.__proto__.new.call(this);
+    ;
+  }).prototype = jogo_Page.Jogo.prototype;
+  dart.addTypeTests(jogo_Page.Jogo);
+  dart.addTypeCaches(jogo_Page.Jogo);
+  dart.setMethodSignature(jogo_Page.Jogo, () => ({
+    __proto__: dart.getMethods(jogo_Page.Jogo.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(jogo_Page.Jogo, I[3]);
   dart.trackLibraries("zapp_user_main", {
     "file:///zapp/project/.zapp_entry.dart": $46zapp_entry,
     "file:///zapp/project/lib/main.dart": main,
@@ -303,7 +370,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     "file:///zapp/project/lib/home_Page.dart": home_Page,
     "file:///zapp/project/lib/jogo_Page.dart": jogo_Page
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["/zapp/project/.zapp_entry.dart","/zapp/project/lib/main.dart","/zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart","/zapp/project/lib/app_Widget.dart","/zapp/project/lib/app_controller.dart","/zapp/project/lib/home_Page.dart","/zapp/project/lib/jogo_Page.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA2CI,IA1BF,iCAAgB;AACd,UAAoB,6BAGD;AAF8B,QAA9B,AAAkB,6BAElB,eAF2B;;AAEL,QAAF,CAApB;;AAEnB,UAAO,AAAQ,uBAAY;AAKvB,QAJK,AAAqC,qBAA7B,qCAAuB,uBAAW,QAAC;AAG9C,UAFC,AAAQ,sBAAW,2BAA2B,CAC/C;;;wBAIL,SAAC,GAAG;AACL,UAAO,AAAQ,uBAAY;AAIvB,QAHC,AAAQ,sBAAW,wBAAwB,CAC5C,AAAE,CAAD,eACD,AAAW,UAAD;;2DAGM,yCACb,SAAC,MAAM,QAAQ,MAAM;AAC1B,cAAO,AAAQ,uBAAY;AAC4B,YAAlD,AAAQ,sBAAW,wBAAwB,CAAC,IAAI;;;EAI3D;;AAEiB;AAQd,MAPD,MAAS,gCACC;AACS,UAAf;6CAEe;AACmB,UAAjB;;IAGvB;;;AClDqB,IAAnB,eAAO;EACT;;ECCwB;;UCCI;AACxB,YAAO,iDACoB,gDAChB,SAAC,SAAS,UACV,gCACE,yCACmB,gCACI,AAAS,oDACtB,qBACA,qCACC,aACV,yDACN,KAAK,QAAC,WAAY,2DAClB,SAAS,QAAC,WAAY;IAKhC;;;;;;;;EACF;;;;;;;;;;ICtBO;;;;;;;AAEuB,MAA1B,oBAAe;AACE,MAAjB;IACF;;;;;;IAJK,oBAAc;;;EAKrB;;;;;;;;;;;;;;MANuB,qCAAQ;YAAG;;;;;;ACI9B,YAAO;IACT;;;;;;;;EACF;;;;;;;;;;IAGM;;;;;;UAGsB;AACxB,YAAO,oCACG,+BACC,kBAAK,uBACH,wBACP,4CAGE,iEAGG,yCACgC,wDACE,0CAC7B,wBACR,kBAAK,AAAoB,wBAAR,gBACjB,qCAAkB,MAClB,8DAIgB,4DACb,kBAAW,wCACP;AAC+B,YAA9B,AAAY,uBAAT,OAAO,yBAAY;;IAIxC;;;;;;IA/BI,gBAAU;;;EAgChB;;;;;;;;;;;;;cAGyB;IAAU;;;;;;;EACnC;;;;;;UAI4B;AACxB,YAAO,gCACkB,AAAS,8DACnB,QAAC;AAC0B,UAAtB,AAAS;;IAE/B;;;;;;;;EACF;;;;;;;;;;ACvDI,YAAO;IACT;;;;;;;;EACF;;;;;;;;;UAK4B;AACxB,YAAO,oCACG,+BACC,kBAAK,sBAGR,qCACE,YACD,YACO;IAGpB;;;;;;;;EACA","file":"main.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["/zapp/project/.zapp_entry.dart","/zapp/project/lib/main.dart","/zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart","/zapp/project/lib/app_Widget.dart","/zapp/project/lib/app_controller.dart","/zapp/project/lib/home_Page.dart","/zapp/project/lib/jogo_Page.dart"],"names":[],"mappings":"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","file":"main.js"}');
   // Exports:
   return {
     zapp__project__$46zapp_entry: $46zapp_entry,

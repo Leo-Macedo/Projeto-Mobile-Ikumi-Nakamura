@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'app_controller.dart';
-import 'jogo_Page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -17,30 +16,65 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Page'),
-        actions: [
-          CustomSwitch(),
-        ],
-      ),
-      body: Container(
-        width: double.infinity,
-        height: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text('Contador: $counter'),
-            Container(height: 30),
-            CustomSwitch(),
-          ],
+        title: Container(
+          width: double.infinity,
+          child: Center(
+            child: Text(
+              'Home Page',
+              style: TextStyle(fontSize: 30),
+            ),
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.sports_esports),
-        onPressed: () {
-          Navigator.of(context).pushNamed('/jogo');
-        },
-      ),
+      body: Stack(children: [
+        SizedBox(
+            height: MediaQuery.of(context).size.height,
+            child: Image.asset('assets/img/ikumi.jpg', fit: BoxFit.cover)),
+        Container(
+          color: Colors.black.withOpacity(0.5),
+        ),
+        Container(
+          padding: EdgeInsets.all(16.0),
+          width: double.infinity,
+          height: double.infinity,
+          child: ListView(
+            shrinkWrap: true,
+            //mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(height: 200),
+                  Text(
+                    'Ikumi Nakamura',
+                    style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 255, 255, 255)),
+                  ),
+                  Container(height: 50),
+                  Botao(
+                    texto: 'Biografia',
+                    rota: '/jogo',
+                  ),
+                  Container(height: 20),
+                  Botao(
+                    texto: 'Jogos',
+                    rota: '/jogo',
+                  ),
+                  Container(height: 20),
+                  Botao(
+                    texto: 'Empresas',
+                    rota: '/jogo',
+                  ),
+                  Container(height: 20),
+                 
+                ],
+              ),
+            ],
+          ),
+        ),
+      ]),
     );
   }
 }
@@ -57,5 +91,29 @@ class CustomSwitch extends StatelessWidget {
         onChanged: (value) {
           AppController.instance.changeTheme();
         });
+  }
+}
+
+class Botao extends StatelessWidget {
+  final String texto;
+  final String rota;
+
+  Botao({required this.texto, required this.rota});
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        minimumSize: Size(200, 60), // Largura e altura do botão
+      ),
+      onPressed: () {
+        Navigator.of(context).pushNamed(rota);
+      },
+      child: Text(
+        texto,
+        style: TextStyle(
+          fontSize: 20,
+        ),
+      ),
+    );
   }
 }
