@@ -16,22 +16,21 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   const transitions = flutter_sdk.src__widgets__transitions;
   const app = flutter_sdk.src__material__app;
   const theme_data = flutter_sdk.src__material__theme_data;
-  const colors = flutter_sdk.src__material__colors;
   const framework = flutter_sdk.src__widgets__framework;
+  const colors = flutter_sdk.src__material__colors;
   const change_notifier = flutter_sdk.src__foundation__change_notifier;
   const scaffold = flutter_sdk.src__material__scaffold;
   const app_bar = flutter_sdk.src__material__app_bar;
   const container = flutter_sdk.src__widgets__container;
-  const basic = flutter_sdk.src__widgets__basic;
   const text = flutter_sdk.src__widgets__text;
   const text_style = flutter_sdk.src__painting__text_style;
+  const basic = flutter_sdk.src__widgets__basic;
   const media_query = flutter_sdk.src__widgets__media_query;
   const image = flutter_sdk.src__widgets__image;
   const box_fit = flutter_sdk.src__painting__box_fit;
   const edge_insets = flutter_sdk.src__painting__edge_insets;
   const scroll_view = flutter_sdk.src__widgets__scroll_view;
   const flex = flutter_sdk.src__rendering__flex;
-  const $switch = flutter_sdk.src__material__switch;
   const elevated_button = flutter_sdk.src__material__elevated_button;
   const navigator = flutter_sdk.src__widgets__navigator;
   var $46zapp_entry = Object.create(dart.library);
@@ -39,6 +38,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   var web_plugin_registrant = Object.create(dart.library);
   var app_Widget = Object.create(dart.library);
   var app_controller = Object.create(dart.library);
+  var historia_page = Object.create(dart.library);
   var home_Page = Object.create(dart.library);
   var jogo_Page = Object.create(dart.library);
   var $toString = dartx.toString;
@@ -55,12 +55,13 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     ZoneAndZoneDelegateAndZone__Tovoid: () => (T.ZoneAndZoneDelegateAndZone__Tovoid = dart.constFn(dart.fnType(dart.void, [async.Zone, async.ZoneDelegate, async.Zone, core.String])))(),
     BuildContextToHomePage: () => (T.BuildContextToHomePage = dart.constFn(dart.fnType(home_Page.HomePage, [framework.BuildContext])))(),
     BuildContextToJogoPage: () => (T.BuildContextToJogoPage = dart.constFn(dart.fnType(jogo_Page.JogoPage, [framework.BuildContext])))(),
+    BuildContextToHistoriaPage: () => (T.BuildContextToHistoriaPage = dart.constFn(dart.fnType(historia_page.HistoriaPage, [framework.BuildContext])))(),
     BuildContextToWidget: () => (T.BuildContextToWidget = dart.constFn(dart.fnType(framework.Widget, [framework.BuildContext])))(),
     IdentityMapOfString$BuildContextToWidget: () => (T.IdentityMapOfString$BuildContextToWidget = dart.constFn(_js_helper.IdentityMap$(core.String, T.BuildContextToWidget())))(),
     WidgetN: () => (T.WidgetN = dart.constFn(dart.nullable(framework.Widget)))(),
     BuildContextAndWidgetNToMaterialApp: () => (T.BuildContextAndWidgetNToMaterialApp = dart.constFn(dart.fnType(app.MaterialApp, [framework.BuildContext, T.WidgetN()])))(),
+    IdentityMapOfint$Color: () => (T.IdentityMapOfint$Color = dart.constFn(_js_helper.IdentityMap$(core.int, ui.Color)))(),
     JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
-    boolTovoid: () => (T.boolTovoid = dart.constFn(dart.fnType(dart.void, [core.bool])))(),
     ObjectN: () => (T.ObjectN = dart.constFn(dart.nullable(core.Object)))(),
     VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))()
   };
@@ -76,6 +77,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   var I = [
     "file:///zapp/project/lib/app_Widget.dart",
     "file:///zapp/project/lib/app_controller.dart",
+    "file:///zapp/project/lib/historia_page.dart",
     "file:///zapp/project/lib/home_Page.dart",
     "file:///zapp/project/lib/jogo_Page.dart"
   ];
@@ -117,7 +119,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   };
   app_Widget.AppWidget = class AppWidget extends framework.StatelessWidget {
     build(context) {
-      return new transitions.AnimatedBuilder.new({animation: app_controller.AppController.instance, builder: dart.fn((context, child) => new app.MaterialApp.new({theme: theme_data.ThemeData.new({primarySwatch: colors.Colors.purple, brightness: app_controller.AppController.instance.isDartTheme ? ui.Brightness.dark : ui.Brightness.light}), initialRoute: "/jogo", routes: new (T.IdentityMapOfString$BuildContextToWidget()).from(["/", dart.fn(context => new home_Page.HomePage.new(), T.BuildContextToHomePage()), "/jogo", dart.fn(context => new jogo_Page.JogoPage.new(), T.BuildContextToJogoPage())])}), T.BuildContextAndWidgetNToMaterialApp())});
+      return new transitions.AnimatedBuilder.new({animation: app_controller.AppController.instance, builder: dart.fn((context, child) => new app.MaterialApp.new({theme: theme_data.ThemeData.new({primarySwatch: app_Widget.createMaterialColor(new ui.Color.fromARGB(255, 52, 14, 58))}), initialRoute: "/", routes: new (T.IdentityMapOfString$BuildContextToWidget()).from(["/", dart.fn(context => new home_Page.HomePage.new(), T.BuildContextToHomePage()), "/jogo", dart.fn(context => new jogo_Page.JogoPage.new(), T.BuildContextToJogoPage()), "/historia", dart.fn(context => new historia_page.HistoriaPage.new(), T.BuildContextToHistoriaPage())])}), T.BuildContextAndWidgetNToMaterialApp())});
     }
     static ['_#new#tearOff']() {
       return new app_Widget.AppWidget.new();
@@ -134,6 +136,10 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
   dart.setLibraryUri(app_Widget.AppWidget, I[0]);
+  app_Widget.createMaterialColor = function createMaterialColor(color) {
+    let swatch = new (T.IdentityMapOfint$Color()).from([50, color.withOpacity(0.1), 100, color.withOpacity(0.2), 200, color.withOpacity(0.3), 300, color.withOpacity(0.4), 400, color.withOpacity(0.5), 500, color.withOpacity(0.6), 600, color.withOpacity(0.7), 700, color.withOpacity(0.8), 800, color.withOpacity(0.9), 900, color]);
+    return new colors.MaterialColor.new(color.value, swatch);
+  };
   var isDartTheme = dart.privateName(app_controller, "AppController.isDartTheme");
   app_controller.AppController = class AppController extends change_notifier.ChangeNotifier {
     get isDartTheme() {
@@ -173,6 +179,44 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     },
     set instance(value) {}
   }, false);
+  historia_page.HistoriaPage = class HistoriaPage extends framework.StatefulWidget {
+    createState() {
+      return new historia_page.HistoriaPageState.new();
+    }
+    static ['_#new#tearOff']() {
+      return new historia_page.HistoriaPage.new();
+    }
+  };
+  (historia_page.HistoriaPage.new = function() {
+    historia_page.HistoriaPage.__proto__.new.call(this);
+    ;
+  }).prototype = historia_page.HistoriaPage.prototype;
+  dart.addTypeTests(historia_page.HistoriaPage);
+  dart.addTypeCaches(historia_page.HistoriaPage);
+  dart.setMethodSignature(historia_page.HistoriaPage, () => ({
+    __proto__: dart.getMethods(historia_page.HistoriaPage.__proto__),
+    createState: dart.fnType(framework.State$(historia_page.HistoriaPage), [])
+  }));
+  dart.setLibraryUri(historia_page.HistoriaPage, I[2]);
+  historia_page.HistoriaPageState = class HistoriaPageState extends framework.State$(historia_page.HistoriaPage) {
+    build(context) {
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new container.Container.new({width: 1 / 0, child: new text.Text.new("História", {style: new text_style.TextStyle.new({fontSize: 30, color: new ui.Color.fromARGB(255, 241, 203, 252)})})})}), body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: new ui.Color.fromARGB(1, 88, 42, 114).withOpacity(1)}), new container.Container.new({padding: new edge_insets.EdgeInsets.all(16), width: 1 / 0, height: 1 / 0, child: new scroll_view.ListView.new({shrinkWrap: true, children: T.JSArrayOfWidget().of([new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidget().of([new jogo_Page.Conteudo.new({titulo: "Ikumi Nakamura: A Artista por Trás do Terror e da Fantasia", texto: "Ikumi Nakamura (中村 育美) é uma artista e diretora de videogame japonesa nascida em 8 de outubro de 1985 no Japão, amplamente reconhecida por seu trabalho na Tango Gameworks, onde atuou como artista em The Evil Within (2014) e The Evil Within 2 (2017), além de ter sido diretora criativa de Ghostwire: Tokyo. Antes de sua passagem pela Tango, Ikumi também fez arte para Ōkami (2006) no Clover Studio e para Bayonetta (2009) na PlatinumGames. Atualmente, ela dirige seu próprio estúdio de jogos independente, chamado Unseen.", img: "assets/img/ikumi1.jpg"}), new jogo_Page.Conteudo.new({titulo: "Vida Pessoal e Formação", texto: "Desde a infância, Ikumi tinha uma forte conexão com o universo do terror, alimentada por momentos compartilhados com seu pai, assistindo a filmes de horror e jogando séries como Resident Evil e Devil May Cry, ambas da Capcom. Essa paixão por jogos e a admiração pela Capcom despertaram nela o desejo de um dia fazer parte do estúdio. \n          No entanto, sua vida tomou um rumo difícil quando seu pai faleceu em um acidente de motocicleta durante seu tempo na universidade. Essa tragédia apenas reforçou sua determinação de seguir uma carreira na Capcom. Para isso, Ikumi frequentou uma escola de arte em Tóquio e, posteriormente, estudou design de jogos na Amusement Media Academy.", img: "assets/img/ikumi2.jpg"})])})])})})])})});
+    }
+    static ['_#new#tearOff']() {
+      return new historia_page.HistoriaPageState.new();
+    }
+  };
+  (historia_page.HistoriaPageState.new = function() {
+    historia_page.HistoriaPageState.__proto__.new.call(this);
+    ;
+  }).prototype = historia_page.HistoriaPageState.prototype;
+  dart.addTypeTests(historia_page.HistoriaPageState);
+  dart.addTypeCaches(historia_page.HistoriaPageState);
+  dart.setMethodSignature(historia_page.HistoriaPageState, () => ({
+    __proto__: dart.getMethods(historia_page.HistoriaPageState.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(historia_page.HistoriaPageState, I[2]);
   home_Page.HomePage = class HomePage extends framework.StatefulWidget {
     createState() {
       return new home_Page.HomePageState.new();
@@ -191,7 +235,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(home_Page.HomePage.__proto__),
     createState: dart.fnType(framework.State$(home_Page.HomePage), [])
   }));
-  dart.setLibraryUri(home_Page.HomePage, I[2]);
+  dart.setLibraryUri(home_Page.HomePage, I[3]);
   var counter = dart.privateName(home_Page, "HomePageState.counter");
   home_Page.HomePageState = class HomePageState extends framework.State$(home_Page.HomePage) {
     get counter() {
@@ -201,7 +245,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       this[counter] = value;
     }
     build(context) {
-      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new container.Container.new({width: 1 / 0, child: new basic.Center.new({child: new text.Text.new("Home Page", {style: new text_style.TextStyle.new({fontSize: 30})})})})}), body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: colors.Colors.black.withOpacity(0.5)}), new container.Container.new({padding: new edge_insets.EdgeInsets.all(16), width: 1 / 0, height: 1 / 0, child: new scroll_view.ListView.new({shrinkWrap: true, children: T.JSArrayOfWidget().of([new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidget().of([new container.Container.new({height: 200}), new text.Text.new("Ikumi Nakamura", {style: new text_style.TextStyle.new({fontSize: 30, fontWeight: ui.FontWeight.bold, color: new ui.Color.fromARGB(255, 255, 255, 255)})}), new container.Container.new({height: 50}), new home_Page.Botao.new({texto: "Biografia", rota: "/jogo"}), new container.Container.new({height: 20}), new home_Page.Botao.new({texto: "Jogos", rota: "/jogo"}), new container.Container.new({height: 20}), new home_Page.Botao.new({texto: "Empresas", rota: "/jogo"}), new container.Container.new({height: 20})])})])})})])})});
+      return new scaffold.Scaffold.new({body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: colors.Colors.black.withOpacity(0.5)}), new container.Container.new({padding: new edge_insets.EdgeInsets.all(16), width: 1 / 0, height: 1 / 0, child: new scroll_view.ListView.new({shrinkWrap: true, children: T.JSArrayOfWidget().of([new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidget().of([new container.Container.new({height: 200}), new text.Text.new("Ikumi Nakamura", {style: new text_style.TextStyle.new({fontSize: 30, fontWeight: ui.FontWeight.bold, color: new ui.Color.fromARGB(255, 255, 255, 255)})}), new container.Container.new({height: 50}), new home_Page.Botao.new({texto: "História", rota: "/historia"}), new container.Container.new({height: 20}), new home_Page.Botao.new({texto: "Jogos", rota: "/jogo"}), new container.Container.new({height: 20}), new home_Page.Botao.new({texto: "Empresas", rota: "/jogo"}), new container.Container.new({height: 20})])})])})})])})});
     }
     static ['_#new#tearOff']() {
       return new home_Page.HomePageState.new();
@@ -218,46 +262,11 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(home_Page.HomePageState.__proto__),
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(home_Page.HomePageState, I[2]);
+  dart.setLibraryUri(home_Page.HomePageState, I[3]);
   dart.setFieldSignature(home_Page.HomePageState, () => ({
     __proto__: dart.getFields(home_Page.HomePageState.__proto__),
     counter: dart.fieldType(core.int)
   }));
-  home_Page.Navigation = class Navigation extends core.Object {
-    static of(context) {
-    }
-    static ['_#new#tearOff']() {
-      return new home_Page.Navigation.new();
-    }
-  };
-  (home_Page.Navigation.new = function() {
-    ;
-  }).prototype = home_Page.Navigation.prototype;
-  dart.addTypeTests(home_Page.Navigation);
-  dart.addTypeCaches(home_Page.Navigation);
-  dart.setStaticMethodSignature(home_Page.Navigation, () => ['of']);
-  dart.setLibraryUri(home_Page.Navigation, I[2]);
-  home_Page.CustomSwitch = class CustomSwitch extends framework.StatelessWidget {
-    build(context) {
-      return new $switch.Switch.new({value: app_controller.AppController.instance.isDartTheme, onChanged: dart.fn(value => {
-          app_controller.AppController.instance.changeTheme();
-        }, T.boolTovoid())});
-    }
-    static ['_#new#tearOff']() {
-      return new home_Page.CustomSwitch.new();
-    }
-  };
-  (home_Page.CustomSwitch.new = function() {
-    home_Page.CustomSwitch.__proto__.new.call(this);
-    ;
-  }).prototype = home_Page.CustomSwitch.prototype;
-  dart.addTypeTests(home_Page.CustomSwitch);
-  dart.addTypeCaches(home_Page.CustomSwitch);
-  dart.setMethodSignature(home_Page.CustomSwitch, () => ({
-    __proto__: dart.getMethods(home_Page.CustomSwitch.__proto__),
-    build: dart.fnType(framework.Widget, [framework.BuildContext])
-  }));
-  dart.setLibraryUri(home_Page.CustomSwitch, I[2]);
   var texto$ = dart.privateName(home_Page, "Botao.texto");
   var rota$ = dart.privateName(home_Page, "Botao.rota");
   home_Page.Botao = class Botao extends framework.StatelessWidget {
@@ -281,7 +290,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     build(context) {
       return new elevated_button.ElevatedButton.new({style: elevated_button.ElevatedButton.styleFrom({minimumSize: new ui.Size.new(200, 60)}), onPressed: dart.fn(() => {
           navigator.Navigator.of(context).pushNamed(T.ObjectN(), this.rota);
-        }, T.VoidTovoid()), child: new text.Text.new(this.texto, {style: new text_style.TextStyle.new({fontSize: 20})})});
+        }, T.VoidTovoid()), child: new text.Text.new(this.texto, {style: new text_style.TextStyle.new({fontSize: 20, color: new ui.Color.fromARGB(255, 241, 203, 252)})})});
     }
   };
   (home_Page.Botao.new = function(opts) {
@@ -298,7 +307,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(home_Page.Botao.__proto__),
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(home_Page.Botao, I[2]);
+  dart.setLibraryUri(home_Page.Botao, I[3]);
   dart.setFieldSignature(home_Page.Botao, () => ({
     __proto__: dart.getFields(home_Page.Botao.__proto__),
     texto: dart.finalFieldType(core.String),
@@ -322,10 +331,10 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(jogo_Page.JogoPage.__proto__),
     createState: dart.fnType(framework.State$(jogo_Page.JogoPage), [])
   }));
-  dart.setLibraryUri(jogo_Page.JogoPage, I[3]);
+  dart.setLibraryUri(jogo_Page.JogoPage, I[4]);
   jogo_Page.JogoPageState = class JogoPageState extends framework.State$(jogo_Page.JogoPage) {
     build(context) {
-      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new container.Container.new({width: 1 / 0, child: new text.Text.new("Jogos", {style: new text_style.TextStyle.new({fontSize: 30})})})}), body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: new ui.Color.fromARGB(255, 188, 95, 235).withOpacity(1)}), new container.Container.new({padding: new edge_insets.EdgeInsets.all(16), width: 1 / 0, height: 1 / 0, child: new scroll_view.ListView.new({shrinkWrap: true, children: T.JSArrayOfWidget().of([new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidget().of([new jogo_Page.Jogo.new(), new jogo_Page.Jogo.new(), new jogo_Page.Jogo.new(), new jogo_Page.Jogo.new(), new jogo_Page.Jogo.new()])})])})})])})});
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new container.Container.new({width: 1 / 0, child: new text.Text.new("Jogos", {style: new text_style.TextStyle.new({fontSize: 30, color: new ui.Color.fromARGB(255, 241, 203, 252)})})})}), body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: new ui.Color.fromARGB(1, 88, 42, 114).withOpacity(1)}), new container.Container.new({padding: new edge_insets.EdgeInsets.all(16), width: 1 / 0, height: 1 / 0, child: new scroll_view.ListView.new({shrinkWrap: true, children: T.JSArrayOfWidget().of([new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidget().of([new jogo_Page.Conteudo.new({titulo: "Ōkami (2006)", texto: "Ikumi Nakamura trabalhou na produção de fundo deste jogo de ação e aventura, que se destaca por seu estilo artístico inspirado na pintura tradicional japonesa. Os jogadores controlam Amaterasu, a deusa do sol, que assume a forma de um lobo. Em um mundo em que a natureza foi corrompida por demônios, Amaterasu deve restaurar a beleza e a vida usando o “Celestial Brush”, uma mecânica que permite desenhar no ambiente para resolver quebra-cabeças e derrotar inimigos. O trabalho de Ikumi foi fundamental para criar os cenários vibrantes e imersivos que definem o jogo, contribuindo para sua recepção calorosa como um dos melhores jogos de sua época.", img: "assets/img/Okami.jpg"}), new jogo_Page.Conteudo.new({titulo: "Bayonetta (2009)", texto: "Como artista conceitual, Ikumi Nakamura desempenhou um papel crucial em Bayonetta, um jogo de ação hack and slash que segue a protagonista Bayonetta, uma bruxa que luta contra anjos e demônios em uma narrativa repleta de ação e humor. O jogo é conhecido por seu combate rápido e estilizado, com combos elaborados e um design de personagens marcante. A estética extravagante e os visuais dinâmicos são resultados da visão artística de Ikumi, que ajudou a definir a identidade visual do jogo, tornando-o um clássico cult e um sucesso comercial.", img: "assets/img/bayonetta.jpg"}), new jogo_Page.Conteudo.new({titulo: "Marvel vs. Capcom 3 (2011)", texto: "Em Marvel vs. Capcom 3: Fate of Two Worlds, Ikumi trabalhou nas cinemáticas, que apresentam confrontos épicos entre personagens da Marvel e da Capcom. Este jogo de luta em equipe combina os mundos de ambos os universos, permitindo que jogadores escolham seus heróis e vilões favoritos para batalhas intensas. As cinemáticas, que capturam a emoção e a ação do jogo, foram aprimoradas pelo trabalho de Ikumi, que garantiu que cada luta fosse visualmente cativante e envolvente, elevando a experiência geral.", img: "assets/img/marvel.jpg"}), new jogo_Page.Conteudo.new({titulo: "Street Fighter X Tekken (2012)", texto: "Neste crossover de luta, Ikumi Nakamura atuou como pintora, contribuindo para a estética vibrante e colorida que caracteriza o jogo. Street Fighter X Tekken reúne personagens icônicos das duas franquias, permitindo que os jogadores formem equipes e lutem em batalhas de tag. O jogo apresenta um sistema de combate dinâmico e uma variedade de modos de jogo. A arte de Ikumi ajudou a moldar a identidade visual dos personagens, garantindo que eles fossem atraentes e reconhecíveis, mantendo a essência de cada franquia.", img: "assets/img/street.jpg"}), new jogo_Page.Conteudo.new({titulo: "Ultra Street Fighter IV (2014)", texto: "Em Ultra Street Fighter IV, Ikumi colaborou como artista conceitual, contribuindo para a atualização e expansão de um dos títulos mais amados da série. O jogo introduz novos personagens, cenários e mecânicas, mantendo o equilíbrio entre os lutadores existentes. A habilidade de Ikumi em criar designs de personagens e cenários refinados foi essencial para revitalizar o jogo, permitindo que ele se mantivesse relevante em uma era de competições acirradas no gênero de luta.", img: "assets/img/ultra.jfif"}), new jogo_Page.Conteudo.new({titulo: "The Evil Within (2014)", texto: "Ikumi Nakamura foi a artista conceitual líder de The Evil Within, um survival horror criado por Shinji Mikami. O jogo segue o detetive Sebastian Castellanos, que, ao investigar uma cena de crime, se encontra preso em um mundo distorcido e aterrorizante, povoado por criaturas grotescas e armadilhas mortais. O design visual do jogo, que combina elementos de horror psicológico e ação intensa, é profundamente influenciado pelo trabalho de Ikumi, que ajudou a criar uma atmosfera opressiva e visualmente intrigante, marcada por cenários sombrios e detalhados.", img: "assets/img/evil.jpg"}), new jogo_Page.Conteudo.new({titulo: "Street Fighter V (2016)", texto: "Em Street Fighter V, Ikumi atuou novamente como artista conceitual de personagens, ajudando a definir a aparência dos lutadores e a estética geral do jogo. Este título traz novos e antigos personagens de volta à arena de luta, apresentando gráficos atualizados e um modo história expandido. A contribuição de Ikumi garantiu que cada personagem tivesse um design visual único e coerente, capturando a essência de suas personalidades e habilidades.", img: "assets/img/streetV.jpg"}), new jogo_Page.Conteudo.new({titulo: "The Evil Within 2 (2017)", texto: "No sequel The Evil Within 2, Ikumi participou como artista de arte adicional, aprofundando o estilo visual e a atmosfera do jogo. Continuando a história de Sebastian Castellanos, o jogo explora temas de perda e redenção em um mundo ainda mais distorcido e aberto. O trabalho de Ikumi ajudou a enriquecer a experiência imersiva, com uma paleta de cores e detalhes visuais que acentuam o horror psicológico da narrativa.", img: "assets/img/evil2.jpg"}), new jogo_Page.Conteudo.new({titulo: "Ghostwire: Tokyo (2022)", texto: "Ikumi foi diretora criativa inicial de Ghostwire: Tokyo, um jogo que se passa em uma Tóquio contemporânea assombrada por espíritos sobrenaturais. Os jogadores controlam Akito, que deve usar habilidades especiais para enfrentar essas entidades e descobrir o que aconteceu com a cidade. A visão de Ikumi ajudou a moldar a narrativa e o design artístico, criando um mundo intrigante e visualmente impressionante que mistura elementos de horror e ação.", img: "assets/img/ghost.jpg"}), new jogo_Page.Conteudo.new({titulo: "Gungrave GORE (2022)", texto: "Em Gungrave GORE, Ikumi atuou como consultora de arte, contribuindo para o design visual de um jogo de ação que combina tiroteio frenético com uma narrativa envolvente. O jogo segue Grave, que deve enfrentar inimigos em um mundo distópico. A experiência de Ikumi foi vital para garantir que a estética do jogo fosse atraente e coesa, refletindo a intensidade da ação.", img: "assets/img/gun.jpg"})])})])})})])})});
     }
     static ['_#new#tearOff']() {
       return new jogo_Page.JogoPageState.new();
@@ -341,36 +350,74 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(jogo_Page.JogoPageState.__proto__),
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(jogo_Page.JogoPageState, I[3]);
-  jogo_Page.Jogo = class Jogo extends framework.StatelessWidget {
-    build(context) {
-      return new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidget().of([new container.Container.new({height: 50}), new text.Text.new("Sapinhos Sapecas", {style: new text_style.TextStyle.new({fontSize: 30, fontWeight: ui.FontWeight.bold, color: new ui.Color.fromARGB(255, 255, 255, 255)})}), new container.Container.new({height: 20}), new basic.Center.new({child: new container.Container.new({height: 200, width: 800, child: new image.Image.asset("assets/img/sapecas.jpeg")})}), new container.Container.new({height: 20}), new text.Text.new("Sapinhos Sapecas é um jogo muito legal e maneiro que você deve salvar o seu tio sequestrado, controle os 3 sapinhos irmão: Ronaldinho, Rivaldinho e Romarinho para encontrá-lo e salvar ele dessa.\n", {style: new text_style.TextStyle.new({fontSize: 20, fontWeight: ui.FontWeight.bold, color: new ui.Color.fromARGB(255, 255, 255, 255)}), textAlign: ui.TextAlign.justify})])});
+  dart.setLibraryUri(jogo_Page.JogoPageState, I[4]);
+  var titulo$ = dart.privateName(jogo_Page, "Conteudo.titulo");
+  var texto$0 = dart.privateName(jogo_Page, "Conteudo.texto");
+  var img$ = dart.privateName(jogo_Page, "Conteudo.img");
+  jogo_Page.Conteudo = class Conteudo extends framework.StatelessWidget {
+    get titulo() {
+      return this[titulo$];
     }
-    static ['_#new#tearOff']() {
-      return new jogo_Page.Jogo.new();
+    set titulo(value) {
+      super.titulo = value;
+    }
+    get texto() {
+      return this[texto$0];
+    }
+    set texto(value) {
+      super.texto = value;
+    }
+    get img() {
+      return this[img$];
+    }
+    set img(value) {
+      super.img = value;
+    }
+    static ['_#new#tearOff'](opts) {
+      let texto = opts && 'texto' in opts ? opts.texto : null;
+      let titulo = opts && 'titulo' in opts ? opts.titulo : null;
+      let img = opts && 'img' in opts ? opts.img : null;
+      return new jogo_Page.Conteudo.new({texto: texto, titulo: titulo, img: img});
+    }
+    build(context) {
+      let textofinal = "          " + this.texto;
+      return new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidget().of([new container.Container.new({height: 50}), new text.Text.new(this.titulo, {style: new text_style.TextStyle.new({fontSize: 30, fontWeight: ui.FontWeight.bold, color: new ui.Color.fromARGB(255, 220, 148, 242)})}), new container.Container.new({height: 20}), new basic.Center.new({child: new container.Container.new({height: 200, width: 800, child: new image.Image.asset(this.img)})}), new container.Container.new({height: 20}), new text.Text.new(textofinal, {style: new text_style.TextStyle.new({fontSize: 20, color: new ui.Color.fromARGB(255, 237, 187, 252)}), textAlign: ui.TextAlign.justify})])});
     }
   };
-  (jogo_Page.Jogo.new = function() {
-    jogo_Page.Jogo.__proto__.new.call(this);
+  (jogo_Page.Conteudo.new = function(opts) {
+    let texto = opts && 'texto' in opts ? opts.texto : null;
+    let titulo = opts && 'titulo' in opts ? opts.titulo : null;
+    let img = opts && 'img' in opts ? opts.img : null;
+    this[texto$0] = texto;
+    this[titulo$] = titulo;
+    this[img$] = img;
+    jogo_Page.Conteudo.__proto__.new.call(this);
     ;
-  }).prototype = jogo_Page.Jogo.prototype;
-  dart.addTypeTests(jogo_Page.Jogo);
-  dart.addTypeCaches(jogo_Page.Jogo);
-  dart.setMethodSignature(jogo_Page.Jogo, () => ({
-    __proto__: dart.getMethods(jogo_Page.Jogo.__proto__),
+  }).prototype = jogo_Page.Conteudo.prototype;
+  dart.addTypeTests(jogo_Page.Conteudo);
+  dart.addTypeCaches(jogo_Page.Conteudo);
+  dart.setMethodSignature(jogo_Page.Conteudo, () => ({
+    __proto__: dart.getMethods(jogo_Page.Conteudo.__proto__),
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(jogo_Page.Jogo, I[3]);
+  dart.setLibraryUri(jogo_Page.Conteudo, I[4]);
+  dart.setFieldSignature(jogo_Page.Conteudo, () => ({
+    __proto__: dart.getFields(jogo_Page.Conteudo.__proto__),
+    titulo: dart.finalFieldType(core.String),
+    texto: dart.finalFieldType(core.String),
+    img: dart.finalFieldType(core.String)
+  }));
   dart.trackLibraries("zapp_user_main", {
     "file:///zapp/project/.zapp_entry.dart": $46zapp_entry,
     "file:///zapp/project/lib/main.dart": main,
     "file:///zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart": web_plugin_registrant,
     "file:///zapp/project/lib/app_Widget.dart": app_Widget,
     "file:///zapp/project/lib/app_controller.dart": app_controller,
+    "file:///zapp/project/lib/historia_page.dart": historia_page,
     "file:///zapp/project/lib/home_Page.dart": home_Page,
     "file:///zapp/project/lib/jogo_Page.dart": jogo_Page
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["/zapp/project/.zapp_entry.dart","/zapp/project/lib/main.dart","/zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart","/zapp/project/lib/app_Widget.dart","/zapp/project/lib/app_controller.dart","/zapp/project/lib/home_Page.dart","/zapp/project/lib/jogo_Page.dart"],"names":[],"mappings":"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","file":"main.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["/zapp/project/.zapp_entry.dart","/zapp/project/lib/main.dart","/zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart","/zapp/project/lib/app_Widget.dart","/zapp/project/lib/app_controller.dart","/zapp/project/lib/historia_page.dart","/zapp/project/lib/home_Page.dart","/zapp/project/lib/jogo_Page.dart"],"names":[],"mappings":"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","file":"main.js"}');
   // Exports:
   return {
     zapp__project__$46zapp_entry: $46zapp_entry,
@@ -378,6 +425,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     zapp__project__$46dart_tool__dartpad__web_plugin_registrant: web_plugin_registrant,
     zapp__project__lib__app_Widget: app_Widget,
     zapp__project__lib__app_controller: app_controller,
+    zapp__project__lib__historia_page: historia_page,
     zapp__project__lib__home_Page: home_Page,
     zapp__project__lib__jogo_Page: jogo_Page
   };

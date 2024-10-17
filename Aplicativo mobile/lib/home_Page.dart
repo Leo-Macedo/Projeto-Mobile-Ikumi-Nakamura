@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'app_controller.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,17 +14,7 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Container(
-          width: double.infinity,
-          child: Center(
-            child: Text(
-              'Home Page',
-              style: TextStyle(fontSize: 30),
-            ),
-          ),
-        ),
-      ),
+      
       body: Stack(children: [
         SizedBox(
             height: MediaQuery.of(context).size.height,
@@ -54,8 +43,8 @@ class HomePageState extends State<HomePage> {
                   ),
                   Container(height: 50),
                   Botao(
-                    texto: 'Biografia',
-                    rota: '/jogo',
+                    texto: 'História',
+                    rota: '/historia',
                   ),
                   Container(height: 20),
                   Botao(
@@ -79,20 +68,9 @@ class HomePageState extends State<HomePage> {
   }
 }
 
-class Navigation {
-  static of(BuildContext context) {}
-}
 
-class CustomSwitch extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Switch(
-        value: AppController.instance.isDartTheme,
-        onChanged: (value) {
-          AppController.instance.changeTheme();
-        });
-  }
-}
+
+
 
 class Botao extends StatelessWidget {
   final String texto;
@@ -112,8 +90,8 @@ class Botao extends StatelessWidget {
         texto,
         style: TextStyle(
           fontSize: 20,
+          color:  Color.fromARGB(255, 241, 203, 252)),
         ),
-      ),
-    );
+          );
   }
 }
