@@ -21,13 +21,15 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   const change_notifier = flutter_sdk.src__foundation__change_notifier;
   const scaffold = flutter_sdk.src__material__scaffold;
   const app_bar = flutter_sdk.src__material__app_bar;
-  const container = flutter_sdk.src__widgets__container;
+  const basic = flutter_sdk.src__widgets__basic;
+  const icon = flutter_sdk.src__widgets__icon;
+  const icons = flutter_sdk.src__material__icons;
   const text = flutter_sdk.src__widgets__text;
   const text_style = flutter_sdk.src__painting__text_style;
-  const basic = flutter_sdk.src__widgets__basic;
   const media_query = flutter_sdk.src__widgets__media_query;
   const image = flutter_sdk.src__widgets__image;
   const box_fit = flutter_sdk.src__painting__box_fit;
+  const container = flutter_sdk.src__widgets__container;
   const edge_insets = flutter_sdk.src__painting__edge_insets;
   const scroll_view = flutter_sdk.src__widgets__scroll_view;
   const flex = flutter_sdk.src__rendering__flex;
@@ -38,10 +40,13 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   var web_plugin_registrant = Object.create(dart.library);
   var app_Widget = Object.create(dart.library);
   var app_controller = Object.create(dart.library);
+  var empresas_page = Object.create(dart.library);
   var historia_page = Object.create(dart.library);
   var home_Page = Object.create(dart.library);
   var jogo_Page = Object.create(dart.library);
   var $toString = dartx.toString;
+  var $length = dartx.length;
+  var $_get = dartx._get;
   dart._checkModuleNullSafetyMode(true);
   dart._checkModuleRuntimeTypes(false);
   var T = {
@@ -56,12 +61,16 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     BuildContextToHomePage: () => (T.BuildContextToHomePage = dart.constFn(dart.fnType(home_Page.HomePage, [framework.BuildContext])))(),
     BuildContextToJogoPage: () => (T.BuildContextToJogoPage = dart.constFn(dart.fnType(jogo_Page.JogoPage, [framework.BuildContext])))(),
     BuildContextToHistoriaPage: () => (T.BuildContextToHistoriaPage = dart.constFn(dart.fnType(historia_page.HistoriaPage, [framework.BuildContext])))(),
+    BuildContextToEmpresasPage: () => (T.BuildContextToEmpresasPage = dart.constFn(dart.fnType(empresas_page.EmpresasPage, [framework.BuildContext])))(),
     BuildContextToWidget: () => (T.BuildContextToWidget = dart.constFn(dart.fnType(framework.Widget, [framework.BuildContext])))(),
     IdentityMapOfString$BuildContextToWidget: () => (T.IdentityMapOfString$BuildContextToWidget = dart.constFn(_js_helper.IdentityMap$(core.String, T.BuildContextToWidget())))(),
     WidgetN: () => (T.WidgetN = dart.constFn(dart.nullable(framework.Widget)))(),
     BuildContextAndWidgetNToMaterialApp: () => (T.BuildContextAndWidgetNToMaterialApp = dart.constFn(dart.fnType(app.MaterialApp, [framework.BuildContext, T.WidgetN()])))(),
     IdentityMapOfint$Color: () => (T.IdentityMapOfint$Color = dart.constFn(_js_helper.IdentityMap$(core.int, ui.Color)))(),
     JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
+    BuildContextAndintToConteudo: () => (T.BuildContextAndintToConteudo = dart.constFn(dart.fnType(jogo_Page.Conteudo, [framework.BuildContext, core.int])))(),
+    JSArrayOfConteudo: () => (T.JSArrayOfConteudo = dart.constFn(_interceptors.JSArray$(jogo_Page.Conteudo)))(),
+    BuildContextAndintToColumn: () => (T.BuildContextAndintToColumn = dart.constFn(dart.fnType(basic.Column, [framework.BuildContext, core.int])))(),
     ObjectN: () => (T.ObjectN = dart.constFn(dart.nullable(core.Object)))(),
     VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))()
   };
@@ -71,12 +80,112 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   dart.defineLazy(CT, {
     get C0() {
       return C[0] = dart.fn(main.main, T.VoidTodynamic());
+    },
+    get C1() {
+      return C[1] = dart.const({
+        __proto__: basic.SizedBox.prototype,
+        [Widget_key]: null,
+        [SingleChildRenderObjectWidget_child]: null,
+        [SizedBox_height]: 50,
+        [SizedBox_width]: null
+      });
+    },
+    get C3() {
+      return C[3] = dart.const({
+        __proto__: ui.FontWeight.prototype,
+        [FontWeight_value]: 700,
+        [FontWeight_index]: 6
+      });
+    },
+    get C4() {
+      return C[4] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4292646130
+      });
+    },
+    get C2() {
+      return C[2] = dart.const({
+        __proto__: text_style.TextStyle.prototype,
+        [TextStyle_overflow]: null,
+        [TextStyle_fontVariations]: null,
+        [TextStyle_fontFeatures]: null,
+        [TextStyle_shadows]: null,
+        [TextStyle_debugLabel]: null,
+        [TextStyle_decorationThickness]: null,
+        [TextStyle_decorationStyle]: null,
+        [TextStyle_decorationColor]: null,
+        [TextStyle_decoration]: null,
+        [TextStyle_background]: null,
+        [TextStyle_foreground]: null,
+        [TextStyle_locale]: null,
+        [TextStyle_leadingDistribution]: null,
+        [TextStyle_height]: null,
+        [TextStyle_textBaseline]: null,
+        [TextStyle_wordSpacing]: null,
+        [TextStyle_letterSpacing]: null,
+        [TextStyle_fontStyle]: null,
+        [TextStyle_fontWeight]: C[3] || CT.C3,
+        [TextStyle_fontSize]: 30,
+        [TextStyle__package]: null,
+        [TextStyle__fontFamilyFallback]: null,
+        [TextStyle_fontFamily]: null,
+        [TextStyle_backgroundColor]: null,
+        [TextStyle_color]: C[4] || CT.C4,
+        [TextStyle_inherit]: true
+      });
+    },
+    get C5() {
+      return C[5] = dart.const({
+        __proto__: basic.SizedBox.prototype,
+        [Widget_key]: null,
+        [SingleChildRenderObjectWidget_child]: null,
+        [SizedBox_height]: 20,
+        [SizedBox_width]: null
+      });
+    },
+    get C7() {
+      return C[7] = dart.const({
+        __proto__: ui.Color.prototype,
+        [Color_value]: 4293770236
+      });
+    },
+    get C6() {
+      return C[6] = dart.const({
+        __proto__: text_style.TextStyle.prototype,
+        [TextStyle_overflow]: null,
+        [TextStyle_fontVariations]: null,
+        [TextStyle_fontFeatures]: null,
+        [TextStyle_shadows]: null,
+        [TextStyle_debugLabel]: null,
+        [TextStyle_decorationThickness]: null,
+        [TextStyle_decorationStyle]: null,
+        [TextStyle_decorationColor]: null,
+        [TextStyle_decoration]: null,
+        [TextStyle_background]: null,
+        [TextStyle_foreground]: null,
+        [TextStyle_locale]: null,
+        [TextStyle_leadingDistribution]: null,
+        [TextStyle_height]: null,
+        [TextStyle_textBaseline]: null,
+        [TextStyle_wordSpacing]: null,
+        [TextStyle_letterSpacing]: null,
+        [TextStyle_fontStyle]: null,
+        [TextStyle_fontWeight]: null,
+        [TextStyle_fontSize]: 20,
+        [TextStyle__package]: null,
+        [TextStyle__fontFamilyFallback]: null,
+        [TextStyle_fontFamily]: null,
+        [TextStyle_backgroundColor]: null,
+        [TextStyle_color]: C[7] || CT.C7,
+        [TextStyle_inherit]: true
+      });
     }
   }, false);
-  var C = [void 0];
+  var C = Array(8).fill(void 0);
   var I = [
     "file:///zapp/project/lib/app_Widget.dart",
     "file:///zapp/project/lib/app_controller.dart",
+    "file:///zapp/project/lib/empresas_page.dart",
     "file:///zapp/project/lib/historia_page.dart",
     "file:///zapp/project/lib/home_Page.dart",
     "file:///zapp/project/lib/jogo_Page.dart"
@@ -119,7 +228,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   };
   app_Widget.AppWidget = class AppWidget extends framework.StatelessWidget {
     build(context) {
-      return new transitions.AnimatedBuilder.new({animation: app_controller.AppController.instance, builder: dart.fn((context, child) => new app.MaterialApp.new({theme: theme_data.ThemeData.new({primarySwatch: app_Widget.createMaterialColor(new ui.Color.fromARGB(255, 52, 14, 58))}), initialRoute: "/", routes: new (T.IdentityMapOfString$BuildContextToWidget()).from(["/", dart.fn(context => new home_Page.HomePage.new(), T.BuildContextToHomePage()), "/jogo", dart.fn(context => new jogo_Page.JogoPage.new(), T.BuildContextToJogoPage()), "/historia", dart.fn(context => new historia_page.HistoriaPage.new(), T.BuildContextToHistoriaPage())])}), T.BuildContextAndWidgetNToMaterialApp())});
+      return new transitions.AnimatedBuilder.new({animation: app_controller.AppController.instance, builder: dart.fn((context, child) => new app.MaterialApp.new({theme: theme_data.ThemeData.new({primarySwatch: app_Widget.createMaterialColor(new ui.Color.fromARGB(255, 52, 14, 58))}), initialRoute: "/", routes: new (T.IdentityMapOfString$BuildContextToWidget()).from(["/", dart.fn(context => new home_Page.HomePage.new(), T.BuildContextToHomePage()), "/jogo", dart.fn(context => new jogo_Page.JogoPage.new(), T.BuildContextToJogoPage()), "/historia", dart.fn(context => new historia_page.HistoriaPage.new(), T.BuildContextToHistoriaPage()), "/empresa", dart.fn(context => new empresas_page.EmpresasPage.new(), T.BuildContextToEmpresasPage())])}), T.BuildContextAndWidgetNToMaterialApp())});
     }
     static ['_#new#tearOff']() {
       return new app_Widget.AppWidget.new();
@@ -179,6 +288,50 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     },
     set instance(value) {}
   }, false);
+  empresas_page.EmpresasPage = class EmpresasPage extends framework.StatefulWidget {
+    createState() {
+      return new empresas_page.EmpresasPageState.new();
+    }
+    static ['_#new#tearOff']() {
+      return new empresas_page.EmpresasPage.new();
+    }
+  };
+  (empresas_page.EmpresasPage.new = function() {
+    empresas_page.EmpresasPage.__proto__.new.call(this);
+    ;
+  }).prototype = empresas_page.EmpresasPage.prototype;
+  dart.addTypeTests(empresas_page.EmpresasPage);
+  dart.addTypeCaches(empresas_page.EmpresasPage);
+  dart.setMethodSignature(empresas_page.EmpresasPage, () => ({
+    __proto__: dart.getMethods(empresas_page.EmpresasPage.__proto__),
+    createState: dart.fnType(framework.State$(empresas_page.EmpresasPage), [])
+  }));
+  dart.setLibraryUri(empresas_page.EmpresasPage, I[2]);
+  empresas_page.EmpresasPageState = class EmpresasPageState extends framework.State$(empresas_page.EmpresasPage) {
+    build(context) {
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new basic.Row.new({children: T.JSArrayOfWidget().of([new icon.Icon.new(icons.Icons.apartment, {color: new ui.Color.fromARGB(255, 241, 203, 252)}), new basic.SizedBox.new({width: 8}), new text.Text.new("Empresas", {style: new text_style.TextStyle.new({fontSize: 30, color: new ui.Color.fromARGB(255, 241, 203, 252)})})])})}), body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: new ui.Color.fromARGB(1, 88, 42, 114).withOpacity(1)}), new container.Container.new({padding: new edge_insets.EdgeInsets.all(16), width: 1 / 0, height: 1 / 0, child: new scroll_view.ListView.builder({itemCount: empresas_page.conteudoEmpresas[$length], itemBuilder: dart.fn((context, index) => empresas_page.conteudoEmpresas[$_get](index), T.BuildContextAndintToConteudo())})})])})});
+    }
+    static ['_#new#tearOff']() {
+      return new empresas_page.EmpresasPageState.new();
+    }
+  };
+  (empresas_page.EmpresasPageState.new = function() {
+    empresas_page.EmpresasPageState.__proto__.new.call(this);
+    ;
+  }).prototype = empresas_page.EmpresasPageState.prototype;
+  dart.addTypeTests(empresas_page.EmpresasPageState);
+  dart.addTypeCaches(empresas_page.EmpresasPageState);
+  dart.setMethodSignature(empresas_page.EmpresasPageState, () => ({
+    __proto__: dart.getMethods(empresas_page.EmpresasPageState.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(empresas_page.EmpresasPageState, I[2]);
+  dart.defineLazy(empresas_page, {
+    /*empresas_page.conteudoEmpresas*/get conteudoEmpresas() {
+      return T.JSArrayOfConteudo().of([new jogo_Page.Conteudo.new({titulo: "Capcom", texto: "Após se candidatar duas vezes, Ikumi Nakamura foi contratada pela Capcom em 2004. Ela se juntou ao Clover Studio, onde teve a oportunidade de criar a arte de fundo para Ōkami (2006), um jogo que se tornaria um clássico e a colocaria no mapa da indústria de jogos.", img: "assets/img/capcom.png"}), new jogo_Page.Conteudo.new({titulo: "PlatinumGames", texto: "Ikumi seguiu seus colegas da Capcom ao fundarem a PlatinumGames. No início do estúdio, apresentou uma ideia para um jogo original para Nintendo DS, mas o projeto foi cancelado após a Nintendo não demonstrar interesse. Apesar disso, ela contribuiu como artista conceitual em Bayonetta (2009) e trabalhou brevemente como diretora de arte em Scalebound antes de deixar a empresa.", img: "assets/img/platinum.png"}), new jogo_Page.Conteudo.new({titulo: "Tango Gameworks", texto: "Em 2010, Ikumi se uniu a Shinji Mikami na Tango Gameworks. Durante sua passagem pelo estúdio, ela atuou como artista em The Evil Within (2014) e The Evil Within 2 (2017), além de ser nomeada diretora criativa de Ghostwire: Tokyo. Sua apresentação na E3 2019 foi um dos pontos altos da coletiva de imprensa da Bethesda Softworks, destacando seu talento e visão criativa. No entanto, em 2019, ela deixou o projeto e a empresa devido ao declínio de sua saúde, causado pelo estresse da dinâmica desenvolvedor-editora e pela pressão sobre o controle do projeto.", img: "assets/img/tango.png"}), new jogo_Page.Conteudo.new({titulo: "Unseen", texto: "Após deixar a Tango Gameworks, Ikumi fez trabalhos de consultoria e freelance. Em março de 2021, anunciou a criação de seu próprio estúdio de jogos independente, chamado Unseen, que foi formalmente revelado no ano seguinte. A intenção de Ikumi é desenvolver novas propriedades intelectuais (IPs) que se expandam para diferentes mídias de entretenimento, mantendo o foco em jogos que explorem mistério, terror, ficção científica e elementos sobrenaturais. O primeiro jogo do estúdio, Kemuri, foi revelado no The Game Awards 2023, prometendo uma nova e intrigante experiência aos jogadores.", img: "assets/img/unseen.png"})]);
+    },
+    set conteudoEmpresas(value) {}
+  }, false);
   historia_page.HistoriaPage = class HistoriaPage extends framework.StatefulWidget {
     createState() {
       return new historia_page.HistoriaPageState.new();
@@ -197,10 +350,10 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(historia_page.HistoriaPage.__proto__),
     createState: dart.fnType(framework.State$(historia_page.HistoriaPage), [])
   }));
-  dart.setLibraryUri(historia_page.HistoriaPage, I[2]);
+  dart.setLibraryUri(historia_page.HistoriaPage, I[3]);
   historia_page.HistoriaPageState = class HistoriaPageState extends framework.State$(historia_page.HistoriaPage) {
     build(context) {
-      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new container.Container.new({width: 1 / 0, child: new text.Text.new("História", {style: new text_style.TextStyle.new({fontSize: 30, color: new ui.Color.fromARGB(255, 241, 203, 252)})})})}), body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: new ui.Color.fromARGB(1, 88, 42, 114).withOpacity(1)}), new container.Container.new({padding: new edge_insets.EdgeInsets.all(16), width: 1 / 0, height: 1 / 0, child: new scroll_view.ListView.new({shrinkWrap: true, children: T.JSArrayOfWidget().of([new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidget().of([new jogo_Page.Conteudo.new({titulo: "Ikumi Nakamura: A Artista por Trás do Terror e da Fantasia", texto: "Ikumi Nakamura (中村 育美) é uma artista e diretora de videogame japonesa nascida em 8 de outubro de 1985 no Japão, amplamente reconhecida por seu trabalho na Tango Gameworks, onde atuou como artista em The Evil Within (2014) e The Evil Within 2 (2017), além de ter sido diretora criativa de Ghostwire: Tokyo. Antes de sua passagem pela Tango, Ikumi também fez arte para Ōkami (2006) no Clover Studio e para Bayonetta (2009) na PlatinumGames. Atualmente, ela dirige seu próprio estúdio de jogos independente, chamado Unseen.", img: "assets/img/ikumi1.jpg"}), new jogo_Page.Conteudo.new({titulo: "Vida Pessoal e Formação", texto: "Desde a infância, Ikumi tinha uma forte conexão com o universo do terror, alimentada por momentos compartilhados com seu pai, assistindo a filmes de horror e jogando séries como Resident Evil e Devil May Cry, ambas da Capcom. Essa paixão por jogos e a admiração pela Capcom despertaram nela o desejo de um dia fazer parte do estúdio. \n          No entanto, sua vida tomou um rumo difícil quando seu pai faleceu em um acidente de motocicleta durante seu tempo na universidade. Essa tragédia apenas reforçou sua determinação de seguir uma carreira na Capcom. Para isso, Ikumi frequentou uma escola de arte em Tóquio e, posteriormente, estudou design de jogos na Amusement Media Academy.", img: "assets/img/ikumi2.jpg"})])})])})})])})});
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new basic.Row.new({children: T.JSArrayOfWidget().of([new icon.Icon.new(icons.Icons.description, {color: new ui.Color.fromARGB(255, 241, 203, 252)}), new basic.SizedBox.new({width: 8}), new text.Text.new("História", {style: new text_style.TextStyle.new({fontSize: 30, color: new ui.Color.fromARGB(255, 241, 203, 252)})})])})}), body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: new ui.Color.fromARGB(1, 88, 42, 114).withOpacity(1)}), new container.Container.new({padding: new edge_insets.EdgeInsets.all(16), width: 1 / 0, height: 1 / 0, child: new scroll_view.ListView.builder({itemCount: historia_page.conteudoHistoria[$length], itemBuilder: dart.fn((context, index) => new basic.Column.new({children: T.JSArrayOfWidget().of([historia_page.conteudoHistoria[$_get](index)])}), T.BuildContextAndintToColumn())})})])})});
     }
     static ['_#new#tearOff']() {
       return new historia_page.HistoriaPageState.new();
@@ -216,7 +369,13 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(historia_page.HistoriaPageState.__proto__),
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(historia_page.HistoriaPageState, I[2]);
+  dart.setLibraryUri(historia_page.HistoriaPageState, I[3]);
+  dart.defineLazy(historia_page, {
+    /*historia_page.conteudoHistoria*/get conteudoHistoria() {
+      return T.JSArrayOfConteudo().of([new jogo_Page.Conteudo.new({titulo: "Ikumi Nakamura: A Artista por Trás do Terror e da Fantasia", texto: "Ikumi Nakamura (中村 育美) é uma artista e diretora de videogame japonesa nascida em 8 de outubro de 1985 no Japão, amplamente reconhecida por seu trabalho na Tango Gameworks, onde atuou como artista em The Evil Within (2014) e The Evil Within 2 (2017), além de ter sido diretora criativa de Ghostwire: Tokyo. Antes de sua passagem pela Tango, Ikumi também fez arte para Ōkami (2006) no Clover Studio e para Bayonetta (2009) na PlatinumGames. Atualmente, ela dirige seu próprio estúdio de jogos independente, chamado Unseen.", img: "assets/img/ikumi1.jpg"}), new jogo_Page.Conteudo.new({titulo: "Vida Pessoal e Formação", texto: "Desde a infância, Ikumi tinha uma forte conexão com o universo do terror, alimentada por momentos compartilhados com seu pai, assistindo a filmes de horror e jogando séries como Resident Evil e Devil May Cry, ambas da Capcom. Essa paixão por jogos e a admiração pela Capcom despertaram nela o desejo de um dia fazer parte do estúdio. \n          No entanto, sua vida tomou um rumo difícil quando seu pai faleceu em um acidente de motocicleta durante seu tempo na universidade. Essa tragédia apenas reforçou sua determinação de seguir uma carreira na Capcom. Para isso, Ikumi frequentou uma escola de arte em Tóquio e, posteriormente, estudou design de jogos na Amusement Media Academy.", img: "assets/img/ikumi2.jpg"})]);
+    },
+    set conteudoHistoria(value) {}
+  }, false);
   home_Page.HomePage = class HomePage extends framework.StatefulWidget {
     createState() {
       return new home_Page.HomePageState.new();
@@ -235,7 +394,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(home_Page.HomePage.__proto__),
     createState: dart.fnType(framework.State$(home_Page.HomePage), [])
   }));
-  dart.setLibraryUri(home_Page.HomePage, I[3]);
+  dart.setLibraryUri(home_Page.HomePage, I[4]);
   var counter = dart.privateName(home_Page, "HomePageState.counter");
   home_Page.HomePageState = class HomePageState extends framework.State$(home_Page.HomePage) {
     get counter() {
@@ -245,7 +404,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       this[counter] = value;
     }
     build(context) {
-      return new scaffold.Scaffold.new({body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: colors.Colors.black.withOpacity(0.5)}), new container.Container.new({padding: new edge_insets.EdgeInsets.all(16), width: 1 / 0, height: 1 / 0, child: new scroll_view.ListView.new({shrinkWrap: true, children: T.JSArrayOfWidget().of([new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidget().of([new container.Container.new({height: 200}), new text.Text.new("Ikumi Nakamura", {style: new text_style.TextStyle.new({fontSize: 30, fontWeight: ui.FontWeight.bold, color: new ui.Color.fromARGB(255, 255, 255, 255)})}), new container.Container.new({height: 50}), new home_Page.Botao.new({texto: "História", rota: "/historia"}), new container.Container.new({height: 20}), new home_Page.Botao.new({texto: "Jogos", rota: "/jogo"}), new container.Container.new({height: 20}), new home_Page.Botao.new({texto: "Empresas", rota: "/jogo"}), new container.Container.new({height: 20})])})])})})])})});
+      return new scaffold.Scaffold.new({body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: colors.Colors.black.withOpacity(0.5)}), new container.Container.new({padding: new edge_insets.EdgeInsets.all(16), width: 1 / 0, height: 1 / 0, child: new scroll_view.ListView.new({shrinkWrap: true, children: T.JSArrayOfWidget().of([new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidget().of([new container.Container.new({height: 200}), new text.Text.new("Ikumi Nakamura", {style: new text_style.TextStyle.new({fontSize: 30, fontWeight: ui.FontWeight.bold, color: new ui.Color.fromARGB(255, 255, 255, 255)})}), new container.Container.new({height: 50}), new home_Page.Botao.new({texto: "História", rota: "/historia"}), new container.Container.new({height: 20}), new home_Page.Botao.new({texto: "Jogos", rota: "/jogo"}), new container.Container.new({height: 20}), new home_Page.Botao.new({texto: "Empresas", rota: "/empresa"}), new container.Container.new({height: 20}), new home_Page.Botao.new({texto: "Links", rota: "/jogo"}), new container.Container.new({height: 20})])})])})})])})});
     }
     static ['_#new#tearOff']() {
       return new home_Page.HomePageState.new();
@@ -262,7 +421,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(home_Page.HomePageState.__proto__),
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(home_Page.HomePageState, I[3]);
+  dart.setLibraryUri(home_Page.HomePageState, I[4]);
   dart.setFieldSignature(home_Page.HomePageState, () => ({
     __proto__: dart.getFields(home_Page.HomePageState.__proto__),
     counter: dart.fieldType(core.int)
@@ -307,7 +466,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(home_Page.Botao.__proto__),
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(home_Page.Botao, I[3]);
+  dart.setLibraryUri(home_Page.Botao, I[4]);
   dart.setFieldSignature(home_Page.Botao, () => ({
     __proto__: dart.getFields(home_Page.Botao.__proto__),
     texto: dart.finalFieldType(core.String),
@@ -331,10 +490,10 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(jogo_Page.JogoPage.__proto__),
     createState: dart.fnType(framework.State$(jogo_Page.JogoPage), [])
   }));
-  dart.setLibraryUri(jogo_Page.JogoPage, I[4]);
+  dart.setLibraryUri(jogo_Page.JogoPage, I[5]);
   jogo_Page.JogoPageState = class JogoPageState extends framework.State$(jogo_Page.JogoPage) {
     build(context) {
-      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new container.Container.new({width: 1 / 0, child: new text.Text.new("Jogos", {style: new text_style.TextStyle.new({fontSize: 30, color: new ui.Color.fromARGB(255, 241, 203, 252)})})})}), body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: new ui.Color.fromARGB(1, 88, 42, 114).withOpacity(1)}), new container.Container.new({padding: new edge_insets.EdgeInsets.all(16), width: 1 / 0, height: 1 / 0, child: new scroll_view.ListView.new({shrinkWrap: true, children: T.JSArrayOfWidget().of([new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidget().of([new jogo_Page.Conteudo.new({titulo: "Ōkami (2006)", texto: "Ikumi Nakamura trabalhou na produção de fundo deste jogo de ação e aventura, que se destaca por seu estilo artístico inspirado na pintura tradicional japonesa. Os jogadores controlam Amaterasu, a deusa do sol, que assume a forma de um lobo. Em um mundo em que a natureza foi corrompida por demônios, Amaterasu deve restaurar a beleza e a vida usando o “Celestial Brush”, uma mecânica que permite desenhar no ambiente para resolver quebra-cabeças e derrotar inimigos. O trabalho de Ikumi foi fundamental para criar os cenários vibrantes e imersivos que definem o jogo, contribuindo para sua recepção calorosa como um dos melhores jogos de sua época.", img: "assets/img/Okami.jpg"}), new jogo_Page.Conteudo.new({titulo: "Bayonetta (2009)", texto: "Como artista conceitual, Ikumi Nakamura desempenhou um papel crucial em Bayonetta, um jogo de ação hack and slash que segue a protagonista Bayonetta, uma bruxa que luta contra anjos e demônios em uma narrativa repleta de ação e humor. O jogo é conhecido por seu combate rápido e estilizado, com combos elaborados e um design de personagens marcante. A estética extravagante e os visuais dinâmicos são resultados da visão artística de Ikumi, que ajudou a definir a identidade visual do jogo, tornando-o um clássico cult e um sucesso comercial.", img: "assets/img/bayonetta.jpg"}), new jogo_Page.Conteudo.new({titulo: "Marvel vs. Capcom 3 (2011)", texto: "Em Marvel vs. Capcom 3: Fate of Two Worlds, Ikumi trabalhou nas cinemáticas, que apresentam confrontos épicos entre personagens da Marvel e da Capcom. Este jogo de luta em equipe combina os mundos de ambos os universos, permitindo que jogadores escolham seus heróis e vilões favoritos para batalhas intensas. As cinemáticas, que capturam a emoção e a ação do jogo, foram aprimoradas pelo trabalho de Ikumi, que garantiu que cada luta fosse visualmente cativante e envolvente, elevando a experiência geral.", img: "assets/img/marvel.jpg"}), new jogo_Page.Conteudo.new({titulo: "Street Fighter X Tekken (2012)", texto: "Neste crossover de luta, Ikumi Nakamura atuou como pintora, contribuindo para a estética vibrante e colorida que caracteriza o jogo. Street Fighter X Tekken reúne personagens icônicos das duas franquias, permitindo que os jogadores formem equipes e lutem em batalhas de tag. O jogo apresenta um sistema de combate dinâmico e uma variedade de modos de jogo. A arte de Ikumi ajudou a moldar a identidade visual dos personagens, garantindo que eles fossem atraentes e reconhecíveis, mantendo a essência de cada franquia.", img: "assets/img/street.jpg"}), new jogo_Page.Conteudo.new({titulo: "Ultra Street Fighter IV (2014)", texto: "Em Ultra Street Fighter IV, Ikumi colaborou como artista conceitual, contribuindo para a atualização e expansão de um dos títulos mais amados da série. O jogo introduz novos personagens, cenários e mecânicas, mantendo o equilíbrio entre os lutadores existentes. A habilidade de Ikumi em criar designs de personagens e cenários refinados foi essencial para revitalizar o jogo, permitindo que ele se mantivesse relevante em uma era de competições acirradas no gênero de luta.", img: "assets/img/ultra.jfif"}), new jogo_Page.Conteudo.new({titulo: "The Evil Within (2014)", texto: "Ikumi Nakamura foi a artista conceitual líder de The Evil Within, um survival horror criado por Shinji Mikami. O jogo segue o detetive Sebastian Castellanos, que, ao investigar uma cena de crime, se encontra preso em um mundo distorcido e aterrorizante, povoado por criaturas grotescas e armadilhas mortais. O design visual do jogo, que combina elementos de horror psicológico e ação intensa, é profundamente influenciado pelo trabalho de Ikumi, que ajudou a criar uma atmosfera opressiva e visualmente intrigante, marcada por cenários sombrios e detalhados.", img: "assets/img/evil.jpg"}), new jogo_Page.Conteudo.new({titulo: "Street Fighter V (2016)", texto: "Em Street Fighter V, Ikumi atuou novamente como artista conceitual de personagens, ajudando a definir a aparência dos lutadores e a estética geral do jogo. Este título traz novos e antigos personagens de volta à arena de luta, apresentando gráficos atualizados e um modo história expandido. A contribuição de Ikumi garantiu que cada personagem tivesse um design visual único e coerente, capturando a essência de suas personalidades e habilidades.", img: "assets/img/streetV.jpg"}), new jogo_Page.Conteudo.new({titulo: "The Evil Within 2 (2017)", texto: "No sequel The Evil Within 2, Ikumi participou como artista de arte adicional, aprofundando o estilo visual e a atmosfera do jogo. Continuando a história de Sebastian Castellanos, o jogo explora temas de perda e redenção em um mundo ainda mais distorcido e aberto. O trabalho de Ikumi ajudou a enriquecer a experiência imersiva, com uma paleta de cores e detalhes visuais que acentuam o horror psicológico da narrativa.", img: "assets/img/evil2.jpg"}), new jogo_Page.Conteudo.new({titulo: "Ghostwire: Tokyo (2022)", texto: "Ikumi foi diretora criativa inicial de Ghostwire: Tokyo, um jogo que se passa em uma Tóquio contemporânea assombrada por espíritos sobrenaturais. Os jogadores controlam Akito, que deve usar habilidades especiais para enfrentar essas entidades e descobrir o que aconteceu com a cidade. A visão de Ikumi ajudou a moldar a narrativa e o design artístico, criando um mundo intrigante e visualmente impressionante que mistura elementos de horror e ação.", img: "assets/img/ghost.jpg"}), new jogo_Page.Conteudo.new({titulo: "Gungrave GORE (2022)", texto: "Em Gungrave GORE, Ikumi atuou como consultora de arte, contribuindo para o design visual de um jogo de ação que combina tiroteio frenético com uma narrativa envolvente. O jogo segue Grave, que deve enfrentar inimigos em um mundo distópico. A experiência de Ikumi foi vital para garantir que a estética do jogo fosse atraente e coesa, refletindo a intensidade da ação.", img: "assets/img/gun.jpg"})])})])})})])})});
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new basic.Row.new({children: T.JSArrayOfWidget().of([new icon.Icon.new(icons.Icons.sports_esports, {color: new ui.Color.fromARGB(255, 241, 203, 252)}), new basic.SizedBox.new({width: 8}), new text.Text.new("Jogos", {style: new text_style.TextStyle.new({fontSize: 30, color: new ui.Color.fromARGB(255, 241, 203, 252)})})])})}), body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: new ui.Color.fromARGB(1, 88, 42, 114).withOpacity(1)}), new container.Container.new({padding: new edge_insets.EdgeInsets.all(16), width: 1 / 0, height: 1 / 0, child: new scroll_view.ListView.builder({itemCount: jogo_Page.conteudosJogos[$length], itemBuilder: dart.fn((context, index) => new basic.Column.new({children: T.JSArrayOfWidget().of([jogo_Page.conteudosJogos[$_get](index)])}), T.BuildContextAndintToColumn())})})])})});
     }
     static ['_#new#tearOff']() {
       return new jogo_Page.JogoPageState.new();
@@ -350,10 +509,43 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(jogo_Page.JogoPageState.__proto__),
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(jogo_Page.JogoPageState, I[4]);
+  dart.setLibraryUri(jogo_Page.JogoPageState, I[5]);
   var titulo$ = dart.privateName(jogo_Page, "Conteudo.titulo");
   var texto$0 = dart.privateName(jogo_Page, "Conteudo.texto");
   var img$ = dart.privateName(jogo_Page, "Conteudo.img");
+  var Widget_key = dart.privateName(framework, "Widget.key");
+  var SingleChildRenderObjectWidget_child = dart.privateName(framework, "SingleChildRenderObjectWidget.child");
+  var SizedBox_height = dart.privateName(basic, "SizedBox.height");
+  var SizedBox_width = dart.privateName(basic, "SizedBox.width");
+  var TextStyle_overflow = dart.privateName(text_style, "TextStyle.overflow");
+  var TextStyle_fontVariations = dart.privateName(text_style, "TextStyle.fontVariations");
+  var TextStyle_fontFeatures = dart.privateName(text_style, "TextStyle.fontFeatures");
+  var TextStyle_shadows = dart.privateName(text_style, "TextStyle.shadows");
+  var TextStyle_debugLabel = dart.privateName(text_style, "TextStyle.debugLabel");
+  var TextStyle_decorationThickness = dart.privateName(text_style, "TextStyle.decorationThickness");
+  var TextStyle_decorationStyle = dart.privateName(text_style, "TextStyle.decorationStyle");
+  var TextStyle_decorationColor = dart.privateName(text_style, "TextStyle.decorationColor");
+  var TextStyle_decoration = dart.privateName(text_style, "TextStyle.decoration");
+  var TextStyle_background = dart.privateName(text_style, "TextStyle.background");
+  var TextStyle_foreground = dart.privateName(text_style, "TextStyle.foreground");
+  var TextStyle_locale = dart.privateName(text_style, "TextStyle.locale");
+  var TextStyle_leadingDistribution = dart.privateName(text_style, "TextStyle.leadingDistribution");
+  var TextStyle_height = dart.privateName(text_style, "TextStyle.height");
+  var TextStyle_textBaseline = dart.privateName(text_style, "TextStyle.textBaseline");
+  var TextStyle_wordSpacing = dart.privateName(text_style, "TextStyle.wordSpacing");
+  var TextStyle_letterSpacing = dart.privateName(text_style, "TextStyle.letterSpacing");
+  var TextStyle_fontStyle = dart.privateName(text_style, "TextStyle.fontStyle");
+  var FontWeight_value = dart.privateName(ui, "FontWeight.value");
+  var FontWeight_index = dart.privateName(ui, "FontWeight.index");
+  var TextStyle_fontWeight = dart.privateName(text_style, "TextStyle.fontWeight");
+  var TextStyle_fontSize = dart.privateName(text_style, "TextStyle.fontSize");
+  var TextStyle__package = dart.privateName(text_style, "TextStyle._package");
+  var TextStyle__fontFamilyFallback = dart.privateName(text_style, "TextStyle._fontFamilyFallback");
+  var TextStyle_fontFamily = dart.privateName(text_style, "TextStyle.fontFamily");
+  var TextStyle_backgroundColor = dart.privateName(text_style, "TextStyle.backgroundColor");
+  var Color_value = dart.privateName(ui, "Color.value");
+  var TextStyle_color = dart.privateName(text_style, "TextStyle.color");
+  var TextStyle_inherit = dart.privateName(text_style, "TextStyle.inherit");
   jogo_Page.Conteudo = class Conteudo extends framework.StatelessWidget {
     get titulo() {
       return this[titulo$];
@@ -374,24 +566,26 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       super.img = value;
     }
     static ['_#new#tearOff'](opts) {
-      let texto = opts && 'texto' in opts ? opts.texto : null;
+      let key = opts && 'key' in opts ? opts.key : null;
       let titulo = opts && 'titulo' in opts ? opts.titulo : null;
+      let texto = opts && 'texto' in opts ? opts.texto : null;
       let img = opts && 'img' in opts ? opts.img : null;
-      return new jogo_Page.Conteudo.new({texto: texto, titulo: titulo, img: img});
+      return new jogo_Page.Conteudo.new({key: key, titulo: titulo, texto: texto, img: img});
     }
     build(context) {
       let textofinal = "          " + this.texto;
-      return new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidget().of([new container.Container.new({height: 50}), new text.Text.new(this.titulo, {style: new text_style.TextStyle.new({fontSize: 30, fontWeight: ui.FontWeight.bold, color: new ui.Color.fromARGB(255, 220, 148, 242)})}), new container.Container.new({height: 20}), new basic.Center.new({child: new container.Container.new({height: 200, width: 800, child: new image.Image.asset(this.img)})}), new container.Container.new({height: 20}), new text.Text.new(textofinal, {style: new text_style.TextStyle.new({fontSize: 20, color: new ui.Color.fromARGB(255, 237, 187, 252)}), textAlign: ui.TextAlign.justify})])});
+      return new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidget().of([C[1] || CT.C1, new text.Text.new(this.titulo, {style: C[2] || CT.C2}), C[5] || CT.C5, new basic.Center.new({child: new container.Container.new({height: 200, width: 800, child: new image.Image.asset(this.img)})}), C[5] || CT.C5, new text.Text.new(textofinal, {style: C[6] || CT.C6, textAlign: ui.TextAlign.justify})])});
     }
   };
   (jogo_Page.Conteudo.new = function(opts) {
-    let texto = opts && 'texto' in opts ? opts.texto : null;
+    let key = opts && 'key' in opts ? opts.key : null;
     let titulo = opts && 'titulo' in opts ? opts.titulo : null;
+    let texto = opts && 'texto' in opts ? opts.texto : null;
     let img = opts && 'img' in opts ? opts.img : null;
-    this[texto$0] = texto;
     this[titulo$] = titulo;
+    this[texto$0] = texto;
     this[img$] = img;
-    jogo_Page.Conteudo.__proto__.new.call(this);
+    jogo_Page.Conteudo.__proto__.new.call(this, {key: key});
     ;
   }).prototype = jogo_Page.Conteudo.prototype;
   dart.addTypeTests(jogo_Page.Conteudo);
@@ -400,24 +594,31 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(jogo_Page.Conteudo.__proto__),
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(jogo_Page.Conteudo, I[4]);
+  dart.setLibraryUri(jogo_Page.Conteudo, I[5]);
   dart.setFieldSignature(jogo_Page.Conteudo, () => ({
     __proto__: dart.getFields(jogo_Page.Conteudo.__proto__),
     titulo: dart.finalFieldType(core.String),
     texto: dart.finalFieldType(core.String),
     img: dart.finalFieldType(core.String)
   }));
+  dart.defineLazy(jogo_Page, {
+    /*jogo_Page.conteudosJogos*/get conteudosJogos() {
+      return T.JSArrayOfConteudo().of([new jogo_Page.Conteudo.new({titulo: "Ōkami (2006)", texto: "Ikumi Nakamura trabalhou na produção de fundo deste jogo de ação e aventura, que se destaca por seu estilo artístico inspirado na pintura tradicional japonesa. Os jogadores controlam Amaterasu, a deusa do sol, que assume a forma de um lobo. Em um mundo em que a natureza foi corrompida por demônios, Amaterasu deve restaurar a beleza e a vida usando o “Celestial Brush”, uma mecânica que permite desenhar no ambiente para resolver quebra-cabeças e derrotar inimigos. O trabalho de Ikumi foi fundamental para criar os cenários vibrantes e imersivos que definem o jogo, contribuindo para sua recepção calorosa como um dos melhores jogos de sua época.", img: "assets/img/Okami.jpg"}), new jogo_Page.Conteudo.new({titulo: "Bayonetta (2009)", texto: "Como artista conceitual, Ikumi Nakamura desempenhou um papel crucial em Bayonetta, um jogo de ação hack and slash que segue a protagonista Bayonetta, uma bruxa que luta contra anjos e demônios em uma narrativa repleta de ação e humor. O jogo é conhecido por seu combate rápido e estilizado, com combos elaborados e um design de personagens marcante. A estética extravagante e os visuais dinâmicos são resultados da visão artística de Ikumi, que ajudou a definir a identidade visual do jogo, tornando-o um clássico cult e um sucesso comercial.", img: "assets/img/bayonetta.jpg"}), new jogo_Page.Conteudo.new({titulo: "Marvel vs. Capcom 3 (2011)", texto: "Em Marvel vs. Capcom 3: Fate of Two Worlds, Ikumi trabalhou nas cinemáticas, que apresentam confrontos épicos entre personagens da Marvel e da Capcom. Este jogo de luta em equipe combina os mundos de ambos os universos, permitindo que jogadores escolham seus heróis e vilões favoritos para batalhas intensas. As cinemáticas, que capturam a emoção e a ação do jogo, foram aprimoradas pelo trabalho de Ikumi, que garantiu que cada luta fosse visualmente cativante e envolvente, elevando a experiência geral.", img: "assets/img/marvel.jpg"}), new jogo_Page.Conteudo.new({titulo: "Street Fighter X Tekken (2012)", texto: "Neste crossover de luta, Ikumi Nakamura atuou como pintora, contribuindo para a estética vibrante e colorida que caracteriza o jogo. Street Fighter X Tekken reúne personagens icônicos das duas franquias, permitindo que os jogadores formem equipes e lutem em batalhas de tag. O jogo apresenta um sistema de combate dinâmico e uma variedade de modos de jogo. A arte de Ikumi ajudou a moldar a identidade visual dos personagens, garantindo que eles fossem atraentes e reconhecíveis, mantendo a essência de cada franquia.", img: "assets/img/street.jpg"}), new jogo_Page.Conteudo.new({titulo: "Ultra Street Fighter IV (2014)", texto: "Em Ultra Street Fighter IV, Ikumi colaborou como artista conceitual, contribuindo para a atualização e expansão de um dos títulos mais amados da série. O jogo introduz novos personagens, cenários e mecânicas, mantendo o equilíbrio entre os lutadores existentes. A habilidade de Ikumi em criar designs de personagens e cenários refinados foi essencial para revitalizar o jogo, permitindo que ele se mantivesse relevante em uma era de competições acirradas no gênero de luta.", img: "assets/img/ultra.jfif"}), new jogo_Page.Conteudo.new({titulo: "The Evil Within (2014)", texto: "Ikumi Nakamura foi a artista conceitual líder de The Evil Within, um survival horror criado por Shinji Mikami. O jogo segue o detetive Sebastian Castellanos, que, ao investigar uma cena de crime, se encontra preso em um mundo distorcido e aterrorizante, povoado por criaturas grotescas e armadilhas mortais. O design visual do jogo, que combina elementos de horror psicológico e ação intensa, é profundamente influenciado pelo trabalho de Ikumi, que ajudou a criar uma atmosfera opressiva e visualmente intrigante, marcada por cenários sombrios e detalhados.", img: "assets/img/evil.jpg"}), new jogo_Page.Conteudo.new({titulo: "Street Fighter V (2016)", texto: "Em Street Fighter V, Ikumi atuou novamente como artista conceitual de personagens, ajudando a definir a aparência dos lutadores e a estética geral do jogo. Este título traz novos e antigos personagens de volta à arena de luta, apresentando gráficos atualizados e um modo história expandido. A contribuição de Ikumi garantiu que cada personagem tivesse um design visual único e coerente, capturando a essência de suas personalidades e habilidades.", img: "assets/img/streetV.jpg"}), new jogo_Page.Conteudo.new({titulo: "The Evil Within 2 (2017)", texto: "No sequel The Evil Within 2, Ikumi participou como artista de arte adicional, aprofundando o estilo visual e a atmosfera do jogo. Continuando a história de Sebastian Castellanos, o jogo explora temas de perda e redenção em um mundo ainda mais distorcido e aberto. O trabalho de Ikumi ajudou a enriquecer a experiência imersiva, com uma paleta de cores e detalhes visuais que acentuam o horror psicológico da narrativa.", img: "assets/img/evil2.jpg"}), new jogo_Page.Conteudo.new({titulo: "Ghostwire: Tokyo (2022)", texto: "Ikumi foi diretora criativa inicial de Ghostwire: Tokyo, um jogo que se passa em uma Tóquio contemporânea assombrada por espíritos sobrenaturais. Os jogadores controlam Akito, que deve usar habilidades especiais para enfrentar essas entidades e descobrir o que aconteceu com a cidade. A visão de Ikumi ajudou a moldar a narrativa e o design artístico, criando um mundo intrigante e visualmente impressionante que mistura elementos de horror e ação.", img: "assets/img/ghost.jpg"}), new jogo_Page.Conteudo.new({titulo: "Gungrave GORE (2022)", texto: "Em Gungrave GORE, Ikumi atuou como consultora de arte, contribuindo para o design visual de um jogo de ação que combina tiroteio frenético com uma narrativa envolvente. O jogo segue Grave, que deve enfrentar inimigos em um mundo distópico. A experiência de Ikumi foi vital para garantir que a estética do jogo fosse atraente e coesa, refletindo a intensidade da ação.", img: "assets/img/gun.jpg"})]);
+    },
+    set conteudosJogos(value) {}
+  }, false);
   dart.trackLibraries("zapp_user_main", {
     "file:///zapp/project/.zapp_entry.dart": $46zapp_entry,
     "file:///zapp/project/lib/main.dart": main,
     "file:///zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart": web_plugin_registrant,
     "file:///zapp/project/lib/app_Widget.dart": app_Widget,
     "file:///zapp/project/lib/app_controller.dart": app_controller,
+    "file:///zapp/project/lib/empresas_page.dart": empresas_page,
     "file:///zapp/project/lib/historia_page.dart": historia_page,
     "file:///zapp/project/lib/home_Page.dart": home_Page,
     "file:///zapp/project/lib/jogo_Page.dart": jogo_Page
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["/zapp/project/.zapp_entry.dart","/zapp/project/lib/main.dart","/zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart","/zapp/project/lib/app_Widget.dart","/zapp/project/lib/app_controller.dart","/zapp/project/lib/historia_page.dart","/zapp/project/lib/home_Page.dart","/zapp/project/lib/jogo_Page.dart"],"names":[],"mappings":"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","file":"main.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["/zapp/project/.zapp_entry.dart","/zapp/project/lib/main.dart","/zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart","/zapp/project/lib/app_Widget.dart","/zapp/project/lib/app_controller.dart","/zapp/project/lib/empresas_page.dart","/zapp/project/lib/historia_page.dart","/zapp/project/lib/home_Page.dart","/zapp/project/lib/jogo_Page.dart"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AA2CI,IA1BF,iCAAgB;AACd,UAAoB,6BAGD;AAF8B,QAA9B,AAAkB,6BAElB,eAF2B;;AAEL,QAAF,CAApB;;AAEnB,UAAO,AAAQ,uBAAY;AAKvB,QAJK,AAAqC,qBAA7B,qCAAuB,uBAAW,QAAC;AAG9C,UAFC,AAAQ,sBAAW,2BAA2B,CAC/C;;;wBAIL,SAAC,GAAG;AACL,UAAO,AAAQ,uBAAY;AAIvB,QAHC,AAAQ,sBAAW,wBAAwB,CAC5C,AAAE,CAAD,eACD,AAAW,UAAD;;2DAGM,yCACb,SAAC,MAAM,QAAQ,MAAM;AAC1B,cAAO,AAAQ,uBAAY;AAC4B,YAAlD,AAAQ,sBAAW,wBAAwB,CAAC,IAAI;;;EAI3D;;AAEiB;AAQd,MAPD,MAAS,gCACC;AACS,UAAf;6CAEe;AACmB,UAAjB;;IAGvB;;;AClDqB,IAAnB,eAAO;EACT;;ECCwB;;UCmBI;AACxB,YAAO,iDACoB,gDAChB,SAAC,SAAS,UACV,gCACE,yCACY,+BAA0B,sBAAS,KAAK,IAAI,IAAI,sBAErD,aACN,yDACN,KAAK,QAAC,WAAY,2DAClB,SAAS,QAAC,WAAY,2DACtB,aAAa,QAAC,WAAY,uEAC1B,YAAY,QAAC,WAAY;IAKnC;;;;;;;;EACF;;;;;;;;gEArCwC;AACtB,iBAAS,uCACvB,IAAI,AAAM,KAAD,aAAa,MACtB,KAAK,AAAM,KAAD,aAAa,MACvB,KAAK,AAAM,KAAD,aAAa,MACvB,KAAK,AAAM,KAAD,aAAa,MACvB,KAAK,AAAM,KAAD,aAAa,MACvB,KAAK,AAAM,KAAD,aAAa,MACvB,KAAK,AAAM,KAAD,aAAa,MACvB,KAAK,AAAM,KAAD,aAAa,MACvB,KAAK,AAAM,KAAD,aAAa,MACvB,KAAK,KAAK;AAEZ,UAAO,8BAAc,AAAM,KAAD,QAAQ,MAAM;EAC1C;;;ICjBO;;;;;;;AAEuB,MAA1B,oBAAe;AACE,MAAjB;IACF;;;;;;IAJK,oBAAc;;;EAKrB;;;;;;;;;;;;;;MANuB,qCAAQ;YAAG;;;;;;ACG9B,YAAO;IACT;;;;;;;;EACF;;;;;;;;;UAI4B;AACxB,YAAO,oCACG,+BACC,6BACK,wBACR,kBAAW,+BAAwB,sBAAS,KAAK,KAAK,KAAK,QAC3D,+BAAgB,KAChB,kBACE,oBACO,wCACK,WACG,sBAAS,KAAK,KAAK,KAAK,sBAMzC,+BAAgB,wBACpB,gCACuB,AAAY,AAAK,0BAAd,OAAO,sBAChB,sBAAM,8BAAoC,0BAC3D,oCAAuB,AAAyB,sBAAhB,GAAG,IAAI,IAAI,iBAAiB,MAC5D,sCACsB,+BAAI,yCAGR,6CACH,AAAiB,sDACf,SAAC,SAAS,UACd,AAAgB,sCAAC,KAAK;IAMzC;;;;;;;;EACF;;;;;;;;;MAEe,8BAAgB;YAAG,2BAChC,oCACY,iBAEJ,gRACC,2BACT,oCACY,wBAEJ,iYACC,6BACT,oCACY,0BAEJ,qjBACC,0BACT,oCACY,iBAEJ,qlBACC;;;;;;AChEP,YAAO;IACT;;;;;;;;EACF;;;;;;;;;UAI4B;AACxB,YAAO,oCACG,+BACC,6BACK,wBACR,kBAAW,iCAA0B,sBAAS,KAAK,KAAK,KAAK,QAC7D,+BAAgB,KAChB,kBACE,oBACO,wCACK,WACG,sBAAS,KAAK,KAAK,KAAK,sBAMzC,+BAAgB,wBACpB,gCACuB,AAAY,AAAK,0BAAd,OAAO,sBAChB,sBAAM,8BAAoC,0BAC3D,oCAAuB,AAAyB,sBAAhB,GAAG,IAAI,IAAI,iBAAiB,MAC5D,sCACsB,+BAAI,yCAGP,6CACJ,AAAiB,sDACf,SAAC,SAAS,UACd,gCACK,wBACR,AAAgB,sCAAC,KAAK;IAQtC;;;;;;;;EACF;;;;;;;;;MAEe,8BAAgB;YAAG,2BAChC,oCACY,qEAEJ,ihBACC,2BACT,oCACY,kCAEJ,srBACC;;;;;;AC5DP,YAAO;IACT;;;;;;;;EACF;;;;;;;;;;IAGM;;;;;;UAGsB;AACxB,YAAO,kCACC,+BAAgB,wBACpB,gCACuB,AAAY,AAAK,0BAAd,OAAO,sBAChB,sBAAM,8BAAoC,0BAC3D,oCACgB,AAAM,gCAAY,QAElC,sCACsB,+BAAI,yCAGjB,0CACO,gBAEF,wBACR,0CACyC,0CAC7B,wBACR,qCAAkB,OAClB,kBACE,0BACO,wCACO,gBACa,2BACV,sBAAS,KAAK,KAAK,KAAK,UAE3C,qCAAkB,MAClB,gCACS,kBACD,eAER,qCAAkB,MAClB,gCACS,eACD,WAER,qCAAkB,MAClB,gCACS,kBACD,cAER,qCAAkB,MAClB,gCACS,eACD,WAER,qCAAkB;IAQlC;;;;;;IA3DI,gBAAU;;;EA4DhB;;;;;;;;;;;;;;;IAGe;;;;;;IACA;;;;;;;;;;;UAIa;AACxB,YAAO,gDACiB,uDACP,gBAAK,KAAK,kBAEd;AAC4B,UAA3B,AAAY,uBAAT,OAAO,yBAAY;mCAE3B,kBACL,oBAEI,wCAAoB,WAAiB,sBAAS,KAAK,KAAK,KAAK;IAGvE;;;QAhBqB;QAAqB;IAArB;IAAqB;AAA1C;;EAAgD;;;;;;;;;;;;;;;ACvE9C,YAAO;IACT;;;;;;;;EACF;;;;;;;;;UAI4B;AACxB,YAAO,oCACG,+BACC,6BACK,wBACR,kBAAW,oCACM,sBAAS,KAAK,KAAK,KAAK,QACzC,+BAAgB,KAChB,kBACE,iBACO,wCACK,WACG,sBAAS,KAAK,KAAK,KAAK,sBAMzC,+BAAgB,wBACpB,gCACuB,AAAY,AAAK,0BAAd,OAAO,sBAChB,sBAAM,8BAAoC,0BAC3D,oCAAuB,AAAyB,sBAAhB,GAAG,IAAI,IAAI,iBAAiB,MAC5D,sCACsB,+BAAI,yCAGR,6CACH,AAAe,gDACb,SAAC,SAAS,UACd,gCACK,wBACR,AAAc,gCAAC,KAAK;IAQpC;;;;;;;;EACF;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAGe;;;;;;IACA;;;;;;IACA;;;;;;;;;;;;;UAUa;AACX,uBAAa,AAAa,eAAE;AAEzC,YAAO,2CACkC,0CAC7B,uCAER,kBACE,qDAOF,6BACS,qCACG,YACD,YACM,sBAAM,8BAIvB,kBACE,UAAU,oCAGW;IAI7B;;;QAtCO;QACS;QACA;QACA;IAFA;IACA;IACA;AACX,sDAAW,GAAG;;EAAC;;;;;;;;;;;;;;;MAqCP,wBAAc;YAAG,2BAC1B,oCACU,uBAEJ,ipBACC,0BAEP,oCACU,2BAEJ,uiBACC,8BAEP,oCACU,qCAEJ,kgBACC,2BAEP,oCACU,yCAEJ,8gBACC,2BAEP,oCACU,yCAEJ,keACC,2BAEP,oCACU,iCAEJ,ujBACC,yBAEP,oCACU,kCAEJ,ucACC,4BAEP,oCACU,mCAEJ,2aACC,0BAEP,oCACU,kCAEJ,ycACC,0BAEP,oCACU,+BAEJ,wXACC","file":"main.js"}');
   // Exports:
   return {
     zapp__project__$46zapp_entry: $46zapp_entry,
@@ -425,6 +626,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     zapp__project__$46dart_tool__dartpad__web_plugin_registrant: web_plugin_registrant,
     zapp__project__lib__app_Widget: app_Widget,
     zapp__project__lib__app_controller: app_controller,
+    zapp__project__lib__empresas_page: empresas_page,
     zapp__project__lib__historia_page: historia_page,
     zapp__project__lib__home_Page: home_Page,
     zapp__project__lib__jogo_Page: jogo_Page

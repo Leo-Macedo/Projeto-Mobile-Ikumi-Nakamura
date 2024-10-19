@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() {
@@ -14,7 +13,6 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: Stack(children: [
         SizedBox(
             height: MediaQuery.of(context).size.height,
@@ -54,10 +52,14 @@ class HomePageState extends State<HomePage> {
                   Container(height: 20),
                   Botao(
                     texto: 'Empresas',
+                    rota: '/empresa',
+                  ),
+                  Container(height: 20),
+                  Botao(
+                    texto: 'Links',
                     rota: '/jogo',
                   ),
                   Container(height: 20),
-                 
                 ],
               ),
             ],
@@ -67,10 +69,6 @@ class HomePageState extends State<HomePage> {
     );
   }
 }
-
-
-
-
 
 class Botao extends StatelessWidget {
   final String texto;
@@ -88,10 +86,9 @@ class Botao extends StatelessWidget {
       },
       child: Text(
         texto,
-        style: TextStyle(
-          fontSize: 20,
-          color:  Color.fromARGB(255, 241, 203, 252)),
-        ),
-          );
+        style:
+            TextStyle(fontSize: 20, color: Color.fromARGB(255, 241, 203, 252)),
+      ),
+    );
   }
 }

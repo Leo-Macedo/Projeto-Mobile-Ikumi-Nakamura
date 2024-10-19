@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'app_controller.dart';
+import 'empresas_page.dart';
 import 'historia_page.dart';
 import 'home_Page.dart';
 import 'jogo_Page.dart';
@@ -36,6 +37,7 @@ class AppWidget extends StatelessWidget {
             '/': (context) => HomePage(),
             '/jogo': (context) => JogoPage(),
             '/historia': (context) => HistoriaPage(),
+            '/empresa': (context) => EmpresasPage(),
           },
         );
       }, 
