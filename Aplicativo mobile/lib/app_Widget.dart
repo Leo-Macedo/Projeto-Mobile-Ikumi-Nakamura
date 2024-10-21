@@ -5,6 +5,7 @@ import 'empresas_page.dart';
 import 'historia_page.dart';
 import 'home_Page.dart';
 import 'jogo_Page.dart';
+import 'links_Page.dart';
 
 MaterialColor createMaterialColor(Color color) {
   Map<int, Color> swatch = {
@@ -38,6 +39,7 @@ class AppWidget extends StatelessWidget {
             '/jogo': (context) => JogoPage(),
             '/historia': (context) => HistoriaPage(),
             '/empresa': (context) => EmpresasPage(),
+            '/links': (context) => LinkPage(),
           },
         );
       }, 

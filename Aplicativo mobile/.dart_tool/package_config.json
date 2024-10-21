@@ -62,6 +62,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "flutter_web_plugins",
+      "rootUri": "file:///zapp/sdk/packages/flutter_web_plugins",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "js",
       "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/js-0.6.5",
       "packageUri": "lib/",
@@ -96,6 +102,12 @@
       "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/path-1.8.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "plugin_platform_interface",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/plugin_platform_interface-2.1.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
     },
     {
       "name": "sky_engine",
@@ -140,6 +152,54 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "url_launcher",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/url_launcher-6.1.11",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "url_launcher_android",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/url_launcher_android-6.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "url_launcher_ios",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/url_launcher_ios-6.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "url_launcher_linux",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/url_launcher_linux-3.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "url_launcher_macos",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/url_launcher_macos-3.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "url_launcher_platform_interface",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/url_launcher_platform_interface-2.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "url_launcher_web",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/url_launcher_web-2.0.19",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "url_launcher_windows",
+      "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/url_launcher_windows-3.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "vector_math",
       "rootUri": "file:///zapp/pub/.pub_cache/hosted/pub.dev/vector_math-2.1.4",
       "packageUri": "lib/",
@@ -152,7 +212,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2024-10-16T05:17:19.286795Z",
+  "generated": "2024-10-20T22:00:11.153105Z",
   "generator": "pub",
   "generatorVersion": "2.19.2"
 }
