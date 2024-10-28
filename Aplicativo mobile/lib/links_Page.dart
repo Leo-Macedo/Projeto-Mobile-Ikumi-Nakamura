@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+
+import 'classes.dart';
 
 class LinkPage extends StatefulWidget {
   @override
@@ -46,15 +47,12 @@ class LinkPageState extends State<LinkPage> {
                     color: Color.fromARGB(255, 255, 255, 255)),
               ),
               SizedBox(height: 20), // Espaço entre o texto e a lista
-              Expanded( // Envolve o ListView em um Expanded
+              Expanded(
+                // Envolve o ListView em um Expanded
                 child: ListView.builder(
-                  itemCount: link.length,
+                  itemCount: links.length,
                   itemBuilder: (context, index) {
-                    return Link( 
-                      titulo: link[index].titulo,
-                      img: link[index].img,
-                      url: link[index].url,
-                    );
+                    return LinkWidget(link: links[index]);
                   },
                 ),
               ),
@@ -66,22 +64,10 @@ class LinkPageState extends State<LinkPage> {
   }
 }
 
-class Link extends StatelessWidget {
-  final String titulo;
-  final String img;
-  final String url; // Parâmetro agora é uma String para a URL
-
-  Link({required this.titulo, required this.img, required this.url});
-
-  Future<void> _launchURL(String url) async {
-    final Uri uri = Uri.parse(url); // Cria o Uri a partir da URL completa
-    if (!await launchUrl(
-      uri,
-      mode: LaunchMode.externalApplication,
-    )) {
-      throw "Cannot launch $url"; // Mensagem de erro mais informativa
-    }
-  }
+class LinkWidget extends StatelessWidget {
+  final Link link;
+  
+  LinkWidget({required this.link});
 
   @override
   Widget build(BuildContext context) {
@@ -89,28 +75,29 @@ class Link extends StatelessWidget {
       children: [
         Container(height: 20),
         Container(
-          width: 400, // Defina a largura desejada
-
+          width: 400, 
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              minimumSize: Size(400, 60), // Largura e altura do botão
+              minimumSize: Size(400, 60), 
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30), 
+              ),
             ),
-            onPressed: () async {
-              // Tenta abrir a URL
-              _launchURL(url);
+            onPressed: () {
+              link.navegar(context);
             },
             child: Row(
               mainAxisAlignment:
-                  MainAxisAlignment.center, // Centraliza o conteúdo
+                  MainAxisAlignment.center, 
               children: [
                 Image.asset(
-                  img, // Exibe a imagem
-                  width: 30, // Defina a largura desejada para a imagem
-                  height: 30, // Defina a altura desejada para a imagem
+                  link.img, 
+                  width: 30, 
+                  height: 30, 
                 ),
-                SizedBox(width: 10), // Espaçamento entre a imagem e o texto
+                SizedBox(width: 10), 
                 Text(
-                  titulo,
+                  link.titulo, 
                   style: TextStyle(
                     fontSize: 20,
                     color: Color.fromARGB(255, 241, 203, 252),
@@ -125,19 +112,24 @@ class Link extends StatelessWidget {
   }
 }
 
-List<ClasseLink> link = [x, instagram, siteUnseen];
-
-class ClasseLink {
-  late String titulo;
-  late String img;
-  late String url;
-
-  ClasseLink(this.titulo, this.img, this.url);
-}
-
-ClasseLink x = ClasseLink('X Ikumi Nakamura', 'assets/img/x.png',
-    'https://twitter.com/nakamura193?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor');
-ClasseLink instagram = ClasseLink('Instagram Unseen',
-    'assets/img/instagram.png', 'https://www.instagram.com/unseentokyo');
-ClasseLink siteUnseen = ClasseLink('Site Unseen',
-    'assets/img/unseen2.png', 'https://www.unseen-tokyo.com/');
+List<Link> links = [
+  Link(
+    titulo: 'X Ikumi Nakamura',
+    img: 'assets/img/x.png',
+    url:
+        'https://twitter.com/nakamura193?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor',
+    tipo: true,
+  ),
+  Link(
+    titulo: 'Instagram Unseen',
+    img: 'assets/img/instagram.png',
+    url: 'https://www.instagram.com/unseentokyo',
+    tipo: true,
+  ),
+  Link(
+    titulo: 'Site Unseen',
+    img: 'assets/img/unseen2.png',
+    url: 'https://www.unseen-tokyo.com/',
+    tipo: true,
+  ),
+];

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'classes.dart';
+
+
 class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() {
@@ -16,10 +19,10 @@ class HomePageState extends State<HomePage> {
       body: Stack(children: [
         SizedBox(
           height: MediaQuery.of(context).size.height,
-          child: Image.asset('assets/img/ikumi.jpg', fit: BoxFit.cover),
+          child: Image.asset('assets/img/ikumi5.jpg', fit: BoxFit.cover),
         ),
         Container(
-          color: Colors.black.withOpacity(0.5),
+          color: Colors.black.withOpacity(0.01),
         ),
         Container(
           padding: EdgeInsets.all(16.0),
@@ -29,29 +32,18 @@ class HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(height: 200),
-              Text(
-                'Ikumi Nakamura',
-                style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromARGB(255, 255, 255, 255)),
-              ),
+              Image.asset(
+                  'assets/img/textikuna.png',
+                  width: 500,
+                  height: 100,
+                ),
               Container(height: 50),
               Expanded(
                 // Envolve o ListView em um Expanded
                 child: ListView.builder(
                   itemCount: botoes.length,
                   itemBuilder: (context, index) {
-                    return Column(
-                      children: [
-                        Botao(
-                          texto: botoes[index].texto,
-                          rota: botoes[index].rota,
-                          icon: botoes[index].icon,
-                        ),
-                        SizedBox(height: 20),
-                      ],
-                    );
+                    return Botao(link: botoes[index]);
                   },
                 ),
               ),
@@ -64,11 +56,9 @@ class HomePageState extends State<HomePage> {
 }
 
 class Botao extends StatelessWidget {
-  final String texto;
-  final String rota;
-  final IconData icon; // Parâmetro agora é obrigatório
+  final Link link;
 
-  Botao({required this.texto, required this.rota, required this.icon});
+  Botao({required this.link});
 
   @override
   Widget build(BuildContext context) {
@@ -78,23 +68,26 @@ class Botao extends StatelessWidget {
           width: 200, // Defina a largura desejada
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              minimumSize: Size(200, 60), // Largura e altura do botão
+              minimumSize: Size(400, 60),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
             ),
             onPressed: () {
-              Navigator.of(context).pushNamed(rota);
+              link.navegar(context);
             },
             child: Row(
               mainAxisAlignment:
                   MainAxisAlignment.center, // Centraliza o conteúdo
               children: [
-                Icon(
-                  icon,
-                  color: Color.fromARGB(
-                      255, 241, 203, 252), // Cor do ícone igual ao texto
+                Image.asset(
+                  link.img,
+                  width: 35,
+                  height: 35,
                 ),
                 SizedBox(width: 10), // Espaçamento entre o ícone e o texto
                 Text(
-                  texto,
+                  link.titulo,
                   style: TextStyle(
                     fontSize: 20,
                     color: Color.fromARGB(255, 241, 203, 252),
@@ -104,29 +97,35 @@ class Botao extends StatelessWidget {
             ),
           ),
         ),
+        Container(height: 20),
       ],
     );
   }
 }
 
-List<ClasseBotao> botoes = [
-  botaoHistoria,
-  botaoJogos,
-  botaoEmpresas,
-  botaoLinks,
+List<Link> botoes = [
+  Link(
+    titulo: 'História',
+    img: 'assets/img/historia.png', // Caminho da imagem para História
+    url: '/historia',
+    tipo: false,
+  ),
+  Link(
+    titulo: 'Jogos',
+    img: 'assets/img/jogos.png', // Caminho da imagem para Jogos
+    url: '/jogo',
+    tipo: false,
+  ),
+  Link(
+    titulo: 'Empresas',
+    img: 'assets/img/empresas.png', // Caminho da imagem para Empresas
+    url: '/empresa',
+    tipo: false,
+  ),
+  Link(
+    titulo: 'Links',
+    img: 'assets/img/links.png', // Caminho da imagem para Links
+    url: '/links',
+    tipo: false,
+  ),
 ];
-
-class ClasseBotao {
-  final String texto;
-  final String rota;
-  final IconData icon;
-
-  ClasseBotao(this.texto, this.rota, this.icon);
-}
-
-ClasseBotao botaoHistoria =
-    ClasseBotao('História', '/historia', Icons.description);
-ClasseBotao botaoJogos = ClasseBotao('Jogos', '/jogo', Icons.sports_esports);
-ClasseBotao botaoEmpresas =
-    ClasseBotao('Empresas', '/empresa', Icons.apartment);
-ClasseBotao botaoLinks = ClasseBotao('Links', '/links', Icons.link);

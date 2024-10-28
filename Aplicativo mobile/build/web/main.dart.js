@@ -12,8 +12,8 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   const _js_helper = dart_sdk._js_helper;
   const html = dart_sdk.html;
   const collection = dart_sdk.collection;
-  const _internal = dart_sdk._internal;
   const typed_data = dart_sdk.typed_data;
+  const _internal = dart_sdk._internal;
   const js_util = dart_sdk.js_util;
   const dart = dart_sdk.dart;
   const dartx = dart_sdk.dartx;
@@ -36,12 +36,13 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   const image = flutter_sdk.src__widgets__image;
   const box_fit = flutter_sdk.src__painting__box_fit;
   const container = flutter_sdk.src__widgets__container;
-  const edge_insets = flutter_sdk.src__painting__edge_insets;
   const scroll_view = flutter_sdk.src__widgets__scroll_view;
+  const card = flutter_sdk.src__material__card;
+  const edge_insets = flutter_sdk.src__painting__edge_insets;
   const flex = flutter_sdk.src__rendering__flex;
   const elevated_button = flutter_sdk.src__material__elevated_button;
-  const navigator = flutter_sdk.src__widgets__navigator;
-  const icon_data = flutter_sdk.src__widgets__icon_data;
+  const rounded_rectangle_border = flutter_sdk.src__painting__rounded_rectangle_border;
+  const border_radius = flutter_sdk.src__painting__border_radius;
   const system_navigator = flutter_sdk.src__services__system_navigator;
   const message_codec = flutter_sdk.src__services__message_codec;
   const message_codecs = flutter_sdk.src__services__message_codecs;
@@ -54,9 +55,10 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   const system_channels = flutter_sdk.src__services__system_channels;
   const url_strategy = flutter_sdk.src__navigation__url_strategy;
   const events = flutter_sdk.src__gestures__events;
+  const navigator = flutter_sdk.src__widgets__navigator;
+  const platform_channel = flutter_sdk.src__services__platform_channel;
   const platform = flutter_sdk.src__foundation__platform;
   const system_chrome = flutter_sdk.src__services__system_chrome;
-  const platform_channel = flutter_sdk.src__services__platform_channel;
   var $46zapp_entry = Object.create(dart.library);
   var main = Object.create(dart.library);
   var web_plugin_registrant = Object.create(dart.library);
@@ -72,15 +74,16 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   var url_launcher_platform_interface = Object.create(dart.library);
   var link$ = Object.create(dart.library);
   var dart_ui = Object.create(dart.library);
-  var url_launcher = Object.create(dart.library);
+  var classes = Object.create(dart.library);
   var types = Object.create(dart.library);
   var url_launcher_platform = Object.create(dart.library);
   var dart_ui_real = Object.create(dart.library);
+  var url_launcher = Object.create(dart.library);
+  var plugin_platform_interface = Object.create(dart.library);
+  var method_channel_url_launcher = Object.create(dart.library);
   var legacy_api = Object.create(dart.library);
   var types$ = Object.create(dart.library);
   var url_launcher_uri = Object.create(dart.library);
-  var plugin_platform_interface = Object.create(dart.library);
-  var method_channel_url_launcher = Object.create(dart.library);
   var url_launcher_string = Object.create(dart.library);
   var type_conversion = Object.create(dart.library);
   var url_launcher_string$ = Object.create(dart.library);
@@ -136,21 +139,21 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     ExpandoOfObject: () => (T.ExpandoOfObject = dart.constFn(core.Expando$(core.Object)))(),
     LinkedHashSetOfString: () => (T.LinkedHashSetOfString = dart.constFn(collection.LinkedHashSet$(core.String)))(),
     JSArrayOfWidget: () => (T.JSArrayOfWidget = dart.constFn(_interceptors.JSArray$(framework.Widget)))(),
-    BuildContextAndintToConteudo: () => (T.BuildContextAndintToConteudo = dart.constFn(dart.fnType(jogo_Page.Conteudo, [framework.BuildContext, core.int])))(),
-    JSArrayOfConteudo: () => (T.JSArrayOfConteudo = dart.constFn(_interceptors.JSArray$(jogo_Page.Conteudo)))(),
-    BuildContextAndintToColumn: () => (T.BuildContextAndintToColumn = dart.constFn(dart.fnType(basic.Column, [framework.BuildContext, core.int])))(),
-    ObjectN: () => (T.ObjectN = dart.constFn(dart.nullable(core.Object)))(),
+    BuildContextAndintToEmpresasWidget: () => (T.BuildContextAndintToEmpresasWidget = dart.constFn(dart.fnType(empresas_page.EmpresasWidget, [framework.BuildContext, core.int])))(),
+    JSArrayOfEmpresa: () => (T.JSArrayOfEmpresa = dart.constFn(_interceptors.JSArray$(classes.Empresa)))(),
+    BuildContextAndintToArtistaWidget: () => (T.BuildContextAndintToArtistaWidget = dart.constFn(dart.fnType(historia_page.ArtistaWidget, [framework.BuildContext, core.int])))(),
+    JSArrayOfArtista: () => (T.JSArrayOfArtista = dart.constFn(_interceptors.JSArray$(classes.Artista)))(),
+    BuildContextAndintToBotao: () => (T.BuildContextAndintToBotao = dart.constFn(dart.fnType(home_Page.Botao, [framework.BuildContext, core.int])))(),
     VoidTovoid: () => (T.VoidTovoid = dart.constFn(dart.fnType(dart.void, [])))(),
-    JSArrayOfClasseBotao: () => (T.JSArrayOfClasseBotao = dart.constFn(_interceptors.JSArray$(home_Page.ClasseBotao)))(),
-    JSArrayOfClasseConteudo: () => (T.JSArrayOfClasseConteudo = dart.constFn(_interceptors.JSArray$(jogo_Page.ClasseConteudo)))(),
-    BuildContextAndintToLink: () => (T.BuildContextAndintToLink = dart.constFn(dart.fnType(links_Page.Link, [framework.BuildContext, core.int])))(),
-    FutureOfvoid: () => (T.FutureOfvoid = dart.constFn(async.Future$(dart.void)))(),
-    VoidToFutureOfvoid: () => (T.VoidToFutureOfvoid = dart.constFn(dart.fnType(T.FutureOfvoid(), [])))(),
-    JSArrayOfClasseLink: () => (T.JSArrayOfClasseLink = dart.constFn(_interceptors.JSArray$(links_Page.ClasseLink)))(),
+    JSArrayOfLink: () => (T.JSArrayOfLink = dart.constFn(_interceptors.JSArray$(classes.Link)))(),
+    BuildContextAndintToJogoWidget: () => (T.BuildContextAndintToJogoWidget = dart.constFn(dart.fnType(jogo_Page.JogoWidget, [framework.BuildContext, core.int])))(),
+    JSArrayOfJogo: () => (T.JSArrayOfJogo = dart.constFn(_interceptors.JSArray$(classes.Jogo)))(),
+    BuildContextAndintToLinkWidget: () => (T.BuildContextAndintToLinkWidget = dart.constFn(dart.fnType(links_Page.LinkWidget, [framework.BuildContext, core.int])))(),
     CompleterOfByteData: () => (T.CompleterOfByteData = dart.constFn(async.Completer$(typed_data.ByteData)))(),
     FutureOrOfByteData: () => (T.FutureOrOfByteData = dart.constFn(async.FutureOr$(typed_data.ByteData)))(),
     FutureOrNOfByteData: () => (T.FutureOrNOfByteData = dart.constFn(dart.nullable(T.FutureOrOfByteData())))(),
     FutureOrNOfByteDataTovoid: () => (T.FutureOrNOfByteDataTovoid = dart.constFn(dart.fnType(dart.void, [], [T.FutureOrNOfByteData()])))(),
+    FutureOfvoid: () => (T.FutureOfvoid = dart.constFn(async.Future$(dart.void)))(),
     PlatformViewCreationParamsToLinkViewController: () => (T.PlatformViewCreationParamsToLinkViewController = dart.constFn(dart.fnType(link$.LinkViewController, [platform_view.PlatformViewCreationParams])))(),
     FactoryOfOneSequenceGestureRecognizer: () => (T.FactoryOfOneSequenceGestureRecognizer = dart.constFn(basic_types.Factory$(recognizer.OneSequenceGestureRecognizer)))(),
     BuildContextAndPlatformViewControllerToPlatformViewSurface: () => (T.BuildContextAndPlatformViewControllerToPlatformViewSurface = dart.constFn(dart.fnType(platform_view.PlatformViewSurface, [framework.BuildContext, platform_views.PlatformViewController])))(),
@@ -160,6 +163,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     IdentityMapOfint$LinkViewController: () => (T.IdentityMapOfint$LinkViewController = dart.constFn(_js_helper.IdentityMap$(core.int, link$.LinkViewController)))(),
     intN: () => (T.intN = dart.constFn(dart.nullable(core.int)))(),
     intToElement: () => (T.intToElement = dart.constFn(dart.fnType(html.Element, [core.int])))(),
+    ObjectN: () => (T.ObjectN = dart.constFn(dart.nullable(core.Object)))(),
     IdentityMapOfString$Object: () => (T.IdentityMapOfString$Object = dart.constFn(_js_helper.IdentityMap$(core.String, core.Object)))(),
     boolN: () => (T.boolN = dart.constFn(dart.nullable(core.bool)))(),
     boolNTobool: () => (T.boolNTobool = dart.constFn(dart.fnType(core.bool, [T.boolN()])))()
@@ -184,11 +188,11 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     },
     get C4() {
       return C[4] = dart.const({
-        __proto__: basic.SizedBox.prototype,
-        [Widget_key]: null,
-        [SingleChildRenderObjectWidget_child]: null,
-        [SizedBox_height]: 50,
-        [SizedBox_width]: null
+        __proto__: edge_insets.EdgeInsets.prototype,
+        [EdgeInsets_bottom]: 16,
+        [EdgeInsets_right]: 16,
+        [EdgeInsets_top]: 16,
+        [EdgeInsets_left]: 16
       });
     },
     get C6() {
@@ -201,7 +205,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     get C7() {
       return C[7] = dart.const({
         __proto__: ui.Color.prototype,
-        [Color_value]: 4292646130
+        [Color_value]: 4292724724
       });
     },
     get C5() {
@@ -240,119 +244,91 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
         __proto__: basic.SizedBox.prototype,
         [Widget_key]: null,
         [SingleChildRenderObjectWidget_child]: null,
-        [SizedBox_height]: 20,
+        [SizedBox_height]: 10,
+        [SizedBox_width]: null
+      });
+    },
+    get C9() {
+      return C[9] = dart.const({
+        __proto__: basic.SizedBox.prototype,
+        [Widget_key]: null,
+        [SingleChildRenderObjectWidget_child]: null,
+        [SizedBox_height]: 16,
         [SizedBox_width]: null
       });
     },
     get C10() {
       return C[10] = dart.const({
-        __proto__: ui.Color.prototype,
-        [Color_value]: 4293770236
-      });
-    },
-    get C9() {
-      return C[9] = dart.const({
-        __proto__: text_style.TextStyle.prototype,
-        [TextStyle_overflow]: null,
-        [TextStyle_fontVariations]: null,
-        [TextStyle_fontFeatures]: null,
-        [TextStyle_shadows]: null,
-        [TextStyle_debugLabel]: null,
-        [TextStyle_decorationThickness]: null,
-        [TextStyle_decorationStyle]: null,
-        [TextStyle_decorationColor]: null,
-        [TextStyle_decoration]: null,
-        [TextStyle_background]: null,
-        [TextStyle_foreground]: null,
-        [TextStyle_locale]: null,
-        [TextStyle_leadingDistribution]: null,
-        [TextStyle_height]: null,
-        [TextStyle_textBaseline]: null,
-        [TextStyle_wordSpacing]: null,
-        [TextStyle_letterSpacing]: null,
-        [TextStyle_fontStyle]: null,
-        [TextStyle_fontWeight]: null,
-        [TextStyle_fontSize]: 20,
-        [TextStyle__package]: null,
-        [TextStyle__fontFamilyFallback]: null,
-        [TextStyle_fontFamily]: null,
-        [TextStyle_backgroundColor]: null,
-        [TextStyle_color]: C[10] || CT.C10,
-        [TextStyle_inherit]: true
+        __proto__: link.LinkTarget.prototype,
+        [debugLabel$]: "defaultTarget"
       });
     },
     get C11() {
       return C[11] = dart.const({
         __proto__: link.LinkTarget.prototype,
-        [debugLabel$]: "defaultTarget"
+        [debugLabel$]: "self"
       });
     },
     get C12() {
       return C[12] = dart.const({
         __proto__: link.LinkTarget.prototype,
-        [debugLabel$]: "self"
+        [debugLabel$]: "blank"
       });
     },
     get C13() {
       return C[13] = dart.const({
-        __proto__: link.LinkTarget.prototype,
-        [debugLabel$]: "blank"
-      });
-    },
-    get C14() {
-      return C[14] = dart.const({
         __proto__: message_codecs.JSONMethodCodec.prototype
       });
     },
+    get C14() {
+      return C[14] = dart.constSet(T.FactoryOfOneSequenceGestureRecognizer(), []);
+    },
     get C15() {
-      return C[15] = dart.constSet(T.FactoryOfOneSequenceGestureRecognizer(), []);
+      return C[15] = dart.fn(link$.LinkViewController._onGlobalClick, T.MouseEventTovoid());
     },
     get C16() {
-      return C[16] = dart.fn(link$.LinkViewController._onGlobalClick, T.MouseEventTovoid());
+      return C[16] = dart.fn(link$.LinkViewController._viewFactory, T.intToElement());
     },
-    get C17() {
-      return C[17] = dart.fn(link$.LinkViewController._viewFactory, T.intToElement());
-    },
-    get C19() {
-      return C[19] = dart.const({
+    get C18() {
+      return C[18] = dart.const({
         __proto__: types.PreferredLaunchMode.prototype,
         [_Enum__name]: "platformDefault",
         [_Enum_index]: 0
       });
     },
-    get C20() {
-      return C[20] = dart.const({
+    get C19() {
+      return C[19] = dart.const({
         __proto__: types.PreferredLaunchMode.prototype,
         [_Enum__name]: "inAppWebView",
         [_Enum_index]: 1
       });
     },
-    get C21() {
-      return C[21] = dart.const({
+    get C20() {
+      return C[20] = dart.const({
         __proto__: types.PreferredLaunchMode.prototype,
         [_Enum__name]: "inAppBrowserView",
         [_Enum_index]: 2
       });
     },
-    get C22() {
-      return C[22] = dart.const({
+    get C21() {
+      return C[21] = dart.const({
         __proto__: types.PreferredLaunchMode.prototype,
         [_Enum__name]: "externalApplication",
         [_Enum_index]: 3
       });
     },
-    get C23() {
-      return C[23] = dart.const({
+    get C22() {
+      return C[22] = dart.const({
         __proto__: types.PreferredLaunchMode.prototype,
         [_Enum__name]: "externalNonBrowserApplication",
         [_Enum_index]: 4
       });
     },
-    get C18() {
-      return C[18] = dart.constList([C[19] || CT.C19, C[20] || CT.C20, C[21] || CT.C21, C[22] || CT.C22, C[23] || CT.C23], types.PreferredLaunchMode);
+    get C17() {
+      return C[17] = dart.constList([C[18] || CT.C18, C[19] || CT.C19, C[20] || CT.C20, C[21] || CT.C21, C[22] || CT.C22], types.PreferredLaunchMode);
     },
-    get C24() {
-      return C[24] = dart.const({
+    get C23() {
+      return C[23] = dart.const({
         __proto__: types.InAppWebViewConfiguration.prototype,
         [headers$]: C[1] || CT.C1,
         [enableDomStorage$]: true,
@@ -361,64 +337,64 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     },
     get C26() {
       return C[26] = dart.const({
-        __proto__: types$.LaunchMode.prototype,
-        [_Enum__name]: "platformDefault",
-        [_Enum_index]: 0
+        __proto__: message_codecs.StandardMessageCodec.prototype
       });
     },
-    get C27() {
-      return C[27] = dart.const({
-        __proto__: types$.LaunchMode.prototype,
-        [_Enum__name]: "inAppWebView",
-        [_Enum_index]: 1
+    get C25() {
+      return C[25] = dart.const({
+        __proto__: message_codecs.StandardMethodCodec.prototype,
+        [StandardMethodCodec_messageCodec]: C[26] || CT.C26
+      });
+    },
+    get C24() {
+      return C[24] = dart.const({
+        __proto__: platform_channel.MethodChannel.prototype,
+        [MethodChannel__binaryMessenger]: null,
+        [MethodChannel_codec]: C[25] || CT.C25,
+        [MethodChannel_name]: "plugins.flutter.io/url_launcher"
       });
     },
     get C28() {
       return C[28] = dart.const({
         __proto__: types$.LaunchMode.prototype,
-        [_Enum__name]: "externalApplication",
-        [_Enum_index]: 2
+        [_Enum__name]: "platformDefault",
+        [_Enum_index]: 0
       });
     },
     get C29() {
       return C[29] = dart.const({
         __proto__: types$.LaunchMode.prototype,
+        [_Enum__name]: "inAppWebView",
+        [_Enum_index]: 1
+      });
+    },
+    get C30() {
+      return C[30] = dart.const({
+        __proto__: types$.LaunchMode.prototype,
+        [_Enum__name]: "externalApplication",
+        [_Enum_index]: 2
+      });
+    },
+    get C31() {
+      return C[31] = dart.const({
+        __proto__: types$.LaunchMode.prototype,
         [_Enum__name]: "externalNonBrowserApplication",
         [_Enum_index]: 3
       });
     },
-    get C25() {
-      return C[25] = dart.constList([C[26] || CT.C26, C[27] || CT.C27, C[28] || CT.C28, C[29] || CT.C29], types$.LaunchMode);
+    get C27() {
+      return C[27] = dart.constList([C[28] || CT.C28, C[29] || CT.C29, C[30] || CT.C30, C[31] || CT.C31], types$.LaunchMode);
     },
-    get C30() {
-      return C[30] = dart.const({
+    get C32() {
+      return C[32] = dart.const({
         __proto__: types$.WebViewConfiguration.prototype,
         [headers$0]: C[1] || CT.C1,
         [enableDomStorage$0]: true,
         [enableJavaScript$0]: true
       });
-    },
-    get C33() {
-      return C[33] = dart.const({
-        __proto__: message_codecs.StandardMessageCodec.prototype
-      });
-    },
-    get C32() {
-      return C[32] = dart.const({
-        __proto__: message_codecs.StandardMethodCodec.prototype,
-        [StandardMethodCodec_messageCodec]: C[33] || CT.C33
-      });
-    },
-    get C31() {
-      return C[31] = dart.const({
-        __proto__: platform_channel.MethodChannel.prototype,
-        [MethodChannel__binaryMessenger]: null,
-        [MethodChannel_codec]: C[32] || CT.C32,
-        [MethodChannel_name]: "plugins.flutter.io/url_launcher"
-      });
     }
   }, false);
-  var C = Array(34).fill(void 0);
+  var C = Array(33).fill(void 0);
   var I = [
     "file:///zapp/project/lib/app_Widget.dart",
     "file:///zapp/pub/.pub_cache/hosted/pub.dev/plugin_platform_interface-2.1.6/lib/plugin_platform_interface.dart",
@@ -434,9 +410,10 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     "package:url_launcher_platform_interface/link.dart",
     "package:url_launcher_web/src/link.dart",
     "file:///zapp/pub/.pub_cache/hosted/pub.dev/url_launcher_web-2.0.19/lib/src/link.dart",
+    "file:///zapp/project/lib/classes.dart",
     "package:url_launcher_platform_interface/src/types.dart",
-    "package:url_launcher/src/types.dart",
-    "package:url_launcher_platform_interface/method_channel_url_launcher.dart"
+    "package:url_launcher_platform_interface/method_channel_url_launcher.dart",
+    "package:url_launcher/src/types.dart"
   ];
   $46zapp_entry.runAppGuarded = function runAppGuarded() {
     async.runZonedGuarded(core.Null, dart.fn(() => {
@@ -752,7 +729,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   dart.setLibraryUri(empresas_page.EmpresasPage, I[6]);
   empresas_page.EmpresasPageState = class EmpresasPageState extends framework.State$(empresas_page.EmpresasPage) {
     build(context) {
-      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new basic.Row.new({children: T.JSArrayOfWidget().of([new icon.Icon.new(icons.Icons.apartment, {color: new ui.Color.fromARGB(255, 241, 203, 252)}), new basic.SizedBox.new({width: 8}), new text.Text.new("Empresas", {style: new text_style.TextStyle.new({fontSize: 30, color: new ui.Color.fromARGB(255, 241, 203, 252)})})])})}), body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: new ui.Color.fromARGB(1, 88, 42, 114).withOpacity(1)}), new container.Container.new({padding: new edge_insets.EdgeInsets.all(16), width: 1 / 0, height: 1 / 0, child: new scroll_view.ListView.builder({itemCount: empresas_page.conteudoEmpresas[$length], itemBuilder: dart.fn((context, index) => empresas_page.conteudoEmpresas[$_get](index), T.BuildContextAndintToConteudo())})})])})});
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new basic.Row.new({children: T.JSArrayOfWidget().of([new icon.Icon.new(icons.Icons.apartment, {color: new ui.Color.fromARGB(255, 241, 203, 252)}), new basic.SizedBox.new({width: 8}), new text.Text.new("Empresas", {style: new text_style.TextStyle.new({fontSize: 30, color: new ui.Color.fromARGB(255, 241, 203, 252)})})])})}), body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: new ui.Color.fromARGB(1, 88, 42, 114).withOpacity(1)}), new container.Container.new({width: 1 / 0, height: 1 / 0, child: new scroll_view.ListView.builder({itemCount: empresas_page.empresas[$length], itemBuilder: dart.fn((context, index) => new empresas_page.EmpresasWidget.new({nome: empresas_page.empresas[$_get](index).nome, logo: empresas_page.empresas[$_get](index).logo, descricao: empresas_page.empresas[$_get](index).descricao, fundacao: empresas_page.empresas[$_get](index).fundacao, jogo: empresas_page.empresas[$_get](index).jogo}), T.BuildContextAndintToEmpresasWidget())})})])})});
     }
     static ['_#new#tearOff']() {
       return new empresas_page.EmpresasPageState.new();
@@ -769,271 +746,15 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
   dart.setLibraryUri(empresas_page.EmpresasPageState, I[6]);
-  dart.defineLazy(empresas_page, {
-    /*empresas_page.conteudoEmpresas*/get conteudoEmpresas() {
-      return T.JSArrayOfConteudo().of([new jogo_Page.Conteudo.new({titulo: "Capcom", texto: "Após se candidatar duas vezes, Ikumi Nakamura foi contratada pela Capcom em 2004. Ela se juntou ao Clover Studio, onde teve a oportunidade de criar a arte de fundo para Ōkami (2006), um jogo que se tornaria um clássico e a colocaria no mapa da indústria de jogos.", img: "assets/img/capcom.png"}), new jogo_Page.Conteudo.new({titulo: "PlatinumGames", texto: "Ikumi seguiu seus colegas da Capcom ao fundarem a PlatinumGames. No início do estúdio, apresentou uma ideia para um jogo original para Nintendo DS, mas o projeto foi cancelado após a Nintendo não demonstrar interesse. Apesar disso, ela contribuiu como artista conceitual em Bayonetta (2009) e trabalhou brevemente como diretora de arte em Scalebound antes de deixar a empresa.", img: "assets/img/platinum.png"}), new jogo_Page.Conteudo.new({titulo: "Tango Gameworks", texto: "Em 2010, Ikumi se uniu a Shinji Mikami na Tango Gameworks. Durante sua passagem pelo estúdio, ela atuou como artista em The Evil Within (2014) e The Evil Within 2 (2017), além de ser nomeada diretora criativa de Ghostwire: Tokyo. Sua apresentação na E3 2019 foi um dos pontos altos da coletiva de imprensa da Bethesda Softworks, destacando seu talento e visão criativa. No entanto, em 2019, ela deixou o projeto e a empresa devido ao declínio de sua saúde, causado pelo estresse da dinâmica desenvolvedor-editora e pela pressão sobre o controle do projeto.", img: "assets/img/tango.png"}), new jogo_Page.Conteudo.new({titulo: "Unseen", texto: "Após deixar a Tango Gameworks, Ikumi fez trabalhos de consultoria e freelance. Em março de 2021, anunciou a criação de seu próprio estúdio de jogos independente, chamado Unseen, que foi formalmente revelado no ano seguinte. A intenção de Ikumi é desenvolver novas propriedades intelectuais (IPs) que se expandam para diferentes mídias de entretenimento, mantendo o foco em jogos que explorem mistério, terror, ficção científica e elementos sobrenaturais. O primeiro jogo do estúdio, Kemuri, foi revelado no The Game Awards 2023, prometendo uma nova e intrigante experiência aos jogadores.", img: "assets/img/unseen.png"})]);
-    },
-    set conteudoEmpresas(value) {}
-  }, false);
-  historia_page.HistoriaPage = class HistoriaPage extends framework.StatefulWidget {
-    createState() {
-      return new historia_page.HistoriaPageState.new();
-    }
-    static ['_#new#tearOff']() {
-      return new historia_page.HistoriaPage.new();
-    }
-  };
-  (historia_page.HistoriaPage.new = function() {
-    historia_page.HistoriaPage.__proto__.new.call(this);
-    ;
-  }).prototype = historia_page.HistoriaPage.prototype;
-  dart.addTypeTests(historia_page.HistoriaPage);
-  dart.addTypeCaches(historia_page.HistoriaPage);
-  dart.setMethodSignature(historia_page.HistoriaPage, () => ({
-    __proto__: dart.getMethods(historia_page.HistoriaPage.__proto__),
-    createState: dart.fnType(framework.State$(historia_page.HistoriaPage), [])
-  }));
-  dart.setLibraryUri(historia_page.HistoriaPage, I[7]);
-  historia_page.HistoriaPageState = class HistoriaPageState extends framework.State$(historia_page.HistoriaPage) {
-    build(context) {
-      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new basic.Row.new({children: T.JSArrayOfWidget().of([new icon.Icon.new(icons.Icons.description, {color: new ui.Color.fromARGB(255, 241, 203, 252)}), new basic.SizedBox.new({width: 8}), new text.Text.new("História", {style: new text_style.TextStyle.new({fontSize: 30, color: new ui.Color.fromARGB(255, 241, 203, 252)})})])})}), body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: new ui.Color.fromARGB(1, 88, 42, 114).withOpacity(1)}), new container.Container.new({padding: new edge_insets.EdgeInsets.all(16), width: 1 / 0, height: 1 / 0, child: new scroll_view.ListView.builder({itemCount: historia_page.conteudoHistoria[$length], itemBuilder: dart.fn((context, index) => new basic.Column.new({children: T.JSArrayOfWidget().of([historia_page.conteudoHistoria[$_get](index)])}), T.BuildContextAndintToColumn())})})])})});
-    }
-    static ['_#new#tearOff']() {
-      return new historia_page.HistoriaPageState.new();
-    }
-  };
-  (historia_page.HistoriaPageState.new = function() {
-    historia_page.HistoriaPageState.__proto__.new.call(this);
-    ;
-  }).prototype = historia_page.HistoriaPageState.prototype;
-  dart.addTypeTests(historia_page.HistoriaPageState);
-  dart.addTypeCaches(historia_page.HistoriaPageState);
-  dart.setMethodSignature(historia_page.HistoriaPageState, () => ({
-    __proto__: dart.getMethods(historia_page.HistoriaPageState.__proto__),
-    build: dart.fnType(framework.Widget, [framework.BuildContext])
-  }));
-  dart.setLibraryUri(historia_page.HistoriaPageState, I[7]);
-  dart.defineLazy(historia_page, {
-    /*historia_page.conteudoHistoria*/get conteudoHistoria() {
-      return T.JSArrayOfConteudo().of([new jogo_Page.Conteudo.new({titulo: "Ikumi Nakamura: A Artista por Trás do Terror e da Fantasia", texto: "Ikumi Nakamura (中村 育美) é uma artista e diretora de videogame japonesa nascida em 8 de outubro de 1985 no Japão, amplamente reconhecida por seu trabalho na Tango Gameworks, onde atuou como artista em The Evil Within (2014) e The Evil Within 2 (2017), além de ter sido diretora criativa de Ghostwire: Tokyo. Antes de sua passagem pela Tango, Ikumi também fez arte para Ōkami (2006) no Clover Studio e para Bayonetta (2009) na PlatinumGames. Atualmente, ela dirige seu próprio estúdio de jogos independente, chamado Unseen.", img: "assets/img/ikumi1.jpg"}), new jogo_Page.Conteudo.new({titulo: "Vida Pessoal e Formação", texto: "Desde a infância, Ikumi tinha uma forte conexão com o universo do terror, alimentada por momentos compartilhados com seu pai, assistindo a filmes de horror e jogando séries como Resident Evil e Devil May Cry, ambas da Capcom. Essa paixão por jogos e a admiração pela Capcom despertaram nela o desejo de um dia fazer parte do estúdio. \n          No entanto, sua vida tomou um rumo difícil quando seu pai faleceu em um acidente de motocicleta durante seu tempo na universidade. Essa tragédia apenas reforçou sua determinação de seguir uma carreira na Capcom. Para isso, Ikumi frequentou uma escola de arte em Tóquio e, posteriormente, estudou design de jogos na Amusement Media Academy.", img: "assets/img/ikumi2.jpg"})]);
-    },
-    set conteudoHistoria(value) {}
-  }, false);
-  home_Page.HomePage = class HomePage extends framework.StatefulWidget {
-    createState() {
-      return new home_Page.HomePageState.new();
-    }
-    static ['_#new#tearOff']() {
-      return new home_Page.HomePage.new();
-    }
-  };
-  (home_Page.HomePage.new = function() {
-    home_Page.HomePage.__proto__.new.call(this);
-    ;
-  }).prototype = home_Page.HomePage.prototype;
-  dart.addTypeTests(home_Page.HomePage);
-  dart.addTypeCaches(home_Page.HomePage);
-  dart.setMethodSignature(home_Page.HomePage, () => ({
-    __proto__: dart.getMethods(home_Page.HomePage.__proto__),
-    createState: dart.fnType(framework.State$(home_Page.HomePage), [])
-  }));
-  dart.setLibraryUri(home_Page.HomePage, I[8]);
-  var counter = dart.privateName(home_Page, "HomePageState.counter");
-  home_Page.HomePageState = class HomePageState extends framework.State$(home_Page.HomePage) {
-    get counter() {
-      return this[counter];
-    }
-    set counter(value) {
-      this[counter] = value;
-    }
-    build(context) {
-      return new scaffold.Scaffold.new({body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: colors.Colors.black.withOpacity(0.5)}), new container.Container.new({padding: new edge_insets.EdgeInsets.all(16), width: 1 / 0, height: 1 / 0, child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidget().of([new container.Container.new({height: 200}), new text.Text.new("Ikumi Nakamura", {style: new text_style.TextStyle.new({fontSize: 30, fontWeight: ui.FontWeight.bold, color: new ui.Color.fromARGB(255, 255, 255, 255)})}), new container.Container.new({height: 50}), new basic.Expanded.new({child: new scroll_view.ListView.builder({itemCount: home_Page.botoes[$length], itemBuilder: dart.fn((context, index) => new basic.Column.new({children: T.JSArrayOfWidget().of([new home_Page.Botao.new({texto: home_Page.botoes[$_get](index).texto, rota: home_Page.botoes[$_get](index).rota, icon: home_Page.botoes[$_get](index).icon}), new basic.SizedBox.new({height: 20})])}), T.BuildContextAndintToColumn())})})])})})])})});
-    }
-    static ['_#new#tearOff']() {
-      return new home_Page.HomePageState.new();
-    }
-  };
-  (home_Page.HomePageState.new = function() {
-    this[counter] = 0;
-    home_Page.HomePageState.__proto__.new.call(this);
-    ;
-  }).prototype = home_Page.HomePageState.prototype;
-  dart.addTypeTests(home_Page.HomePageState);
-  dart.addTypeCaches(home_Page.HomePageState);
-  dart.setMethodSignature(home_Page.HomePageState, () => ({
-    __proto__: dart.getMethods(home_Page.HomePageState.__proto__),
-    build: dart.fnType(framework.Widget, [framework.BuildContext])
-  }));
-  dart.setLibraryUri(home_Page.HomePageState, I[8]);
-  dart.setFieldSignature(home_Page.HomePageState, () => ({
-    __proto__: dart.getFields(home_Page.HomePageState.__proto__),
-    counter: dart.fieldType(core.int)
-  }));
-  var texto$ = dart.privateName(home_Page, "Botao.texto");
-  var rota$ = dart.privateName(home_Page, "Botao.rota");
-  var icon$ = dart.privateName(home_Page, "Botao.icon");
-  home_Page.Botao = class Botao extends framework.StatelessWidget {
-    get texto() {
-      return this[texto$];
-    }
-    set texto(value) {
-      super.texto = value;
-    }
-    get rota() {
-      return this[rota$];
-    }
-    set rota(value) {
-      super.rota = value;
-    }
-    get icon() {
-      return this[icon$];
-    }
-    set icon(value) {
-      super.icon = value;
-    }
-    static ['_#new#tearOff'](opts) {
-      let texto = opts && 'texto' in opts ? opts.texto : null;
-      let rota = opts && 'rota' in opts ? opts.rota : null;
-      let icon = opts && 'icon' in opts ? opts.icon : null;
-      return new home_Page.Botao.new({texto: texto, rota: rota, icon: icon});
-    }
-    build(context) {
-      return new basic.Column.new({children: T.JSArrayOfWidget().of([new container.Container.new({width: 200, child: new elevated_button.ElevatedButton.new({style: elevated_button.ElevatedButton.styleFrom({minimumSize: new ui.Size.new(200, 60)}), onPressed: dart.fn(() => {
-                navigator.Navigator.of(context).pushNamed(T.ObjectN(), this.rota);
-              }, T.VoidTovoid()), child: new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.center, children: T.JSArrayOfWidget().of([new icon.Icon.new(this.icon, {color: new ui.Color.fromARGB(255, 241, 203, 252)}), new basic.SizedBox.new({width: 10}), new text.Text.new(this.texto, {style: new text_style.TextStyle.new({fontSize: 20, color: new ui.Color.fromARGB(255, 241, 203, 252)})})])})})})])});
-    }
-  };
-  (home_Page.Botao.new = function(opts) {
-    let texto = opts && 'texto' in opts ? opts.texto : null;
-    let rota = opts && 'rota' in opts ? opts.rota : null;
-    let icon = opts && 'icon' in opts ? opts.icon : null;
-    this[texto$] = texto;
-    this[rota$] = rota;
-    this[icon$] = icon;
-    home_Page.Botao.__proto__.new.call(this);
-    ;
-  }).prototype = home_Page.Botao.prototype;
-  dart.addTypeTests(home_Page.Botao);
-  dart.addTypeCaches(home_Page.Botao);
-  dart.setMethodSignature(home_Page.Botao, () => ({
-    __proto__: dart.getMethods(home_Page.Botao.__proto__),
-    build: dart.fnType(framework.Widget, [framework.BuildContext])
-  }));
-  dart.setLibraryUri(home_Page.Botao, I[8]);
-  dart.setFieldSignature(home_Page.Botao, () => ({
-    __proto__: dart.getFields(home_Page.Botao.__proto__),
-    texto: dart.finalFieldType(core.String),
-    rota: dart.finalFieldType(core.String),
-    icon: dart.finalFieldType(icon_data.IconData)
-  }));
-  var texto$0 = dart.privateName(home_Page, "ClasseBotao.texto");
-  var rota$0 = dart.privateName(home_Page, "ClasseBotao.rota");
-  var icon$0 = dart.privateName(home_Page, "ClasseBotao.icon");
-  home_Page.ClasseBotao = class ClasseBotao extends core.Object {
-    get texto() {
-      return this[texto$0];
-    }
-    set texto(value) {
-      super.texto = value;
-    }
-    get rota() {
-      return this[rota$0];
-    }
-    set rota(value) {
-      super.rota = value;
-    }
-    get icon() {
-      return this[icon$0];
-    }
-    set icon(value) {
-      super.icon = value;
-    }
-    static ['_#new#tearOff'](texto, rota, icon) {
-      return new home_Page.ClasseBotao.new(texto, rota, icon);
-    }
-  };
-  (home_Page.ClasseBotao.new = function(texto, rota, icon) {
-    this[texto$0] = texto;
-    this[rota$0] = rota;
-    this[icon$0] = icon;
-    ;
-  }).prototype = home_Page.ClasseBotao.prototype;
-  dart.addTypeTests(home_Page.ClasseBotao);
-  dart.addTypeCaches(home_Page.ClasseBotao);
-  dart.setLibraryUri(home_Page.ClasseBotao, I[8]);
-  dart.setFieldSignature(home_Page.ClasseBotao, () => ({
-    __proto__: dart.getFields(home_Page.ClasseBotao.__proto__),
-    texto: dart.finalFieldType(core.String),
-    rota: dart.finalFieldType(core.String),
-    icon: dart.finalFieldType(icon_data.IconData)
-  }));
-  dart.defineLazy(home_Page, {
-    /*home_Page.botoes*/get botoes() {
-      return T.JSArrayOfClasseBotao().of([home_Page.botaoHistoria, home_Page.botaoJogos, home_Page.botaoEmpresas, home_Page.botaoLinks]);
-    },
-    set botoes(value) {},
-    /*home_Page.botaoHistoria*/get botaoHistoria() {
-      return new home_Page.ClasseBotao.new("História", "/historia", icons.Icons.description);
-    },
-    set botaoHistoria(value) {},
-    /*home_Page.botaoJogos*/get botaoJogos() {
-      return new home_Page.ClasseBotao.new("Jogos", "/jogo", icons.Icons.sports_esports);
-    },
-    set botaoJogos(value) {},
-    /*home_Page.botaoEmpresas*/get botaoEmpresas() {
-      return new home_Page.ClasseBotao.new("Empresas", "/empresa", icons.Icons.apartment);
-    },
-    set botaoEmpresas(value) {},
-    /*home_Page.botaoLinks*/get botaoLinks() {
-      return new home_Page.ClasseBotao.new("Links", "/links", icons.Icons.link);
-    },
-    set botaoLinks(value) {}
-  }, false);
-  jogo_Page.JogoPage = class JogoPage extends framework.StatefulWidget {
-    createState() {
-      return new jogo_Page.JogoPageState.new();
-    }
-    static ['_#new#tearOff']() {
-      return new jogo_Page.JogoPage.new();
-    }
-  };
-  (jogo_Page.JogoPage.new = function() {
-    jogo_Page.JogoPage.__proto__.new.call(this);
-    ;
-  }).prototype = jogo_Page.JogoPage.prototype;
-  dart.addTypeTests(jogo_Page.JogoPage);
-  dart.addTypeCaches(jogo_Page.JogoPage);
-  dart.setMethodSignature(jogo_Page.JogoPage, () => ({
-    __proto__: dart.getMethods(jogo_Page.JogoPage.__proto__),
-    createState: dart.fnType(framework.State$(jogo_Page.JogoPage), [])
-  }));
-  dart.setLibraryUri(jogo_Page.JogoPage, I[9]);
-  jogo_Page.JogoPageState = class JogoPageState extends framework.State$(jogo_Page.JogoPage) {
-    build(context) {
-      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new basic.Row.new({children: T.JSArrayOfWidget().of([new icon.Icon.new(icons.Icons.sports_esports, {color: new ui.Color.fromARGB(255, 241, 203, 252)}), new basic.SizedBox.new({width: 8}), new text.Text.new("Jogos", {style: new text_style.TextStyle.new({fontSize: 30, color: new ui.Color.fromARGB(255, 241, 203, 252)})})])})}), body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: new ui.Color.fromARGB(1, 88, 42, 114).withOpacity(1)}), new container.Container.new({padding: new edge_insets.EdgeInsets.all(16), width: 1 / 0, height: 1 / 0, child: new scroll_view.ListView.builder({itemCount: jogo_Page.conteudosJogos[$length], itemBuilder: dart.fn((context, index) => new basic.Column.new({children: T.JSArrayOfWidget().of([new jogo_Page.Conteudo.new({titulo: jogo_Page.conteudosJogos[$_get](index).titulo, texto: jogo_Page.conteudosJogos[$_get](index).texto, img: jogo_Page.conteudosJogos[$_get](index).img})])}), T.BuildContextAndintToColumn())})})])})});
-    }
-    static ['_#new#tearOff']() {
-      return new jogo_Page.JogoPageState.new();
-    }
-  };
-  (jogo_Page.JogoPageState.new = function() {
-    jogo_Page.JogoPageState.__proto__.new.call(this);
-    ;
-  }).prototype = jogo_Page.JogoPageState.prototype;
-  dart.addTypeTests(jogo_Page.JogoPageState);
-  dart.addTypeCaches(jogo_Page.JogoPageState);
-  dart.setMethodSignature(jogo_Page.JogoPageState, () => ({
-    __proto__: dart.getMethods(jogo_Page.JogoPageState.__proto__),
-    build: dart.fnType(framework.Widget, [framework.BuildContext])
-  }));
-  dart.setLibraryUri(jogo_Page.JogoPageState, I[9]);
-  var titulo$ = dart.privateName(jogo_Page, "Conteudo.titulo");
-  var texto$1 = dart.privateName(jogo_Page, "Conteudo.texto");
-  var img$ = dart.privateName(jogo_Page, "Conteudo.img");
-  var Widget_key = dart.privateName(framework, "Widget.key");
-  var SingleChildRenderObjectWidget_child = dart.privateName(framework, "SingleChildRenderObjectWidget.child");
-  var SizedBox_height = dart.privateName(basic, "SizedBox.height");
-  var SizedBox_width = dart.privateName(basic, "SizedBox.width");
+  var nome$ = dart.privateName(empresas_page, "EmpresasWidget.nome");
+  var logo$ = dart.privateName(empresas_page, "EmpresasWidget.logo");
+  var descricao$ = dart.privateName(empresas_page, "EmpresasWidget.descricao");
+  var fundacao$ = dart.privateName(empresas_page, "EmpresasWidget.fundacao");
+  var jogo$ = dart.privateName(empresas_page, "EmpresasWidget.jogo");
+  var EdgeInsets_bottom = dart.privateName(edge_insets, "EdgeInsets.bottom");
+  var EdgeInsets_right = dart.privateName(edge_insets, "EdgeInsets.right");
+  var EdgeInsets_top = dart.privateName(edge_insets, "EdgeInsets.top");
+  var EdgeInsets_left = dart.privateName(edge_insets, "EdgeInsets.left");
   var TextStyle_overflow = dart.privateName(text_style, "TextStyle.overflow");
   var TextStyle_fontVariations = dart.privateName(text_style, "TextStyle.fontVariations");
   var TextStyle_fontFeatures = dart.privateName(text_style, "TextStyle.fontFeatures");
@@ -1063,18 +784,146 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   var Color_value = dart.privateName(ui, "Color.value");
   var TextStyle_color = dart.privateName(text_style, "TextStyle.color");
   var TextStyle_inherit = dart.privateName(text_style, "TextStyle.inherit");
-  jogo_Page.Conteudo = class Conteudo extends framework.StatelessWidget {
-    get titulo() {
-      return this[titulo$];
+  var Widget_key = dart.privateName(framework, "Widget.key");
+  var SingleChildRenderObjectWidget_child = dart.privateName(framework, "SingleChildRenderObjectWidget.child");
+  var SizedBox_height = dart.privateName(basic, "SizedBox.height");
+  var SizedBox_width = dart.privateName(basic, "SizedBox.width");
+  empresas_page.EmpresasWidget = class EmpresasWidget extends framework.StatelessWidget {
+    get nome() {
+      return this[nome$];
     }
-    set titulo(value) {
-      super.titulo = value;
+    set nome(value) {
+      super.nome = value;
     }
-    get texto() {
-      return this[texto$1];
+    get logo() {
+      return this[logo$];
     }
-    set texto(value) {
-      super.texto = value;
+    set logo(value) {
+      super.logo = value;
+    }
+    get descricao() {
+      return this[descricao$];
+    }
+    set descricao(value) {
+      super.descricao = value;
+    }
+    get fundacao() {
+      return this[fundacao$];
+    }
+    set fundacao(value) {
+      super.fundacao = value;
+    }
+    get jogo() {
+      return this[jogo$];
+    }
+    set jogo(value) {
+      super.jogo = value;
+    }
+    static ['_#new#tearOff'](opts) {
+      let nome = opts && 'nome' in opts ? opts.nome : null;
+      let logo = opts && 'logo' in opts ? opts.logo : null;
+      let descricao = opts && 'descricao' in opts ? opts.descricao : null;
+      let fundacao = opts && 'fundacao' in opts ? opts.fundacao : null;
+      let jogo = opts && 'jogo' in opts ? opts.jogo : null;
+      return new empresas_page.EmpresasWidget.new({nome: nome, logo: logo, descricao: descricao, fundacao: fundacao, jogo: jogo});
+    }
+    build(context) {
+      return new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: 700, child: new image.Image.asset(this.logo, {fit: box_fit.BoxFit.cover})}), new card.Card.new({margin: new edge_insets.EdgeInsets.all(16), color: new ui.Color.fromARGB(255, 0, 0, 0).withOpacity(0.8), child: new basic.Padding.new({padding: C[4] || CT.C4, child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.start, children: T.JSArrayOfWidget().of([new basic.Center.new({child: new text.Text.new(this.nome, {style: C[5] || CT.C5})}), C[8] || CT.C8, new jogo_Page.TextTitulo.new({texto: "Fundação:", tipo: true}), new jogo_Page.TextTitulo.new({texto: dart.str(this.fundacao), tipo: false}), C[8] || CT.C8, new jogo_Page.TextTitulo.new({texto: "Descrição:", tipo: true}), new jogo_Page.TextTitulo.new({texto: this.descricao, tipo: false}), C[8] || CT.C8, new jogo_Page.TextTitulo.new({texto: "Jogos:", tipo: true}), new jogo_Page.TextTitulo.new({texto: this.jogo, tipo: false}), C[8] || CT.C8])})})})])});
+    }
+  };
+  (empresas_page.EmpresasWidget.new = function(opts) {
+    let nome = opts && 'nome' in opts ? opts.nome : null;
+    let logo = opts && 'logo' in opts ? opts.logo : null;
+    let descricao = opts && 'descricao' in opts ? opts.descricao : null;
+    let fundacao = opts && 'fundacao' in opts ? opts.fundacao : null;
+    let jogo = opts && 'jogo' in opts ? opts.jogo : null;
+    this[nome$] = nome;
+    this[logo$] = logo;
+    this[descricao$] = descricao;
+    this[fundacao$] = fundacao;
+    this[jogo$] = jogo;
+    empresas_page.EmpresasWidget.__proto__.new.call(this);
+    ;
+  }).prototype = empresas_page.EmpresasWidget.prototype;
+  dart.addTypeTests(empresas_page.EmpresasWidget);
+  dart.addTypeCaches(empresas_page.EmpresasWidget);
+  dart.setMethodSignature(empresas_page.EmpresasWidget, () => ({
+    __proto__: dart.getMethods(empresas_page.EmpresasWidget.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(empresas_page.EmpresasWidget, I[6]);
+  dart.setFieldSignature(empresas_page.EmpresasWidget, () => ({
+    __proto__: dart.getFields(empresas_page.EmpresasWidget.__proto__),
+    nome: dart.finalFieldType(core.String),
+    logo: dart.finalFieldType(core.String),
+    descricao: dart.finalFieldType(core.String),
+    fundacao: dart.finalFieldType(core.int),
+    jogo: dart.finalFieldType(core.String)
+  }));
+  dart.defineLazy(empresas_page, {
+    /*empresas_page.empresas*/get empresas() {
+      return T.JSArrayOfEmpresa().of([new classes.Empresa.new({nome: "Capcom", fundacao: 2004, logo: "assets/img/capcom1.png", descricao: "Após se candidatar duas vezes, Ikumi Nakamura foi contratada pela Capcom em 2004. Ela se juntou ao Clover Studio, onde teve a oportunidade de criar a arte de fundo para Ōkami (2006), um jogo que se tornaria um clássico e a colocaria no mapa da indústria de jogos.", jogo: "Ōkami (2006)"}), new classes.Empresa.new({nome: "PlatinumGames", fundacao: 2006, logo: "assets/img/platinum4.png", descricao: "Ikumi seguiu seus colegas da Capcom ao fundarem a PlatinumGames. No início do estúdio, apresentou uma ideia para um jogo original para Nintendo DS, mas o projeto foi cancelado após a Nintendo não demonstrar interesse. Apesar disso, ela contribuiu como artista conceitual em Bayonetta (2009) e trabalhou brevemente como diretora de arte em Scalebound antes de deixar a empresa.", jogo: "Bayonetta (2009)"}), new classes.Empresa.new({nome: "Tango Gameworks", fundacao: 2010, logo: "assets/img/tango.png", descricao: "Em 2010, Ikumi se uniu a Shinji Mikami na Tango Gameworks. Durante sua passagem pelo estúdio, ela atuou como artista em The Evil Within (2014) e The Evil Within 2 (2017), além de ser nomeada diretora criativa de Ghostwire: Tokyo. Sua apresentação na E3 2019 foi um dos pontos altos da coletiva de imprensa da Bethesda Softworks, destacando seu talento e visão criativa. No entanto, em 2019, ela deixou o projeto e a empresa devido ao declínio de sua saúde, causado pelo estresse da dinâmica desenvolvedor-editora e pela pressão sobre o controle do projeto.", jogo: "The Evil Within (2014), The Evil Within 2 (2017), Ghostwire: Tokyo (2022)"}), new classes.Empresa.new({nome: "Unseen", fundacao: 2021, logo: "assets/img/unseen.png", descricao: "Após deixar a Tango Gameworks, Ikumi fez trabalhos de consultoria e freelance. Em março de 2021, anunciou a criação de seu próprio estúdio de jogos independente, chamado Unseen, que foi formalmente revelado no ano seguinte. A intenção de Ikumi é desenvolver novas propriedades intelectuais (IPs) que se expandam para diferentes mídias de entretenimento, mantendo o foco em jogos que explorem mistério, terror, ficção científica e elementos sobrenaturais. O primeiro jogo do estúdio, Kemuri, foi revelado no The Game Awards 2023, prometendo uma nova e intrigante experiência aos jogadores.", jogo: "Kemuri"})]);
+    },
+    set empresas(value) {}
+  }, false);
+  historia_page.HistoriaPage = class HistoriaPage extends framework.StatefulWidget {
+    createState() {
+      return new historia_page.HistoriaPageState.new();
+    }
+    static ['_#new#tearOff']() {
+      return new historia_page.HistoriaPage.new();
+    }
+  };
+  (historia_page.HistoriaPage.new = function() {
+    historia_page.HistoriaPage.__proto__.new.call(this);
+    ;
+  }).prototype = historia_page.HistoriaPage.prototype;
+  dart.addTypeTests(historia_page.HistoriaPage);
+  dart.addTypeCaches(historia_page.HistoriaPage);
+  dart.setMethodSignature(historia_page.HistoriaPage, () => ({
+    __proto__: dart.getMethods(historia_page.HistoriaPage.__proto__),
+    createState: dart.fnType(framework.State$(historia_page.HistoriaPage), [])
+  }));
+  dart.setLibraryUri(historia_page.HistoriaPage, I[7]);
+  historia_page.HistoriaPageState = class HistoriaPageState extends framework.State$(historia_page.HistoriaPage) {
+    build(context) {
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new basic.Row.new({children: T.JSArrayOfWidget().of([new icon.Icon.new(icons.Icons.description, {color: new ui.Color.fromARGB(255, 241, 203, 252)}), new basic.SizedBox.new({width: 8}), new text.Text.new("História", {style: new text_style.TextStyle.new({fontSize: 30, color: new ui.Color.fromARGB(255, 241, 203, 252)})})])})}), body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi2.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: new ui.Color.fromARGB(1, 88, 42, 114).withOpacity(0.7)}), new container.Container.new({padding: new edge_insets.EdgeInsets.all(16), width: 1 / 0, height: 1 / 0, child: new scroll_view.ListView.builder({itemCount: historia_page.artista[$length], itemBuilder: dart.fn((context, index) => new historia_page.ArtistaWidget.new({nome: historia_page.artista[$_get](index).nome, nascimento: historia_page.artista[$_get](index).nascimento, img: historia_page.artista[$_get](index).img, descricao: historia_page.artista[$_get](index).descricao, titulo: historia_page.artista[$_get](index).titulo, img2: historia_page.artista[$_get](index).img2, descricao2: historia_page.artista[$_get](index).descricao2, titulo2: historia_page.artista[$_get](index).titulo2}), T.BuildContextAndintToArtistaWidget())})})])})});
+    }
+    static ['_#new#tearOff']() {
+      return new historia_page.HistoriaPageState.new();
+    }
+  };
+  (historia_page.HistoriaPageState.new = function() {
+    historia_page.HistoriaPageState.__proto__.new.call(this);
+    ;
+  }).prototype = historia_page.HistoriaPageState.prototype;
+  dart.addTypeTests(historia_page.HistoriaPageState);
+  dart.addTypeCaches(historia_page.HistoriaPageState);
+  dart.setMethodSignature(historia_page.HistoriaPageState, () => ({
+    __proto__: dart.getMethods(historia_page.HistoriaPageState.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(historia_page.HistoriaPageState, I[7]);
+  var nome$0 = dart.privateName(historia_page, "ArtistaWidget.nome");
+  var nascimento$ = dart.privateName(historia_page, "ArtistaWidget.nascimento");
+  var img$ = dart.privateName(historia_page, "ArtistaWidget.img");
+  var descricao$0 = dart.privateName(historia_page, "ArtistaWidget.descricao");
+  var titulo$ = dart.privateName(historia_page, "ArtistaWidget.titulo");
+  var img2$ = dart.privateName(historia_page, "ArtistaWidget.img2");
+  var descricao2$ = dart.privateName(historia_page, "ArtistaWidget.descricao2");
+  var titulo2$ = dart.privateName(historia_page, "ArtistaWidget.titulo2");
+  historia_page.ArtistaWidget = class ArtistaWidget extends framework.StatelessWidget {
+    get nome() {
+      return this[nome$0];
+    }
+    set nome(value) {
+      super.nome = value;
+    }
+    get nascimento() {
+      return this[nascimento$];
+    }
+    set nascimento(value) {
+      super.nascimento = value;
     }
     get img() {
       return this[img$];
@@ -1082,149 +931,350 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     set img(value) {
       super.img = value;
     }
+    get descricao() {
+      return this[descricao$0];
+    }
+    set descricao(value) {
+      super.descricao = value;
+    }
+    get titulo() {
+      return this[titulo$];
+    }
+    set titulo(value) {
+      super.titulo = value;
+    }
+    get img2() {
+      return this[img2$];
+    }
+    set img2(value) {
+      super.img2 = value;
+    }
+    get descricao2() {
+      return this[descricao2$];
+    }
+    set descricao2(value) {
+      super.descricao2 = value;
+    }
+    get titulo2() {
+      return this[titulo2$];
+    }
+    set titulo2(value) {
+      super.titulo2 = value;
+    }
     static ['_#new#tearOff'](opts) {
-      let key = opts && 'key' in opts ? opts.key : null;
-      let titulo = opts && 'titulo' in opts ? opts.titulo : null;
-      let texto = opts && 'texto' in opts ? opts.texto : null;
+      let nome = opts && 'nome' in opts ? opts.nome : null;
       let img = opts && 'img' in opts ? opts.img : null;
-      return new jogo_Page.Conteudo.new({key: key, titulo: titulo, texto: texto, img: img});
+      let descricao = opts && 'descricao' in opts ? opts.descricao : null;
+      let titulo = opts && 'titulo' in opts ? opts.titulo : null;
+      let img2 = opts && 'img2' in opts ? opts.img2 : null;
+      let descricao2 = opts && 'descricao2' in opts ? opts.descricao2 : null;
+      let titulo2 = opts && 'titulo2' in opts ? opts.titulo2 : null;
+      let nascimento = opts && 'nascimento' in opts ? opts.nascimento : null;
+      return new historia_page.ArtistaWidget.new({nome: nome, img: img, descricao: descricao, titulo: titulo, img2: img2, descricao2: descricao2, titulo2: titulo2, nascimento: nascimento});
     }
     build(context) {
-      let textofinal = "          " + this.texto;
-      return new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidget().of([C[4] || CT.C4, new text.Text.new(this.titulo, {style: C[5] || CT.C5}), C[8] || CT.C8, new basic.Center.new({child: new container.Container.new({height: 200, width: 800, child: new image.Image.asset(this.img)})}), C[8] || CT.C8, new text.Text.new(textofinal, {style: C[9] || CT.C9, textAlign: ui.TextAlign.justify})])});
+      return new basic.Padding.new({padding: new edge_insets.EdgeInsets.all(16), child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidget().of([new text.Text.new(this.titulo, {style: C[5] || CT.C5, textAlign: ui.TextAlign.center}), C[9] || CT.C9, new basic.ClipOval.new({child: new image.Image.asset(this.img, {width: 300, height: 300, fit: box_fit.BoxFit.cover})}), C[9] || CT.C9, new card.Card.new({color: new ui.Color.fromARGB(255, 0, 0, 0).withOpacity(0.8), child: new basic.Padding.new({padding: C[4] || CT.C4, child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.start, children: T.JSArrayOfWidget().of([new jogo_Page.TextTitulo.new({texto: "Nome Completo:", tipo: true}), new jogo_Page.TextTitulo.new({texto: this.nome, tipo: false}), C[8] || CT.C8, new jogo_Page.TextTitulo.new({texto: "Nascimento:", tipo: true}), new jogo_Page.TextTitulo.new({texto: this.nascimento, tipo: false}), C[8] || CT.C8, new jogo_Page.TextTitulo.new({texto: "História:", tipo: true}), new jogo_Page.TextTitulo.new({texto: this.descricao, tipo: false}), C[8] || CT.C8])})})}), new container.Container.new({height: 50}), new text.Text.new(this.titulo2, {style: C[5] || CT.C5, textAlign: ui.TextAlign.center}), C[9] || CT.C9, new basic.ClipOval.new({child: new image.Image.asset(this.img2, {width: 300, height: 300, fit: box_fit.BoxFit.cover})}), C[9] || CT.C9, new card.Card.new({color: new ui.Color.fromARGB(255, 0, 0, 0).withOpacity(0.8), child: new basic.Padding.new({padding: C[4] || CT.C4, child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.start, children: T.JSArrayOfWidget().of([new jogo_Page.TextTitulo.new({texto: this.descricao2, tipo: false}), C[8] || CT.C8])})})})])})});
     }
   };
-  (jogo_Page.Conteudo.new = function(opts) {
-    let key = opts && 'key' in opts ? opts.key : null;
-    let titulo = opts && 'titulo' in opts ? opts.titulo : null;
-    let texto = opts && 'texto' in opts ? opts.texto : null;
+  (historia_page.ArtistaWidget.new = function(opts) {
+    let nome = opts && 'nome' in opts ? opts.nome : null;
     let img = opts && 'img' in opts ? opts.img : null;
-    this[titulo$] = titulo;
-    this[texto$1] = texto;
+    let descricao = opts && 'descricao' in opts ? opts.descricao : null;
+    let titulo = opts && 'titulo' in opts ? opts.titulo : null;
+    let img2 = opts && 'img2' in opts ? opts.img2 : null;
+    let descricao2 = opts && 'descricao2' in opts ? opts.descricao2 : null;
+    let titulo2 = opts && 'titulo2' in opts ? opts.titulo2 : null;
+    let nascimento = opts && 'nascimento' in opts ? opts.nascimento : null;
+    this[nome$0] = nome;
     this[img$] = img;
-    jogo_Page.Conteudo.__proto__.new.call(this, {key: key});
+    this[descricao$0] = descricao;
+    this[titulo$] = titulo;
+    this[img2$] = img2;
+    this[descricao2$] = descricao2;
+    this[titulo2$] = titulo2;
+    this[nascimento$] = nascimento;
+    historia_page.ArtistaWidget.__proto__.new.call(this);
     ;
-  }).prototype = jogo_Page.Conteudo.prototype;
-  dart.addTypeTests(jogo_Page.Conteudo);
-  dart.addTypeCaches(jogo_Page.Conteudo);
-  dart.setMethodSignature(jogo_Page.Conteudo, () => ({
-    __proto__: dart.getMethods(jogo_Page.Conteudo.__proto__),
+  }).prototype = historia_page.ArtistaWidget.prototype;
+  dart.addTypeTests(historia_page.ArtistaWidget);
+  dart.addTypeCaches(historia_page.ArtistaWidget);
+  dart.setMethodSignature(historia_page.ArtistaWidget, () => ({
+    __proto__: dart.getMethods(historia_page.ArtistaWidget.__proto__),
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(jogo_Page.Conteudo, I[9]);
-  dart.setFieldSignature(jogo_Page.Conteudo, () => ({
-    __proto__: dart.getFields(jogo_Page.Conteudo.__proto__),
+  dart.setLibraryUri(historia_page.ArtistaWidget, I[7]);
+  dart.setFieldSignature(historia_page.ArtistaWidget, () => ({
+    __proto__: dart.getFields(historia_page.ArtistaWidget.__proto__),
+    nome: dart.finalFieldType(core.String),
+    nascimento: dart.finalFieldType(core.String),
+    img: dart.finalFieldType(core.String),
+    descricao: dart.finalFieldType(core.String),
     titulo: dart.finalFieldType(core.String),
-    texto: dart.finalFieldType(core.String),
-    img: dart.finalFieldType(core.String)
+    img2: dart.finalFieldType(core.String),
+    descricao2: dart.finalFieldType(core.String),
+    titulo2: dart.finalFieldType(core.String)
   }));
-  var __ClasseConteudo_titulo = dart.privateName(jogo_Page, "_#ClasseConteudo#titulo");
-  var __ClasseConteudo_texto = dart.privateName(jogo_Page, "_#ClasseConteudo#texto");
-  var __ClasseConteudo_img = dart.privateName(jogo_Page, "_#ClasseConteudo#img");
-  jogo_Page.ClasseConteudo = class ClasseConteudo extends core.Object {
-    get titulo() {
-      let t0;
-      t0 = this[__ClasseConteudo_titulo];
-      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("titulo")) : t0;
+  dart.defineLazy(historia_page, {
+    /*historia_page.artista*/get artista() {
+      return T.JSArrayOfArtista().of([new classes.Artista.new({titulo: "Ikumi Nakamura: A Artista por Trás do Terror e da Fantasia", nome: "Ikumi Nakamura", nascimento: "8 de outubro de 1985 no Japão", descricao: "Ikumi Nakamura (中村 育美) é uma artista e diretora de videogame japonesa, amplamente reconhecida por seu trabalho na Tango Gameworks, onde atuou como artista em The Evil Within (2014) e The Evil Within 2 (2017),além de ter sido diretora criativa de Ghostwire: Tokyo.\n\n" + "Antes de sua passagem pela Tango, Ikumi também fez arte para Ōkami (2006) no Clover Studio e para Bayonetta (2009) na PlatinumGames.\n\n" + "Atualmente, ela dirige seu próprio estúdio de jogos independente, chamado Unseen.", img: "assets/img/ikumi1.jpg", titulo2: "Vida Pessoal e Formação", img2: "assets/img/ikumi3.jpg", descricao2: "Desde a infância, Ikumi tinha uma forte conexão com o universo do terror, alimentada por momentos compartilhados com seu pai, assistindo a filmes de horror e jogando séries como Resident Evil e Devil May Cry, ambas da Capcom.\n\n" + "Essa paixão por jogos e a admiração pela Capcom despertaram nela o desejo de um dia fazer parte do estúdio.\n\n" + "No entanto, sua vida tomou um rumo difícil quando seu pai faleceu em um acidente de motocicleta durante seu tempo na universidade. Essa tragédia apenas reforçou sua determinação de seguir uma carreira na Capcom.\n\n" + "Para isso, Ikumi frequentou uma escola de arte em Tóquio e, posteriormente, estudou design de jogos na Amusement Media Academy."})]);
+    },
+    set artista(value) {}
+  }, false);
+  home_Page.HomePage = class HomePage extends framework.StatefulWidget {
+    createState() {
+      return new home_Page.HomePageState.new();
     }
-    set titulo(titulo$35param) {
-      this[__ClasseConteudo_titulo] = titulo$35param;
-    }
-    get texto() {
-      let t0;
-      t0 = this[__ClasseConteudo_texto];
-      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("texto")) : t0;
-    }
-    set texto(texto$35param) {
-      this[__ClasseConteudo_texto] = texto$35param;
-    }
-    get img() {
-      let t0;
-      t0 = this[__ClasseConteudo_img];
-      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("img")) : t0;
-    }
-    set img(img$35param) {
-      this[__ClasseConteudo_img] = img$35param;
-    }
-    static ['_#new#tearOff'](titulo, texto, img) {
-      return new jogo_Page.ClasseConteudo.new(titulo, texto, img);
+    static ['_#new#tearOff']() {
+      return new home_Page.HomePage.new();
     }
   };
-  (jogo_Page.ClasseConteudo.new = function(titulo, texto, img) {
-    this[__ClasseConteudo_titulo] = null;
-    this[__ClasseConteudo_texto] = null;
-    this[__ClasseConteudo_img] = null;
-    this[__ClasseConteudo_titulo] = titulo;
-    this[__ClasseConteudo_texto] = texto;
-    this[__ClasseConteudo_img] = img;
+  (home_Page.HomePage.new = function() {
+    home_Page.HomePage.__proto__.new.call(this);
     ;
-  }).prototype = jogo_Page.ClasseConteudo.prototype;
-  dart.addTypeTests(jogo_Page.ClasseConteudo);
-  dart.addTypeCaches(jogo_Page.ClasseConteudo);
-  dart.setGetterSignature(jogo_Page.ClasseConteudo, () => ({
-    __proto__: dart.getGetters(jogo_Page.ClasseConteudo.__proto__),
-    titulo: core.String,
-    texto: core.String,
-    img: core.String
+  }).prototype = home_Page.HomePage.prototype;
+  dart.addTypeTests(home_Page.HomePage);
+  dart.addTypeCaches(home_Page.HomePage);
+  dart.setMethodSignature(home_Page.HomePage, () => ({
+    __proto__: dart.getMethods(home_Page.HomePage.__proto__),
+    createState: dart.fnType(framework.State$(home_Page.HomePage), [])
   }));
-  dart.setSetterSignature(jogo_Page.ClasseConteudo, () => ({
-    __proto__: dart.getSetters(jogo_Page.ClasseConteudo.__proto__),
-    titulo: core.String,
-    texto: core.String,
-    img: core.String
+  dart.setLibraryUri(home_Page.HomePage, I[8]);
+  var counter = dart.privateName(home_Page, "HomePageState.counter");
+  home_Page.HomePageState = class HomePageState extends framework.State$(home_Page.HomePage) {
+    get counter() {
+      return this[counter];
+    }
+    set counter(value) {
+      this[counter] = value;
+    }
+    build(context) {
+      return new scaffold.Scaffold.new({body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi5.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: colors.Colors.black.withOpacity(0.01)}), new container.Container.new({padding: new edge_insets.EdgeInsets.all(16), width: 1 / 0, height: 1 / 0, child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.center, children: T.JSArrayOfWidget().of([new container.Container.new({height: 200}), new image.Image.asset("assets/img/textikuna.png", {width: 500, height: 100}), new container.Container.new({height: 50}), new basic.Expanded.new({child: new scroll_view.ListView.builder({itemCount: home_Page.botoes[$length], itemBuilder: dart.fn((context, index) => new home_Page.Botao.new({link: home_Page.botoes[$_get](index)}), T.BuildContextAndintToBotao())})})])})})])})});
+    }
+    static ['_#new#tearOff']() {
+      return new home_Page.HomePageState.new();
+    }
+  };
+  (home_Page.HomePageState.new = function() {
+    this[counter] = 0;
+    home_Page.HomePageState.__proto__.new.call(this);
+    ;
+  }).prototype = home_Page.HomePageState.prototype;
+  dart.addTypeTests(home_Page.HomePageState);
+  dart.addTypeCaches(home_Page.HomePageState);
+  dart.setMethodSignature(home_Page.HomePageState, () => ({
+    __proto__: dart.getMethods(home_Page.HomePageState.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(jogo_Page.ClasseConteudo, I[9]);
-  dart.setFieldSignature(jogo_Page.ClasseConteudo, () => ({
-    __proto__: dart.getFields(jogo_Page.ClasseConteudo.__proto__),
-    [__ClasseConteudo_titulo]: dart.fieldType(dart.nullable(core.String)),
-    [__ClasseConteudo_texto]: dart.fieldType(dart.nullable(core.String)),
-    [__ClasseConteudo_img]: dart.fieldType(dart.nullable(core.String))
+  dart.setLibraryUri(home_Page.HomePageState, I[8]);
+  dart.setFieldSignature(home_Page.HomePageState, () => ({
+    __proto__: dart.getFields(home_Page.HomePageState.__proto__),
+    counter: dart.fieldType(core.int)
+  }));
+  var link$0 = dart.privateName(home_Page, "Botao.link");
+  home_Page.Botao = class Botao extends framework.StatelessWidget {
+    get link() {
+      return this[link$0];
+    }
+    set link(value) {
+      super.link = value;
+    }
+    static ['_#new#tearOff'](opts) {
+      let link = opts && 'link' in opts ? opts.link : null;
+      return new home_Page.Botao.new({link: link});
+    }
+    build(context) {
+      return new basic.Column.new({children: T.JSArrayOfWidget().of([new container.Container.new({width: 200, child: new elevated_button.ElevatedButton.new({style: elevated_button.ElevatedButton.styleFrom({minimumSize: new ui.Size.new(400, 60), shape: new rounded_rectangle_border.RoundedRectangleBorder.new({borderRadius: new border_radius.BorderRadius.circular(30)})}), onPressed: dart.fn(() => {
+                this.link.navegar(context);
+              }, T.VoidTovoid()), child: new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.center, children: T.JSArrayOfWidget().of([new image.Image.asset(this.link.img, {width: 35, height: 35}), new basic.SizedBox.new({width: 10}), new text.Text.new(this.link.titulo, {style: new text_style.TextStyle.new({fontSize: 20, color: new ui.Color.fromARGB(255, 241, 203, 252)})})])})})}), new container.Container.new({height: 20})])});
+    }
+  };
+  (home_Page.Botao.new = function(opts) {
+    let link = opts && 'link' in opts ? opts.link : null;
+    this[link$0] = link;
+    home_Page.Botao.__proto__.new.call(this);
+    ;
+  }).prototype = home_Page.Botao.prototype;
+  dart.addTypeTests(home_Page.Botao);
+  dart.addTypeCaches(home_Page.Botao);
+  dart.setMethodSignature(home_Page.Botao, () => ({
+    __proto__: dart.getMethods(home_Page.Botao.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(home_Page.Botao, I[8]);
+  dart.setFieldSignature(home_Page.Botao, () => ({
+    __proto__: dart.getFields(home_Page.Botao.__proto__),
+    link: dart.finalFieldType(classes.Link)
+  }));
+  dart.defineLazy(home_Page, {
+    /*home_Page.botoes*/get botoes() {
+      return T.JSArrayOfLink().of([new classes.Link.new({titulo: "História", img: "assets/img/historia.png", url: "/historia", tipo: false}), new classes.Link.new({titulo: "Jogos", img: "assets/img/jogos.png", url: "/jogo", tipo: false}), new classes.Link.new({titulo: "Empresas", img: "assets/img/empresas.png", url: "/empresa", tipo: false}), new classes.Link.new({titulo: "Links", img: "assets/img/links.png", url: "/links", tipo: false})]);
+    },
+    set botoes(value) {}
+  }, false);
+  jogo_Page.JogoPage = class JogoPage extends framework.StatefulWidget {
+    createState() {
+      return new jogo_Page.JogoPageState.new();
+    }
+    static ['_#new#tearOff']() {
+      return new jogo_Page.JogoPage.new();
+    }
+  };
+  (jogo_Page.JogoPage.new = function() {
+    jogo_Page.JogoPage.__proto__.new.call(this);
+    ;
+  }).prototype = jogo_Page.JogoPage.prototype;
+  dart.addTypeTests(jogo_Page.JogoPage);
+  dart.addTypeCaches(jogo_Page.JogoPage);
+  dart.setMethodSignature(jogo_Page.JogoPage, () => ({
+    __proto__: dart.getMethods(jogo_Page.JogoPage.__proto__),
+    createState: dart.fnType(framework.State$(jogo_Page.JogoPage), [])
+  }));
+  dart.setLibraryUri(jogo_Page.JogoPage, I[9]);
+  jogo_Page.JogoPageState = class JogoPageState extends framework.State$(jogo_Page.JogoPage) {
+    build(context) {
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new basic.Row.new({children: T.JSArrayOfWidget().of([new icon.Icon.new(icons.Icons.sports_esports, {color: new ui.Color.fromARGB(255, 241, 203, 252)}), new basic.SizedBox.new({width: 8}), new text.Text.new("Jogos", {style: new text_style.TextStyle.new({fontSize: 30, color: new ui.Color.fromARGB(255, 241, 203, 252)})})])})}), body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: new ui.Color.fromARGB(255, 88, 42, 114).withOpacity(1)}), new container.Container.new({width: 1 / 0, height: 1 / 0, child: new scroll_view.ListView.builder({itemCount: jogo_Page.jogos[$length], itemBuilder: dart.fn((context, index) => new jogo_Page.JogoWidget.new({nome: jogo_Page.jogos[$_get](index).nome, img: jogo_Page.jogos[$_get](index).img, descricao: jogo_Page.jogos[$_get](index).descricao, ano: jogo_Page.jogos[$_get](index).ano, participacao: jogo_Page.jogos[$_get](index).participacao}), T.BuildContextAndintToJogoWidget())})})])})});
+    }
+    static ['_#new#tearOff']() {
+      return new jogo_Page.JogoPageState.new();
+    }
+  };
+  (jogo_Page.JogoPageState.new = function() {
+    jogo_Page.JogoPageState.__proto__.new.call(this);
+    ;
+  }).prototype = jogo_Page.JogoPageState.prototype;
+  dart.addTypeTests(jogo_Page.JogoPageState);
+  dart.addTypeCaches(jogo_Page.JogoPageState);
+  dart.setMethodSignature(jogo_Page.JogoPageState, () => ({
+    __proto__: dart.getMethods(jogo_Page.JogoPageState.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(jogo_Page.JogoPageState, I[9]);
+  var nome$1 = dart.privateName(jogo_Page, "JogoWidget.nome");
+  var img$0 = dart.privateName(jogo_Page, "JogoWidget.img");
+  var descricao$1 = dart.privateName(jogo_Page, "JogoWidget.descricao");
+  var ano$ = dart.privateName(jogo_Page, "JogoWidget.ano");
+  var participacao$ = dart.privateName(jogo_Page, "JogoWidget.participacao");
+  jogo_Page.JogoWidget = class JogoWidget extends framework.StatelessWidget {
+    get nome() {
+      return this[nome$1];
+    }
+    set nome(value) {
+      super.nome = value;
+    }
+    get img() {
+      return this[img$0];
+    }
+    set img(value) {
+      super.img = value;
+    }
+    get descricao() {
+      return this[descricao$1];
+    }
+    set descricao(value) {
+      super.descricao = value;
+    }
+    get ano() {
+      return this[ano$];
+    }
+    set ano(value) {
+      super.ano = value;
+    }
+    get participacao() {
+      return this[participacao$];
+    }
+    set participacao(value) {
+      super.participacao = value;
+    }
+    static ['_#new#tearOff'](opts) {
+      let nome = opts && 'nome' in opts ? opts.nome : null;
+      let img = opts && 'img' in opts ? opts.img : null;
+      let descricao = opts && 'descricao' in opts ? opts.descricao : null;
+      let ano = opts && 'ano' in opts ? opts.ano : null;
+      let participacao = opts && 'participacao' in opts ? opts.participacao : null;
+      return new jogo_Page.JogoWidget.new({nome: nome, img: img, descricao: descricao, ano: ano, participacao: participacao});
+    }
+    build(context) {
+      return new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: 700, child: new image.Image.asset(this.img, {fit: box_fit.BoxFit.cover})}), new card.Card.new({margin: new edge_insets.EdgeInsets.all(16), color: new ui.Color.fromARGB(255, 0, 0, 0).withOpacity(0.8), child: new basic.Padding.new({padding: C[4] || CT.C4, child: new basic.Column.new({crossAxisAlignment: flex.CrossAxisAlignment.start, children: T.JSArrayOfWidget().of([new basic.Center.new({child: new text.Text.new(this.nome, {style: C[5] || CT.C5})}), C[8] || CT.C8, new jogo_Page.TextTitulo.new({texto: "Lançamento:", tipo: true}), new jogo_Page.TextTitulo.new({texto: dart.str(this.ano), tipo: false}), C[8] || CT.C8, new jogo_Page.TextTitulo.new({texto: "Participação:", tipo: true}), new jogo_Page.TextTitulo.new({texto: this.participacao, tipo: false}), C[8] || CT.C8, new jogo_Page.TextTitulo.new({texto: "Descrição:", tipo: true}), new jogo_Page.TextTitulo.new({texto: this.descricao, tipo: false}), C[8] || CT.C8])})})})])});
+    }
+  };
+  (jogo_Page.JogoWidget.new = function(opts) {
+    let nome = opts && 'nome' in opts ? opts.nome : null;
+    let img = opts && 'img' in opts ? opts.img : null;
+    let descricao = opts && 'descricao' in opts ? opts.descricao : null;
+    let ano = opts && 'ano' in opts ? opts.ano : null;
+    let participacao = opts && 'participacao' in opts ? opts.participacao : null;
+    this[nome$1] = nome;
+    this[img$0] = img;
+    this[descricao$1] = descricao;
+    this[ano$] = ano;
+    this[participacao$] = participacao;
+    jogo_Page.JogoWidget.__proto__.new.call(this);
+    ;
+  }).prototype = jogo_Page.JogoWidget.prototype;
+  dart.addTypeTests(jogo_Page.JogoWidget);
+  dart.addTypeCaches(jogo_Page.JogoWidget);
+  dart.setMethodSignature(jogo_Page.JogoWidget, () => ({
+    __proto__: dart.getMethods(jogo_Page.JogoWidget.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(jogo_Page.JogoWidget, I[9]);
+  dart.setFieldSignature(jogo_Page.JogoWidget, () => ({
+    __proto__: dart.getFields(jogo_Page.JogoWidget.__proto__),
+    nome: dart.finalFieldType(core.String),
+    img: dart.finalFieldType(core.String),
+    descricao: dart.finalFieldType(core.String),
+    ano: dart.finalFieldType(core.int),
+    participacao: dart.finalFieldType(core.String)
+  }));
+  var texto$ = dart.privateName(jogo_Page, "TextTitulo.texto");
+  var tipo$ = dart.privateName(jogo_Page, "TextTitulo.tipo");
+  jogo_Page.TextTitulo = class TextTitulo extends framework.StatelessWidget {
+    get texto() {
+      return this[texto$];
+    }
+    set texto(value) {
+      super.texto = value;
+    }
+    get tipo() {
+      return this[tipo$];
+    }
+    set tipo(value) {
+      super.tipo = value;
+    }
+    static ['_#new#tearOff'](opts) {
+      let texto = opts && 'texto' in opts ? opts.texto : null;
+      let tipo = opts && 'tipo' in opts ? opts.tipo : null;
+      return new jogo_Page.TextTitulo.new({texto: texto, tipo: tipo});
+    }
+    build(context) {
+      return new text.Text.new(this.texto, {style: new text_style.TextStyle.new({fontSize: 16, fontWeight: ui.FontWeight.bold, color: this.tipo ? new ui.Color.fromARGB(255, 221, 199, 244) : new ui.Color.fromARGB(255, 255, 255, 255), height: 2})});
+    }
+  };
+  (jogo_Page.TextTitulo.new = function(opts) {
+    let texto = opts && 'texto' in opts ? opts.texto : null;
+    let tipo = opts && 'tipo' in opts ? opts.tipo : null;
+    this[texto$] = texto;
+    this[tipo$] = tipo;
+    jogo_Page.TextTitulo.__proto__.new.call(this);
+    ;
+  }).prototype = jogo_Page.TextTitulo.prototype;
+  dart.addTypeTests(jogo_Page.TextTitulo);
+  dart.addTypeCaches(jogo_Page.TextTitulo);
+  dart.setMethodSignature(jogo_Page.TextTitulo, () => ({
+    __proto__: dart.getMethods(jogo_Page.TextTitulo.__proto__),
+    build: dart.fnType(framework.Widget, [framework.BuildContext])
+  }));
+  dart.setLibraryUri(jogo_Page.TextTitulo, I[9]);
+  dart.setFieldSignature(jogo_Page.TextTitulo, () => ({
+    __proto__: dart.getFields(jogo_Page.TextTitulo.__proto__),
+    texto: dart.finalFieldType(core.String),
+    tipo: dart.finalFieldType(core.bool)
   }));
   dart.defineLazy(jogo_Page, {
-    /*jogo_Page.conteudosJogos*/get conteudosJogos() {
-      return T.JSArrayOfClasseConteudo().of([jogo_Page.okami, jogo_Page.bayonetta, jogo_Page.marvelVsCapcom3, jogo_Page.streetFighterXTekken, jogo_Page.ultraStreetFighterIV, jogo_Page.theEvilWithin, jogo_Page.streetFighterV, jogo_Page.theEvilWithin2, jogo_Page.ghostwireTokyo, jogo_Page.gungraveGore]);
+    /*jogo_Page.jogos*/get jogos() {
+      return T.JSArrayOfJogo().of([new classes.Jogo.new({nome: "Ōkami", img: "assets/img/okami.jpg", descricao: "Ōkami é um jogo de ação e aventura que se destaca por seu estilo artístico inspirado na pintura tradicional japonesa. Os jogadores controlam Amaterasu, a deusa do sol, que assume a forma de um lobo. Em um mundo corrompido por demônios, Amaterasu deve restaurar a beleza e a vida usando o 'Celestial Brush'.", ano: 2006, participacao: "Ikumi Nakamura trabalhou na produção de fundo, criando cenários vibrantes que definiram a estética única do jogo."}), new classes.Jogo.new({nome: "Bayonetta", img: "assets/img/bayonetta.jpg", descricao: "Bayonetta é um jogo de ação hack and slash que segue a protagonista Bayonetta, uma bruxa que luta contra anjos e demônios. O jogo é conhecido por seu combate rápido e estilizado, com combos elaborados e uma narrativa cheia de ação e humor.", ano: 2009, participacao: "Como artista conceitual, Ikumi foi fundamental na criação do design dos personagens e no desenvolvimento da estética visual do jogo, contribuindo para sua identidade marcante."}), new classes.Jogo.new({nome: "Marvel vs. Capcom 3: Fate of Two Worlds", img: "assets/img/marvel.jpg", descricao: "Este jogo de luta em equipe combina personagens da Marvel e da Capcom, permitindo que jogadores escolham seus heróis e vilões favoritos para batalhas intensas. As cinemáticas capturam a emoção e a ação do jogo.", ano: 2011, participacao: "Ikumi trabalhou nas cinemáticas, garantindo que as sequências de combate fossem visualmente cativantes e que a narrativa fluísse de forma envolvente."}), new classes.Jogo.new({nome: "Street Fighter X Tekken", img: "assets/img/street.jpg", descricao: "Street Fighter X Tekken é um crossover de luta que reúne personagens icônicos de duas franquias, permitindo que os jogadores formem equipes e lutem em batalhas de tag. O jogo apresenta um sistema de combate dinâmico.", ano: 2012, participacao: "Como pintora, Ikumi contribuiu para a estética vibrante e colorida do jogo, ajudando a moldar a identidade visual dos personagens de maneira atraente e reconhecível."}), new classes.Jogo.new({nome: "Ultra Street Fighter IV", img: "assets/img/ultra.jfif", descricao: "Ultra Street Fighter IV é uma atualização de um dos títulos mais amados da série, introduzindo novos personagens, cenários e mecânicas, mantendo o equilíbrio entre os lutadores existentes.", ano: 2014, participacao: "Ikumi colaborou como artista conceitual, oferecendo designs refinados que revitalizaram o jogo e ajudaram a mantê-lo relevante em um mercado competitivo."}), new classes.Jogo.new({nome: "The Evil Within", img: "assets/img/evil.jpg", descricao: "The Evil Within é um survival horror que segue o detetive Sebastian Castellanos, preso em um mundo distorcido e aterrorizante, povoado por criaturas grotescas. O design visual combina elementos de horror psicológico e ação intensa.", ano: 2014, participacao: "Como artista conceitual líder, Ikumi foi essencial na criação da atmosfera opressiva e visualmente intrigante do jogo, utilizando cenários sombrios e detalhados."}), new classes.Jogo.new({nome: "Street Fighter V", img: "assets/img/streetV.jpg", descricao: "Street Fighter V traz novos e antigos personagens de volta à arena de luta, apresentando gráficos atualizados e um modo história expandido, garantindo que cada personagem tenha um design visual único.", ano: 2016, participacao: "Ikumi atuou como artista conceitual de personagens, ajudando a definir a aparência dos lutadores e garantindo uma estética coerente que captura suas personalidades."}), new classes.Jogo.new({nome: "The Evil Within 2", img: "assets/img/evil2.jpg", descricao: "No sequel The Evil Within 2, o jogo explora temas de perda e redenção em um mundo ainda mais distorcido. A atmosfera e a paleta de cores acentuam o horror psicológico da narrativa.", ano: 2017, participacao: "Ikumi participou como artista de arte adicional, aprofundando o estilo visual e a atmosfera do jogo, enriquecendo a experiência imersiva."}), new classes.Jogo.new({nome: "Ghostwire: Tokyo", img: "assets/img/ghost.jpg", descricao: "Ghostwire: Tokyo se passa em uma Tóquio contemporânea assombrada por espíritos sobrenaturais. Os jogadores controlam Akito, que deve enfrentar essas entidades e descobrir o que aconteceu com a cidade.", ano: 2022, participacao: "Ikumi foi diretora criativa inicial, moldando a narrativa e o design artístico, criando um mundo intrigante que mistura horror e ação."}), new classes.Jogo.new({nome: "Gungrave GORE", img: "assets/img/gun.jpg", descricao: "Gungrave GORE é um jogo de ação que combina tiroteio frenético com uma narrativa envolvente, seguindo Grave em um mundo distópico.", ano: 2022, participacao: "Como consultora de arte, Ikumi contribuiu para o design visual do jogo, assegurando uma estética coesa que reflete a intensidade da ação."})]);
     },
-    set conteudosJogos(value) {},
-    /*jogo_Page.okami*/get okami() {
-      return new jogo_Page.ClasseConteudo.new("Ōkami (2006)", "Ikumi Nakamura trabalhou na produção de fundo deste jogo de ação e aventura, que se destaca por seu estilo artístico inspirado na pintura tradicional japonesa. Os jogadores controlam Amaterasu, a deusa do sol, que assume a forma de um lobo. Em um mundo em que a natureza foi corrompida por demônios, Amaterasu deve restaurar a beleza e a vida usando o “Celestial Brush”, uma mecânica que permite desenhar no ambiente para resolver quebra-cabeças e derrotar inimigos. O trabalho de Ikumi foi fundamental para criar os cenários vibrantes e imersivos que definem o jogo, contribuindo para sua recepção calorosa como um dos melhores jogos de sua época.", "assets/img/Okami.jpg");
-    },
-    set okami(value) {},
-    /*jogo_Page.bayonetta*/get bayonetta() {
-      return new jogo_Page.ClasseConteudo.new("Bayonetta (2009)", "Como artista conceitual, Ikumi Nakamura desempenhou um papel crucial em Bayonetta, um jogo de ação hack and slash que segue a protagonista Bayonetta, uma bruxa que luta contra anjos e demônios em uma narrativa repleta de ação e humor. O jogo é conhecido por seu combate rápido e estilizado, com combos elaborados e um design de personagens marcante. A estética extravagante e os visuais dinâmicos são resultados da visão artística de Ikumi, que ajudou a definir a identidade visual do jogo, tornando-o um clássico cult e um sucesso comercial.", "assets/img/bayonetta.jpg");
-    },
-    set bayonetta(value) {},
-    /*jogo_Page.marvelVsCapcom3*/get marvelVsCapcom3() {
-      return new jogo_Page.ClasseConteudo.new("Marvel vs. Capcom 3 (2011)", "Em Marvel vs. Capcom 3: Fate of Two Worlds, Ikumi trabalhou nas cinemáticas, que apresentam confrontos épicos entre personagens da Marvel e da Capcom. Este jogo de luta em equipe combina os mundos de ambos os universos, permitindo que jogadores escolham seus heróis e vilões favoritos para batalhas intensas. As cinemáticas, que capturam a emoção e a ação do jogo, foram aprimoradas pelo trabalho de Ikumi, que garantiu que cada luta fosse visualmente cativante e envolvente, elevando a experiência geral.", "assets/img/marvel.jpg");
-    },
-    set marvelVsCapcom3(value) {},
-    /*jogo_Page.streetFighterXTekken*/get streetFighterXTekken() {
-      return new jogo_Page.ClasseConteudo.new("Street Fighter X Tekken (2012)", "Neste crossover de luta, Ikumi Nakamura atuou como pintora, contribuindo para a estética vibrante e colorida que caracteriza o jogo. Street Fighter X Tekken reúne personagens icônicos das duas franquias, permitindo que os jogadores formem equipes e lutem em batalhas de tag. O jogo apresenta um sistema de combate dinâmico e uma variedade de modos de jogo. A arte de Ikumi ajudou a moldar a identidade visual dos personagens, garantindo que eles fossem atraentes e reconhecíveis, mantendo a essência de cada franquia.", "assets/img/street.jpg");
-    },
-    set streetFighterXTekken(value) {},
-    /*jogo_Page.ultraStreetFighterIV*/get ultraStreetFighterIV() {
-      return new jogo_Page.ClasseConteudo.new("Ultra Street Fighter IV (2014)", "Em Ultra Street Fighter IV, Ikumi colaborou como artista conceitual, contribuindo para a atualização e expansão de um dos títulos mais amados da série. O jogo introduz novos personagens, cenários e mecânicas, mantendo o equilíbrio entre os lutadores existentes. A habilidade de Ikumi em criar designs de personagens e cenários refinados foi essencial para revitalizar o jogo, permitindo que ele se mantivesse relevante em uma era de competições acirradas no gênero de luta.", "assets/img/ultra.jfif");
-    },
-    set ultraStreetFighterIV(value) {},
-    /*jogo_Page.theEvilWithin*/get theEvilWithin() {
-      return new jogo_Page.ClasseConteudo.new("The Evil Within (2014)", "Ikumi Nakamura foi a artista conceitual líder de The Evil Within, um survival horror criado por Shinji Mikami. O jogo segue o detetive Sebastian Castellanos, que, ao investigar uma cena de crime, se encontra preso em um mundo distorcido e aterrorizante, povoado por criaturas grotescas e armadilhas mortais. O design visual do jogo, que combina elementos de horror psicológico e ação intensa, é profundamente influenciado pelo trabalho de Ikumi, que ajudou a criar uma atmosfera opressiva e visualmente intrigante, marcada por cenários sombrios e detalhados.", "assets/img/evil.jpg");
-    },
-    set theEvilWithin(value) {},
-    /*jogo_Page.streetFighterV*/get streetFighterV() {
-      return new jogo_Page.ClasseConteudo.new("Street Fighter V (2016)", "Em Street Fighter V, Ikumi atuou novamente como artista conceitual de personagens, ajudando a definir a aparência dos lutadores e a estética geral do jogo. Este título traz novos e antigos personagens de volta à arena de luta, apresentando gráficos atualizados e um modo história expandido. A contribuição de Ikumi garantiu que cada personagem tivesse um design visual único e coerente, capturando a essência de suas personalidades e habilidades.", "assets/img/streetV.jpg");
-    },
-    set streetFighterV(value) {},
-    /*jogo_Page.theEvilWithin2*/get theEvilWithin2() {
-      return new jogo_Page.ClasseConteudo.new("The Evil Within 2 (2017)", "No sequel The Evil Within 2, Ikumi participou como artista de arte adicional, aprofundando o estilo visual e a atmosfera do jogo. Continuando a história de Sebastian Castellanos, o jogo explora temas de perda e redenção em um mundo ainda mais distorcido e aberto. O trabalho de Ikumi ajudou a enriquecer a experiência imersiva, com uma paleta de cores e detalhes visuais que acentuam o horror psicológico da narrativa.", "assets/img/evil2.jpg");
-    },
-    set theEvilWithin2(value) {},
-    /*jogo_Page.ghostwireTokyo*/get ghostwireTokyo() {
-      return new jogo_Page.ClasseConteudo.new("Ghostwire: Tokyo (2022)", "Ikumi foi diretora criativa inicial de Ghostwire: Tokyo, um jogo que se passa em uma Tóquio contemporânea assombrada por espíritos sobrenaturais. Os jogadores controlam Akito, que deve usar habilidades especiais para enfrentar essas entidades e descobrir o que aconteceu com a cidade. A visão de Ikumi ajudou a moldar a narrativa e o design artístico, criando um mundo intrigante e visualmente impressionante que mistura elementos de horror e ação.", "assets/img/ghost.jpg");
-    },
-    set ghostwireTokyo(value) {},
-    /*jogo_Page.gungraveGore*/get gungraveGore() {
-      return new jogo_Page.ClasseConteudo.new("Gungrave GORE (2022)", "Em Gungrave GORE, Ikumi atuou como consultora de arte, contribuindo para o design visual de um jogo de ação que combina tiroteio frenético com uma narrativa envolvente. O jogo segue Grave, que deve enfrentar inimigos em um mundo distópico. A experiência de Ikumi foi vital para garantir que a estética do jogo fosse atraente e coesa, refletindo a intensidade da ação.", "assets/img/gun.jpg");
-    },
-    set gungraveGore(value) {}
+    set jogos(value) {}
   }, false);
   links_Page.LinkPage = class LinkPage extends framework.StatefulWidget {
     createState() {
@@ -1247,7 +1297,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   dart.setLibraryUri(links_Page.LinkPage, I[10]);
   links_Page.LinkPageState = class LinkPageState extends framework.State$(links_Page.LinkPage) {
     build(context) {
-      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new basic.Row.new({children: T.JSArrayOfWidget().of([new icon.Icon.new(icons.Icons.link, {color: new ui.Color.fromARGB(255, 241, 203, 252)}), new basic.SizedBox.new({width: 8}), new text.Text.new("Links", {style: new text_style.TextStyle.new({fontSize: 30, color: new ui.Color.fromARGB(255, 241, 203, 252)})})])})}), body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: new ui.Color.fromARGB(1, 88, 42, 114).withOpacity(1)}), new container.Container.new({padding: new edge_insets.EdgeInsets.all(16), width: 1 / 0, height: 1 / 0, child: new basic.Column.new({children: T.JSArrayOfWidget().of([new text.Text.new("Links", {style: new text_style.TextStyle.new({fontSize: 30, fontWeight: ui.FontWeight.bold, color: new ui.Color.fromARGB(255, 255, 255, 255)})}), new basic.SizedBox.new({height: 20}), new basic.Expanded.new({child: new scroll_view.ListView.builder({itemCount: links_Page.link[$length], itemBuilder: dart.fn((context, index) => new links_Page.Link.new({titulo: links_Page.link[$_get](index).titulo, img: links_Page.link[$_get](index).img, url: links_Page.link[$_get](index).url}), T.BuildContextAndintToLink())})})])})})])})});
+      return new scaffold.Scaffold.new({appBar: new app_bar.AppBar.new({title: new basic.Row.new({children: T.JSArrayOfWidget().of([new icon.Icon.new(icons.Icons.link, {color: new ui.Color.fromARGB(255, 241, 203, 252)}), new basic.SizedBox.new({width: 8}), new text.Text.new("Links", {style: new text_style.TextStyle.new({fontSize: 30, color: new ui.Color.fromARGB(255, 241, 203, 252)})})])})}), body: new basic.Stack.new({children: T.JSArrayOfWidget().of([new basic.SizedBox.new({height: media_query.MediaQuery.of(context).size.height, child: new image.Image.asset("assets/img/ikumi.jpg", {fit: box_fit.BoxFit.cover})}), new container.Container.new({color: new ui.Color.fromARGB(1, 88, 42, 114).withOpacity(1)}), new container.Container.new({padding: new edge_insets.EdgeInsets.all(16), width: 1 / 0, height: 1 / 0, child: new basic.Column.new({children: T.JSArrayOfWidget().of([new text.Text.new("Links", {style: new text_style.TextStyle.new({fontSize: 30, fontWeight: ui.FontWeight.bold, color: new ui.Color.fromARGB(255, 255, 255, 255)})}), new basic.SizedBox.new({height: 20}), new basic.Expanded.new({child: new scroll_view.ListView.builder({itemCount: links_Page.links[$length], itemBuilder: dart.fn((context, index) => new links_Page.LinkWidget.new({link: links_Page.links[$_get](index)}), T.BuildContextAndintToLinkWidget())})})])})})])})});
     }
     static ['_#new#tearOff']() {
       return new links_Page.LinkPageState.new();
@@ -1264,152 +1314,46 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
   dart.setLibraryUri(links_Page.LinkPageState, I[10]);
-  var titulo$0 = dart.privateName(links_Page, "Link.titulo");
-  var img$0 = dart.privateName(links_Page, "Link.img");
-  var url$ = dart.privateName(links_Page, "Link.url");
-  var _launchURL = dart.privateName(links_Page, "_launchURL");
-  links_Page.Link = class Link extends framework.StatelessWidget {
-    get titulo() {
-      return this[titulo$0];
+  var link$1 = dart.privateName(links_Page, "LinkWidget.link");
+  links_Page.LinkWidget = class LinkWidget extends framework.StatelessWidget {
+    get link() {
+      return this[link$1];
     }
-    set titulo(value) {
-      super.titulo = value;
-    }
-    get img() {
-      return this[img$0];
-    }
-    set img(value) {
-      super.img = value;
-    }
-    get url() {
-      return this[url$];
-    }
-    set url(value) {
-      super.url = value;
+    set link(value) {
+      super.link = value;
     }
     static ['_#new#tearOff'](opts) {
-      let titulo = opts && 'titulo' in opts ? opts.titulo : null;
-      let img = opts && 'img' in opts ? opts.img : null;
-      let url = opts && 'url' in opts ? opts.url : null;
-      return new links_Page.Link.new({titulo: titulo, img: img, url: url});
-    }
-    [_launchURL](url) {
-      return async.async(dart.void, function* _launchURL() {
-        let uri = core.Uri.parse(url);
-        if (!(yield url_launcher_uri.launchUrl(uri, {mode: types$.LaunchMode.externalApplication}))) {
-          dart.throw("Cannot launch " + url);
-        }
-      });
+      let link = opts && 'link' in opts ? opts.link : null;
+      return new links_Page.LinkWidget.new({link: link});
     }
     build(context) {
-      return new basic.Column.new({children: T.JSArrayOfWidget().of([new container.Container.new({height: 20}), new container.Container.new({width: 400, child: new elevated_button.ElevatedButton.new({style: elevated_button.ElevatedButton.styleFrom({minimumSize: new ui.Size.new(400, 60)}), onPressed: dart.fn(() => async.async(dart.void, (function*() {
-                this[_launchURL](this.url);
-              }).bind(this)), T.VoidToFutureOfvoid()), child: new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.center, children: T.JSArrayOfWidget().of([new image.Image.asset(this.img, {width: 30, height: 30}), new basic.SizedBox.new({width: 10}), new text.Text.new(this.titulo, {style: new text_style.TextStyle.new({fontSize: 20, color: new ui.Color.fromARGB(255, 241, 203, 252)})})])})})})])});
+      return new basic.Column.new({children: T.JSArrayOfWidget().of([new container.Container.new({height: 20}), new container.Container.new({width: 400, child: new elevated_button.ElevatedButton.new({style: elevated_button.ElevatedButton.styleFrom({minimumSize: new ui.Size.new(400, 60), shape: new rounded_rectangle_border.RoundedRectangleBorder.new({borderRadius: new border_radius.BorderRadius.circular(30)})}), onPressed: dart.fn(() => {
+                this.link.navegar(context);
+              }, T.VoidTovoid()), child: new basic.Row.new({mainAxisAlignment: flex.MainAxisAlignment.center, children: T.JSArrayOfWidget().of([new image.Image.asset(this.link.img, {width: 30, height: 30}), new basic.SizedBox.new({width: 10}), new text.Text.new(this.link.titulo, {style: new text_style.TextStyle.new({fontSize: 20, color: new ui.Color.fromARGB(255, 241, 203, 252)})})])})})})])});
     }
   };
-  (links_Page.Link.new = function(opts) {
-    let titulo = opts && 'titulo' in opts ? opts.titulo : null;
-    let img = opts && 'img' in opts ? opts.img : null;
-    let url = opts && 'url' in opts ? opts.url : null;
-    this[titulo$0] = titulo;
-    this[img$0] = img;
-    this[url$] = url;
-    links_Page.Link.__proto__.new.call(this);
+  (links_Page.LinkWidget.new = function(opts) {
+    let link = opts && 'link' in opts ? opts.link : null;
+    this[link$1] = link;
+    links_Page.LinkWidget.__proto__.new.call(this);
     ;
-  }).prototype = links_Page.Link.prototype;
-  dart.addTypeTests(links_Page.Link);
-  dart.addTypeCaches(links_Page.Link);
-  dart.setMethodSignature(links_Page.Link, () => ({
-    __proto__: dart.getMethods(links_Page.Link.__proto__),
-    [_launchURL]: dart.fnType(async.Future$(dart.void), [core.String]),
+  }).prototype = links_Page.LinkWidget.prototype;
+  dart.addTypeTests(links_Page.LinkWidget);
+  dart.addTypeCaches(links_Page.LinkWidget);
+  dart.setMethodSignature(links_Page.LinkWidget, () => ({
+    __proto__: dart.getMethods(links_Page.LinkWidget.__proto__),
     build: dart.fnType(framework.Widget, [framework.BuildContext])
   }));
-  dart.setLibraryUri(links_Page.Link, I[10]);
-  dart.setFieldSignature(links_Page.Link, () => ({
-    __proto__: dart.getFields(links_Page.Link.__proto__),
-    titulo: dart.finalFieldType(core.String),
-    img: dart.finalFieldType(core.String),
-    url: dart.finalFieldType(core.String)
-  }));
-  var __ClasseLink_titulo = dart.privateName(links_Page, "_#ClasseLink#titulo");
-  var __ClasseLink_img = dart.privateName(links_Page, "_#ClasseLink#img");
-  var __ClasseLink_url = dart.privateName(links_Page, "_#ClasseLink#url");
-  links_Page.ClasseLink = class ClasseLink extends core.Object {
-    get titulo() {
-      let t0;
-      t0 = this[__ClasseLink_titulo];
-      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("titulo")) : t0;
-    }
-    set titulo(titulo$35param) {
-      this[__ClasseLink_titulo] = titulo$35param;
-    }
-    get img() {
-      let t0;
-      t0 = this[__ClasseLink_img];
-      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("img")) : t0;
-    }
-    set img(img$35param) {
-      this[__ClasseLink_img] = img$35param;
-    }
-    get url() {
-      let t0;
-      t0 = this[__ClasseLink_url];
-      return t0 == null ? dart.throw(new _internal.LateError.fieldNI("url")) : t0;
-    }
-    set url(url$35param) {
-      this[__ClasseLink_url] = url$35param;
-    }
-    static ['_#new#tearOff'](titulo, img, url) {
-      return new links_Page.ClasseLink.new(titulo, img, url);
-    }
-  };
-  (links_Page.ClasseLink.new = function(titulo, img, url) {
-    this[__ClasseLink_titulo] = null;
-    this[__ClasseLink_img] = null;
-    this[__ClasseLink_url] = null;
-    this[__ClasseLink_titulo] = titulo;
-    this[__ClasseLink_img] = img;
-    this[__ClasseLink_url] = url;
-    ;
-  }).prototype = links_Page.ClasseLink.prototype;
-  dart.addTypeTests(links_Page.ClasseLink);
-  dart.addTypeCaches(links_Page.ClasseLink);
-  dart.setGetterSignature(links_Page.ClasseLink, () => ({
-    __proto__: dart.getGetters(links_Page.ClasseLink.__proto__),
-    titulo: core.String,
-    img: core.String,
-    url: core.String
-  }));
-  dart.setSetterSignature(links_Page.ClasseLink, () => ({
-    __proto__: dart.getSetters(links_Page.ClasseLink.__proto__),
-    titulo: core.String,
-    img: core.String,
-    url: core.String
-  }));
-  dart.setLibraryUri(links_Page.ClasseLink, I[10]);
-  dart.setFieldSignature(links_Page.ClasseLink, () => ({
-    __proto__: dart.getFields(links_Page.ClasseLink.__proto__),
-    [__ClasseLink_titulo]: dart.fieldType(dart.nullable(core.String)),
-    [__ClasseLink_img]: dart.fieldType(dart.nullable(core.String)),
-    [__ClasseLink_url]: dart.fieldType(dart.nullable(core.String))
+  dart.setLibraryUri(links_Page.LinkWidget, I[10]);
+  dart.setFieldSignature(links_Page.LinkWidget, () => ({
+    __proto__: dart.getFields(links_Page.LinkWidget.__proto__),
+    link: dart.finalFieldType(classes.Link)
   }));
   dart.defineLazy(links_Page, {
-    /*links_Page.link*/get link() {
-      return T.JSArrayOfClasseLink().of([links_Page.x, links_Page.instagram, links_Page.siteUnseen]);
+    /*links_Page.links*/get links() {
+      return T.JSArrayOfLink().of([new classes.Link.new({titulo: "X Ikumi Nakamura", img: "assets/img/x.png", url: "https://twitter.com/nakamura193?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor", tipo: true}), new classes.Link.new({titulo: "Instagram Unseen", img: "assets/img/instagram.png", url: "https://www.instagram.com/unseentokyo", tipo: true}), new classes.Link.new({titulo: "Site Unseen", img: "assets/img/unseen2.png", url: "https://www.unseen-tokyo.com/", tipo: true})]);
     },
-    set link(value) {},
-    /*links_Page.x*/get x() {
-      return new links_Page.ClasseLink.new("X Ikumi Nakamura", "assets/img/x.png", "https://twitter.com/nakamura193?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor");
-    },
-    set x(value) {},
-    /*links_Page.instagram*/get instagram() {
-      return new links_Page.ClasseLink.new("Instagram Unseen", "assets/img/instagram.png", "https://www.instagram.com/unseentokyo");
-    },
-    set instagram(value) {},
-    /*links_Page.siteUnseen*/get siteUnseen() {
-      return new links_Page.ClasseLink.new("Site Unseen", "assets/img/unseen2.png", "https://www.unseen-tokyo.com/");
-    },
-    set siteUnseen(value) {}
+    set links(value) {}
   }, false);
   var debugLabel$ = dart.privateName(link, "LinkTarget.debugLabel");
   link.LinkTarget = class LinkTarget extends core.Object {
@@ -1439,13 +1383,13 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   dart.setStaticFieldSignature(link.LinkTarget, () => ['defaultTarget', 'self', 'blank']);
   dart.defineLazy(link.LinkTarget, {
     /*link.LinkTarget.defaultTarget*/get defaultTarget() {
-      return C[11] || CT.C11;
+      return C[10] || CT.C10;
     },
     /*link.LinkTarget.self*/get self() {
-      return C[12] || CT.C12;
+      return C[11] || CT.C11;
     },
     /*link.LinkTarget.blank*/get blank() {
-      return C[13] || CT.C13;
+      return C[12] || CT.C12;
     }
   }, false);
   link.LinkInfo = class LinkInfo extends core.Object {};
@@ -1463,13 +1407,13 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   };
   dart.defineLazy(link, {
     /*link._codec*/get _codec() {
-      return C[14] || CT.C14;
+      return C[13] || CT.C13;
     }
   }, false);
-  var link$0 = dart.privateName(link$, "WebLinkDelegate.link");
+  var link$2 = dart.privateName(link$, "WebLinkDelegate.link");
   link$.WebLinkDelegate = class WebLinkDelegate extends framework.StatefulWidget {
     get link() {
-      return this[link$0];
+      return this[link$2];
     }
     set link(value) {
       super.link = value;
@@ -1484,7 +1428,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   };
   (link$.WebLinkDelegate.new = function(link, opts) {
     let key = opts && 'key' in opts ? opts.key : null;
-    this[link$0] = link;
+    this[link$2] = link;
     link$.WebLinkDelegate.__proto__.new.call(this, {key: key});
     ;
   }).prototype = link$.WebLinkDelegate.prototype;
@@ -1536,7 +1480,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
                   t0.setTarget(this.widget.link.target);
                   return t0;
                 })();
-              }, T.PlatformViewCreationParamsToLinkViewController()), surfaceFactory: dart.fn((context, controller) => new platform_view.PlatformViewSurface.new({controller: controller, gestureRecognizers: C[15] || CT.C15, hitTestBehavior: platform_view$.PlatformViewHitTestBehavior.transparent}), T.BuildContextAndPlatformViewControllerToPlatformViewSurface())})})])});
+              }, T.PlatformViewCreationParamsToLinkViewController()), surfaceFactory: dart.fn((context, controller) => new platform_view.PlatformViewSurface.new({controller: controller, gestureRecognizers: C[14] || CT.C14, hitTestBehavior: platform_view$.PlatformViewHitTestBehavior.transparent}), T.BuildContextAndPlatformViewControllerToPlatformViewSurface())})})])});
     }
     static ['_#new#tearOff']() {
       return new link$.WebLinkDelegateState.new();
@@ -1682,12 +1626,12 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     }
     [_getHtmlTarget](target) {
       switch (target) {
+        case C[10] || CT.C10:
         case C[11] || CT.C11:
-        case C[12] || CT.C12:
           {
             return "_self";
           }
-        case C[13] || CT.C13:
+        case C[12] || CT.C12:
           {
             return "_blank";
           }
@@ -1718,7 +1662,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     this[_uri] = null;
     this[viewId$] = viewId;
     if (link$.LinkViewController._instances[$isEmpty]) {
-      link$.LinkViewController._clickSubscription = html.window[$onClick].listen(C[16] || CT.C16);
+      link$.LinkViewController._clickSubscription = html.window[$onClick].listen(C[15] || CT.C15);
     }
     link$.LinkViewController._instances[$_set](this.viewId, this);
   }).prototype = link$.LinkViewController.prototype;
@@ -1794,7 +1738,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   };
   dart.copyProperties(link$, {
     get linkViewFactory() {
-      return C[17] || CT.C17;
+      return C[16] || CT.C16;
     }
   });
   dart.defineLazy(link$, {
@@ -1805,6 +1749,330 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       return "__url_launcher::link::viewId";
     }
   }, false);
+  var nome$2 = dart.privateName(classes, "Jogo.nome");
+  var img$1 = dart.privateName(classes, "Jogo.img");
+  var descricao$2 = dart.privateName(classes, "Jogo.descricao");
+  var ano$0 = dart.privateName(classes, "Jogo.ano");
+  var participacao$0 = dart.privateName(classes, "Jogo.participacao");
+  classes.Jogo = class Jogo extends core.Object {
+    get nome() {
+      return this[nome$2];
+    }
+    set nome(value) {
+      super.nome = value;
+    }
+    get img() {
+      return this[img$1];
+    }
+    set img(value) {
+      super.img = value;
+    }
+    get descricao() {
+      return this[descricao$2];
+    }
+    set descricao(value) {
+      super.descricao = value;
+    }
+    get ano() {
+      return this[ano$0];
+    }
+    set ano(value) {
+      super.ano = value;
+    }
+    get participacao() {
+      return this[participacao$0];
+    }
+    set participacao(value) {
+      super.participacao = value;
+    }
+    static ['_#new#tearOff'](opts) {
+      let nome = opts && 'nome' in opts ? opts.nome : null;
+      let img = opts && 'img' in opts ? opts.img : null;
+      let descricao = opts && 'descricao' in opts ? opts.descricao : null;
+      let ano = opts && 'ano' in opts ? opts.ano : null;
+      let participacao = opts && 'participacao' in opts ? opts.participacao : null;
+      return new classes.Jogo.new({nome: nome, img: img, descricao: descricao, ano: ano, participacao: participacao});
+    }
+  };
+  (classes.Jogo.new = function(opts) {
+    let nome = opts && 'nome' in opts ? opts.nome : null;
+    let img = opts && 'img' in opts ? opts.img : null;
+    let descricao = opts && 'descricao' in opts ? opts.descricao : null;
+    let ano = opts && 'ano' in opts ? opts.ano : null;
+    let participacao = opts && 'participacao' in opts ? opts.participacao : null;
+    this[nome$2] = nome;
+    this[img$1] = img;
+    this[descricao$2] = descricao;
+    this[ano$0] = ano;
+    this[participacao$0] = participacao;
+    ;
+  }).prototype = classes.Jogo.prototype;
+  dart.addTypeTests(classes.Jogo);
+  dart.addTypeCaches(classes.Jogo);
+  dart.setLibraryUri(classes.Jogo, I[14]);
+  dart.setFieldSignature(classes.Jogo, () => ({
+    __proto__: dart.getFields(classes.Jogo.__proto__),
+    nome: dart.finalFieldType(core.String),
+    img: dart.finalFieldType(core.String),
+    descricao: dart.finalFieldType(core.String),
+    ano: dart.finalFieldType(core.int),
+    participacao: dart.finalFieldType(core.String)
+  }));
+  var nome$3 = dart.privateName(classes, "Artista.nome");
+  var nascimento$0 = dart.privateName(classes, "Artista.nascimento");
+  var img$2 = dart.privateName(classes, "Artista.img");
+  var descricao$3 = dart.privateName(classes, "Artista.descricao");
+  var titulo$0 = dart.privateName(classes, "Artista.titulo");
+  var img2$0 = dart.privateName(classes, "Artista.img2");
+  var descricao2$0 = dart.privateName(classes, "Artista.descricao2");
+  var titulo2$0 = dart.privateName(classes, "Artista.titulo2");
+  classes.Artista = class Artista extends core.Object {
+    get nome() {
+      return this[nome$3];
+    }
+    set nome(value) {
+      super.nome = value;
+    }
+    get nascimento() {
+      return this[nascimento$0];
+    }
+    set nascimento(value) {
+      super.nascimento = value;
+    }
+    get img() {
+      return this[img$2];
+    }
+    set img(value) {
+      super.img = value;
+    }
+    get descricao() {
+      return this[descricao$3];
+    }
+    set descricao(value) {
+      super.descricao = value;
+    }
+    get titulo() {
+      return this[titulo$0];
+    }
+    set titulo(value) {
+      super.titulo = value;
+    }
+    get img2() {
+      return this[img2$0];
+    }
+    set img2(value) {
+      super.img2 = value;
+    }
+    get descricao2() {
+      return this[descricao2$0];
+    }
+    set descricao2(value) {
+      super.descricao2 = value;
+    }
+    get titulo2() {
+      return this[titulo2$0];
+    }
+    set titulo2(value) {
+      super.titulo2 = value;
+    }
+    static ['_#new#tearOff'](opts) {
+      let nome = opts && 'nome' in opts ? opts.nome : null;
+      let img = opts && 'img' in opts ? opts.img : null;
+      let descricao = opts && 'descricao' in opts ? opts.descricao : null;
+      let titulo = opts && 'titulo' in opts ? opts.titulo : null;
+      let img2 = opts && 'img2' in opts ? opts.img2 : null;
+      let descricao2 = opts && 'descricao2' in opts ? opts.descricao2 : null;
+      let titulo2 = opts && 'titulo2' in opts ? opts.titulo2 : null;
+      let nascimento = opts && 'nascimento' in opts ? opts.nascimento : null;
+      return new classes.Artista.new({nome: nome, img: img, descricao: descricao, titulo: titulo, img2: img2, descricao2: descricao2, titulo2: titulo2, nascimento: nascimento});
+    }
+  };
+  (classes.Artista.new = function(opts) {
+    let nome = opts && 'nome' in opts ? opts.nome : null;
+    let img = opts && 'img' in opts ? opts.img : null;
+    let descricao = opts && 'descricao' in opts ? opts.descricao : null;
+    let titulo = opts && 'titulo' in opts ? opts.titulo : null;
+    let img2 = opts && 'img2' in opts ? opts.img2 : null;
+    let descricao2 = opts && 'descricao2' in opts ? opts.descricao2 : null;
+    let titulo2 = opts && 'titulo2' in opts ? opts.titulo2 : null;
+    let nascimento = opts && 'nascimento' in opts ? opts.nascimento : null;
+    this[nome$3] = nome;
+    this[img$2] = img;
+    this[descricao$3] = descricao;
+    this[titulo$0] = titulo;
+    this[img2$0] = img2;
+    this[descricao2$0] = descricao2;
+    this[titulo2$0] = titulo2;
+    this[nascimento$0] = nascimento;
+    ;
+  }).prototype = classes.Artista.prototype;
+  dart.addTypeTests(classes.Artista);
+  dart.addTypeCaches(classes.Artista);
+  dart.setLibraryUri(classes.Artista, I[14]);
+  dart.setFieldSignature(classes.Artista, () => ({
+    __proto__: dart.getFields(classes.Artista.__proto__),
+    nome: dart.finalFieldType(core.String),
+    nascimento: dart.finalFieldType(core.String),
+    img: dart.finalFieldType(core.String),
+    descricao: dart.finalFieldType(core.String),
+    titulo: dart.finalFieldType(core.String),
+    img2: dart.finalFieldType(core.String),
+    descricao2: dart.finalFieldType(core.String),
+    titulo2: dart.finalFieldType(core.String)
+  }));
+  var nome$4 = dart.privateName(classes, "Empresa.nome");
+  var fundacao$0 = dart.privateName(classes, "Empresa.fundacao");
+  var logo$0 = dart.privateName(classes, "Empresa.logo");
+  var descricao$4 = dart.privateName(classes, "Empresa.descricao");
+  var jogo$0 = dart.privateName(classes, "Empresa.jogo");
+  classes.Empresa = class Empresa extends core.Object {
+    get nome() {
+      return this[nome$4];
+    }
+    set nome(value) {
+      super.nome = value;
+    }
+    get fundacao() {
+      return this[fundacao$0];
+    }
+    set fundacao(value) {
+      super.fundacao = value;
+    }
+    get logo() {
+      return this[logo$0];
+    }
+    set logo(value) {
+      super.logo = value;
+    }
+    get descricao() {
+      return this[descricao$4];
+    }
+    set descricao(value) {
+      super.descricao = value;
+    }
+    get jogo() {
+      return this[jogo$0];
+    }
+    set jogo(value) {
+      super.jogo = value;
+    }
+    static ['_#new#tearOff'](opts) {
+      let nome = opts && 'nome' in opts ? opts.nome : null;
+      let fundacao = opts && 'fundacao' in opts ? opts.fundacao : null;
+      let logo = opts && 'logo' in opts ? opts.logo : null;
+      let descricao = opts && 'descricao' in opts ? opts.descricao : null;
+      let jogo = opts && 'jogo' in opts ? opts.jogo : null;
+      return new classes.Empresa.new({nome: nome, fundacao: fundacao, logo: logo, descricao: descricao, jogo: jogo});
+    }
+  };
+  (classes.Empresa.new = function(opts) {
+    let nome = opts && 'nome' in opts ? opts.nome : null;
+    let fundacao = opts && 'fundacao' in opts ? opts.fundacao : null;
+    let logo = opts && 'logo' in opts ? opts.logo : null;
+    let descricao = opts && 'descricao' in opts ? opts.descricao : null;
+    let jogo = opts && 'jogo' in opts ? opts.jogo : null;
+    this[nome$4] = nome;
+    this[fundacao$0] = fundacao;
+    this[logo$0] = logo;
+    this[descricao$4] = descricao;
+    this[jogo$0] = jogo;
+    ;
+  }).prototype = classes.Empresa.prototype;
+  dart.addTypeTests(classes.Empresa);
+  dart.addTypeCaches(classes.Empresa);
+  dart.setLibraryUri(classes.Empresa, I[14]);
+  dart.setFieldSignature(classes.Empresa, () => ({
+    __proto__: dart.getFields(classes.Empresa.__proto__),
+    nome: dart.finalFieldType(core.String),
+    fundacao: dart.finalFieldType(core.int),
+    logo: dart.finalFieldType(core.String),
+    descricao: dart.finalFieldType(core.String),
+    jogo: dart.finalFieldType(core.String)
+  }));
+  var titulo$1 = dart.privateName(classes, "Link.titulo");
+  var img$3 = dart.privateName(classes, "Link.img");
+  var url$ = dart.privateName(classes, "Link.url");
+  var tipo$0 = dart.privateName(classes, "Link.tipo");
+  classes.Link = class Link extends core.Object {
+    get titulo() {
+      return this[titulo$1];
+    }
+    set titulo(value) {
+      super.titulo = value;
+    }
+    get img() {
+      return this[img$3];
+    }
+    set img(value) {
+      super.img = value;
+    }
+    get url() {
+      return this[url$];
+    }
+    set url(value) {
+      super.url = value;
+    }
+    get tipo() {
+      return this[tipo$0];
+    }
+    set tipo(value) {
+      super.tipo = value;
+    }
+    static ['_#new#tearOff'](opts) {
+      let titulo = opts && 'titulo' in opts ? opts.titulo : null;
+      let img = opts && 'img' in opts ? opts.img : null;
+      let url = opts && 'url' in opts ? opts.url : null;
+      let tipo = opts && 'tipo' in opts ? opts.tipo : null;
+      return new classes.Link.new({titulo: titulo, img: img, url: url, tipo: tipo});
+    }
+    IrParaSite() {
+      return async.async(dart.void, (function* IrParaSite() {
+        let uri = core.Uri.parse(this.url);
+        if (!(yield url_launcher_uri.launchUrl(uri, {mode: types$.LaunchMode.externalApplication}))) {
+          dart.throw("Cannot launch " + this.url);
+        }
+      }).bind(this));
+    }
+    IrParaPagina(context) {
+      navigator.Navigator.of(context).pushNamed(T.ObjectN(), this.url);
+    }
+    navegar(context) {
+      return async.async(dart.void, (function* navegar() {
+        if (this.tipo) {
+          yield this.IrParaSite();
+        } else {
+          this.IrParaPagina(context);
+        }
+      }).bind(this));
+    }
+  };
+  (classes.Link.new = function(opts) {
+    let titulo = opts && 'titulo' in opts ? opts.titulo : null;
+    let img = opts && 'img' in opts ? opts.img : null;
+    let url = opts && 'url' in opts ? opts.url : null;
+    let tipo = opts && 'tipo' in opts ? opts.tipo : null;
+    this[titulo$1] = titulo;
+    this[img$3] = img;
+    this[url$] = url;
+    this[tipo$0] = tipo;
+    ;
+  }).prototype = classes.Link.prototype;
+  dart.addTypeTests(classes.Link);
+  dart.addTypeCaches(classes.Link);
+  dart.setMethodSignature(classes.Link, () => ({
+    __proto__: dart.getMethods(classes.Link.__proto__),
+    IrParaSite: dart.fnType(async.Future$(dart.void), []),
+    IrParaPagina: dart.fnType(dart.void, [framework.BuildContext]),
+    navegar: dart.fnType(async.Future$(dart.void), [framework.BuildContext])
+  }));
+  dart.setLibraryUri(classes.Link, I[14]);
+  dart.setFieldSignature(classes.Link, () => ({
+    __proto__: dart.getFields(classes.Link.__proto__),
+    titulo: dart.finalFieldType(core.String),
+    img: dart.finalFieldType(core.String),
+    url: dart.finalFieldType(core.String),
+    tipo: dart.finalFieldType(core.bool)
+  }));
   var _name = dart.privateName(core, "_name");
   var _enumToString = dart.privateName(core, "_enumToString");
   var _Enum__name = dart.privateName(core, "_Enum._name");
@@ -1824,26 +2092,26 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(types.PreferredLaunchMode.__proto__),
     [_enumToString]: dart.fnType(core.String, [])
   }));
-  dart.setLibraryUri(types.PreferredLaunchMode, I[14]);
+  dart.setLibraryUri(types.PreferredLaunchMode, I[15]);
   dart.setStaticFieldSignature(types.PreferredLaunchMode, () => ['values', 'platformDefault', 'inAppWebView', 'inAppBrowserView', 'externalApplication', 'externalNonBrowserApplication']);
   dart.defineLazy(types.PreferredLaunchMode, {
     /*types.PreferredLaunchMode.values*/get values() {
-      return C[18] || CT.C18;
+      return C[17] || CT.C17;
     },
     /*types.PreferredLaunchMode.platformDefault*/get platformDefault() {
-      return C[19] || CT.C19;
+      return C[18] || CT.C18;
     },
     /*types.PreferredLaunchMode.inAppWebView*/get inAppWebView() {
-      return C[20] || CT.C20;
+      return C[19] || CT.C19;
     },
     /*types.PreferredLaunchMode.inAppBrowserView*/get inAppBrowserView() {
-      return C[21] || CT.C21;
+      return C[20] || CT.C20;
     },
     /*types.PreferredLaunchMode.externalApplication*/get externalApplication() {
-      return C[22] || CT.C22;
+      return C[21] || CT.C21;
     },
     /*types.PreferredLaunchMode.externalNonBrowserApplication*/get externalNonBrowserApplication() {
-      return C[23] || CT.C23;
+      return C[22] || CT.C22;
     }
   }, false);
   var enableJavaScript$ = dart.privateName(types, "InAppWebViewConfiguration.enableJavaScript");
@@ -1886,7 +2154,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   }).prototype = types.InAppWebViewConfiguration.prototype;
   dart.addTypeTests(types.InAppWebViewConfiguration);
   dart.addTypeCaches(types.InAppWebViewConfiguration);
-  dart.setLibraryUri(types.InAppWebViewConfiguration, I[14]);
+  dart.setLibraryUri(types.InAppWebViewConfiguration, I[15]);
   dart.setFieldSignature(types.InAppWebViewConfiguration, () => ({
     __proto__: dart.getFields(types.InAppWebViewConfiguration.__proto__),
     enableJavaScript: dart.finalFieldType(core.bool),
@@ -1916,15 +2184,15 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       super.webOnlyWindowName = value;
     }
     static ['_#new#tearOff'](opts) {
-      let mode = opts && 'mode' in opts ? opts.mode : C[19] || CT.C19;
-      let webViewConfiguration = opts && 'webViewConfiguration' in opts ? opts.webViewConfiguration : C[24] || CT.C24;
+      let mode = opts && 'mode' in opts ? opts.mode : C[18] || CT.C18;
+      let webViewConfiguration = opts && 'webViewConfiguration' in opts ? opts.webViewConfiguration : C[23] || CT.C23;
       let webOnlyWindowName = opts && 'webOnlyWindowName' in opts ? opts.webOnlyWindowName : null;
       return new types.LaunchOptions.new({mode: mode, webViewConfiguration: webViewConfiguration, webOnlyWindowName: webOnlyWindowName});
     }
   };
   (types.LaunchOptions.new = function(opts) {
-    let mode = opts && 'mode' in opts ? opts.mode : C[19] || CT.C19;
-    let webViewConfiguration = opts && 'webViewConfiguration' in opts ? opts.webViewConfiguration : C[24] || CT.C24;
+    let mode = opts && 'mode' in opts ? opts.mode : C[18] || CT.C18;
+    let webViewConfiguration = opts && 'webViewConfiguration' in opts ? opts.webViewConfiguration : C[23] || CT.C23;
     let webOnlyWindowName = opts && 'webOnlyWindowName' in opts ? opts.webOnlyWindowName : null;
     this[mode$] = mode;
     this[webViewConfiguration$] = webViewConfiguration;
@@ -1933,13 +2201,78 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   }).prototype = types.LaunchOptions.prototype;
   dart.addTypeTests(types.LaunchOptions);
   dart.addTypeCaches(types.LaunchOptions);
-  dart.setLibraryUri(types.LaunchOptions, I[14]);
+  dart.setLibraryUri(types.LaunchOptions, I[15]);
   dart.setFieldSignature(types.LaunchOptions, () => ({
     __proto__: dart.getFields(types.LaunchOptions.__proto__),
     mode: dart.finalFieldType(types.PreferredLaunchMode),
     webViewConfiguration: dart.finalFieldType(types.InAppWebViewConfiguration),
     webOnlyWindowName: dart.finalFieldType(dart.nullable(core.String))
   }));
+  plugin_platform_interface.MockPlatformInterfaceMixin = class MockPlatformInterfaceMixin extends core.Object {};
+  (plugin_platform_interface.MockPlatformInterfaceMixin.new = function() {
+    ;
+  }).prototype = plugin_platform_interface.MockPlatformInterfaceMixin.prototype;
+  dart.addTypeTests(plugin_platform_interface.MockPlatformInterfaceMixin);
+  dart.addTypeCaches(plugin_platform_interface.MockPlatformInterfaceMixin);
+  plugin_platform_interface.MockPlatformInterfaceMixin[dart.implements] = () => [plugin_platform_interface.PlatformInterface];
+  dart.setLibraryUri(plugin_platform_interface.MockPlatformInterfaceMixin, I[2]);
+  var linkDelegate = dart.privateName(method_channel_url_launcher, "MethodChannelUrlLauncher.linkDelegate");
+  method_channel_url_launcher.MethodChannelUrlLauncher = class MethodChannelUrlLauncher extends url_launcher_platform.UrlLauncherPlatform {
+    get linkDelegate() {
+      return this[linkDelegate];
+    }
+    set linkDelegate(value) {
+      super.linkDelegate = value;
+    }
+    canLaunch(url) {
+      return method_channel_url_launcher._channel.invokeMethod(core.bool, "canLaunch", new (T.IdentityMapOfString$Object()).from(["url", url])).then(core.bool, dart.fn(value => {
+        let t2;
+        t2 = value;
+        return t2 == null ? false : t2;
+      }, T.boolNTobool()));
+    }
+    closeWebView() {
+      return method_channel_url_launcher._channel.invokeMethod(dart.void, "closeWebView");
+    }
+    launch(url, opts) {
+      let useSafariVC = opts && 'useSafariVC' in opts ? opts.useSafariVC : null;
+      let useWebView = opts && 'useWebView' in opts ? opts.useWebView : null;
+      let enableJavaScript = opts && 'enableJavaScript' in opts ? opts.enableJavaScript : null;
+      let enableDomStorage = opts && 'enableDomStorage' in opts ? opts.enableDomStorage : null;
+      let universalLinksOnly = opts && 'universalLinksOnly' in opts ? opts.universalLinksOnly : null;
+      let headers = opts && 'headers' in opts ? opts.headers : null;
+      let webOnlyWindowName = opts && 'webOnlyWindowName' in opts ? opts.webOnlyWindowName : null;
+      return method_channel_url_launcher._channel.invokeMethod(core.bool, "launch", new (T.IdentityMapOfString$Object()).from(["url", url, "useSafariVC", useSafariVC, "useWebView", useWebView, "enableJavaScript", enableJavaScript, "enableDomStorage", enableDomStorage, "universalLinksOnly", universalLinksOnly, "headers", headers])).then(core.bool, dart.fn(value => {
+        let t2;
+        t2 = value;
+        return t2 == null ? false : t2;
+      }, T.boolNTobool()));
+    }
+    static ['_#new#tearOff']() {
+      return new method_channel_url_launcher.MethodChannelUrlLauncher.new();
+    }
+  };
+  (method_channel_url_launcher.MethodChannelUrlLauncher.new = function() {
+    this[linkDelegate] = null;
+    method_channel_url_launcher.MethodChannelUrlLauncher.__proto__.new.call(this);
+    ;
+  }).prototype = method_channel_url_launcher.MethodChannelUrlLauncher.prototype;
+  dart.addTypeTests(method_channel_url_launcher.MethodChannelUrlLauncher);
+  dart.addTypeCaches(method_channel_url_launcher.MethodChannelUrlLauncher);
+  dart.setLibraryUri(method_channel_url_launcher.MethodChannelUrlLauncher, I[16]);
+  dart.setFieldSignature(method_channel_url_launcher.MethodChannelUrlLauncher, () => ({
+    __proto__: dart.getFields(method_channel_url_launcher.MethodChannelUrlLauncher.__proto__),
+    linkDelegate: dart.finalFieldType(dart.nullable(dart.fnType(framework.Widget, [link.LinkInfo])))
+  }));
+  var MethodChannel__binaryMessenger = dart.privateName(platform_channel, "MethodChannel._binaryMessenger");
+  var StandardMethodCodec_messageCodec = dart.privateName(message_codecs, "StandardMethodCodec.messageCodec");
+  var MethodChannel_codec = dart.privateName(platform_channel, "MethodChannel.codec");
+  var MethodChannel_name = dart.privateName(platform_channel, "MethodChannel.name");
+  dart.defineLazy(method_channel_url_launcher, {
+    /*method_channel_url_launcher._channel*/get _channel() {
+      return C[24] || CT.C24;
+    }
+  }, false);
   legacy_api.launch = function launch(urlString, opts) {
     let forceSafariVC = opts && 'forceSafariVC' in opts ? opts.forceSafariVC : null;
     let forceWebView = opts && 'forceWebView' in opts ? opts.forceWebView : false;
@@ -1997,23 +2330,23 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     __proto__: dart.getMethods(types$.LaunchMode.__proto__),
     [_enumToString]: dart.fnType(core.String, [])
   }));
-  dart.setLibraryUri(types$.LaunchMode, I[15]);
+  dart.setLibraryUri(types$.LaunchMode, I[17]);
   dart.setStaticFieldSignature(types$.LaunchMode, () => ['values', 'platformDefault', 'inAppWebView', 'externalApplication', 'externalNonBrowserApplication']);
   dart.defineLazy(types$.LaunchMode, {
     /*types$.LaunchMode.values*/get values() {
-      return C[25] || CT.C25;
-    },
-    /*types$.LaunchMode.platformDefault*/get platformDefault() {
-      return C[26] || CT.C26;
-    },
-    /*types$.LaunchMode.inAppWebView*/get inAppWebView() {
       return C[27] || CT.C27;
     },
-    /*types$.LaunchMode.externalApplication*/get externalApplication() {
+    /*types$.LaunchMode.platformDefault*/get platformDefault() {
       return C[28] || CT.C28;
     },
-    /*types$.LaunchMode.externalNonBrowserApplication*/get externalNonBrowserApplication() {
+    /*types$.LaunchMode.inAppWebView*/get inAppWebView() {
       return C[29] || CT.C29;
+    },
+    /*types$.LaunchMode.externalApplication*/get externalApplication() {
+      return C[30] || CT.C30;
+    },
+    /*types$.LaunchMode.externalNonBrowserApplication*/get externalNonBrowserApplication() {
+      return C[31] || CT.C31;
     }
   }, false);
   var enableJavaScript$0 = dart.privateName(types$, "WebViewConfiguration.enableJavaScript");
@@ -2056,7 +2389,7 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
   }).prototype = types$.WebViewConfiguration.prototype;
   dart.addTypeTests(types$.WebViewConfiguration);
   dart.addTypeCaches(types$.WebViewConfiguration);
-  dart.setLibraryUri(types$.WebViewConfiguration, I[15]);
+  dart.setLibraryUri(types$.WebViewConfiguration, I[17]);
   dart.setFieldSignature(types$.WebViewConfiguration, () => ({
     __proto__: dart.getFields(types$.WebViewConfiguration.__proto__),
     enableJavaScript: dart.finalFieldType(core.bool),
@@ -2064,8 +2397,8 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     headers: dart.finalFieldType(core.Map$(core.String, core.String))
   }));
   url_launcher_uri.launchUrl = function launchUrl(url, opts) {
-    let mode = opts && 'mode' in opts ? opts.mode : C[26] || CT.C26;
-    let webViewConfiguration = opts && 'webViewConfiguration' in opts ? opts.webViewConfiguration : C[30] || CT.C30;
+    let mode = opts && 'mode' in opts ? opts.mode : C[28] || CT.C28;
+    let webViewConfiguration = opts && 'webViewConfiguration' in opts ? opts.webViewConfiguration : C[32] || CT.C32;
     let webOnlyWindowName = opts && 'webOnlyWindowName' in opts ? opts.webOnlyWindowName : null;
     return async.async(core.bool, function* launchUrl() {
       if (mode === types$.LaunchMode.inAppWebView && !(url.scheme === "https" || url.scheme === "http")) {
@@ -2084,97 +2417,32 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
       return url_launcher_platform.UrlLauncherPlatform.instance.closeWebView();
     });
   };
-  plugin_platform_interface.MockPlatformInterfaceMixin = class MockPlatformInterfaceMixin extends core.Object {};
-  (plugin_platform_interface.MockPlatformInterfaceMixin.new = function() {
-    ;
-  }).prototype = plugin_platform_interface.MockPlatformInterfaceMixin.prototype;
-  dart.addTypeTests(plugin_platform_interface.MockPlatformInterfaceMixin);
-  dart.addTypeCaches(plugin_platform_interface.MockPlatformInterfaceMixin);
-  plugin_platform_interface.MockPlatformInterfaceMixin[dart.implements] = () => [plugin_platform_interface.PlatformInterface];
-  dart.setLibraryUri(plugin_platform_interface.MockPlatformInterfaceMixin, I[2]);
-  var linkDelegate = dart.privateName(method_channel_url_launcher, "MethodChannelUrlLauncher.linkDelegate");
-  method_channel_url_launcher.MethodChannelUrlLauncher = class MethodChannelUrlLauncher extends url_launcher_platform.UrlLauncherPlatform {
-    get linkDelegate() {
-      return this[linkDelegate];
-    }
-    set linkDelegate(value) {
-      super.linkDelegate = value;
-    }
-    canLaunch(url) {
-      return method_channel_url_launcher._channel.invokeMethod(core.bool, "canLaunch", new (T.IdentityMapOfString$Object()).from(["url", url])).then(core.bool, dart.fn(value => {
-        let t4;
-        t4 = value;
-        return t4 == null ? false : t4;
-      }, T.boolNTobool()));
-    }
-    closeWebView() {
-      return method_channel_url_launcher._channel.invokeMethod(dart.void, "closeWebView");
-    }
-    launch(url, opts) {
-      let useSafariVC = opts && 'useSafariVC' in opts ? opts.useSafariVC : null;
-      let useWebView = opts && 'useWebView' in opts ? opts.useWebView : null;
-      let enableJavaScript = opts && 'enableJavaScript' in opts ? opts.enableJavaScript : null;
-      let enableDomStorage = opts && 'enableDomStorage' in opts ? opts.enableDomStorage : null;
-      let universalLinksOnly = opts && 'universalLinksOnly' in opts ? opts.universalLinksOnly : null;
-      let headers = opts && 'headers' in opts ? opts.headers : null;
-      let webOnlyWindowName = opts && 'webOnlyWindowName' in opts ? opts.webOnlyWindowName : null;
-      return method_channel_url_launcher._channel.invokeMethod(core.bool, "launch", new (T.IdentityMapOfString$Object()).from(["url", url, "useSafariVC", useSafariVC, "useWebView", useWebView, "enableJavaScript", enableJavaScript, "enableDomStorage", enableDomStorage, "universalLinksOnly", universalLinksOnly, "headers", headers])).then(core.bool, dart.fn(value => {
-        let t4;
-        t4 = value;
-        return t4 == null ? false : t4;
-      }, T.boolNTobool()));
-    }
-    static ['_#new#tearOff']() {
-      return new method_channel_url_launcher.MethodChannelUrlLauncher.new();
-    }
-  };
-  (method_channel_url_launcher.MethodChannelUrlLauncher.new = function() {
-    this[linkDelegate] = null;
-    method_channel_url_launcher.MethodChannelUrlLauncher.__proto__.new.call(this);
-    ;
-  }).prototype = method_channel_url_launcher.MethodChannelUrlLauncher.prototype;
-  dart.addTypeTests(method_channel_url_launcher.MethodChannelUrlLauncher);
-  dart.addTypeCaches(method_channel_url_launcher.MethodChannelUrlLauncher);
-  dart.setLibraryUri(method_channel_url_launcher.MethodChannelUrlLauncher, I[16]);
-  dart.setFieldSignature(method_channel_url_launcher.MethodChannelUrlLauncher, () => ({
-    __proto__: dart.getFields(method_channel_url_launcher.MethodChannelUrlLauncher.__proto__),
-    linkDelegate: dart.finalFieldType(dart.nullable(dart.fnType(framework.Widget, [link.LinkInfo])))
-  }));
-  var MethodChannel__binaryMessenger = dart.privateName(platform_channel, "MethodChannel._binaryMessenger");
-  var StandardMethodCodec_messageCodec = dart.privateName(message_codecs, "StandardMethodCodec.messageCodec");
-  var MethodChannel_codec = dart.privateName(platform_channel, "MethodChannel.codec");
-  var MethodChannel_name = dart.privateName(platform_channel, "MethodChannel.name");
-  dart.defineLazy(method_channel_url_launcher, {
-    /*method_channel_url_launcher._channel*/get _channel() {
-      return C[31] || CT.C31;
-    }
-  }, false);
   type_conversion.convertConfiguration = function convertConfiguration(config) {
     return new types.InAppWebViewConfiguration.new({enableJavaScript: config.enableJavaScript, enableDomStorage: config.enableDomStorage, headers: config.headers});
   };
   type_conversion.convertLaunchMode = function convertLaunchMode(mode) {
     switch (mode) {
-      case C[26] || CT.C26:
+      case C[28] || CT.C28:
         {
           return types.PreferredLaunchMode.platformDefault;
         }
-      case C[27] || CT.C27:
+      case C[29] || CT.C29:
         {
           return types.PreferredLaunchMode.inAppWebView;
         }
-      case C[28] || CT.C28:
+      case C[30] || CT.C30:
         {
           return types.PreferredLaunchMode.externalApplication;
         }
-      case C[29] || CT.C29:
+      case C[31] || CT.C31:
         {
           return types.PreferredLaunchMode.externalNonBrowserApplication;
         }
     }
   };
   url_launcher_string$.launchUrlString = function launchUrlString(urlString, opts) {
-    let mode = opts && 'mode' in opts ? opts.mode : C[26] || CT.C26;
-    let webViewConfiguration = opts && 'webViewConfiguration' in opts ? opts.webViewConfiguration : C[30] || CT.C30;
+    let mode = opts && 'mode' in opts ? opts.mode : C[28] || CT.C28;
+    let webViewConfiguration = opts && 'webViewConfiguration' in opts ? opts.webViewConfiguration : C[32] || CT.C32;
     let webOnlyWindowName = opts && 'webOnlyWindowName' in opts ? opts.webOnlyWindowName : null;
     return async.async(core.bool, function* launchUrlString() {
       if (mode === types$.LaunchMode.inAppWebView && !(urlString[$startsWith]("https:") || urlString[$startsWith]("http:"))) {
@@ -2204,20 +2472,21 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     "package:url_launcher_platform_interface/url_launcher_platform_interface.dart": url_launcher_platform_interface,
     "package:url_launcher_web/src/link.dart": link$,
     "package:url_launcher_web/src/shims/dart_ui.dart": dart_ui,
-    "package:url_launcher/url_launcher.dart": url_launcher,
+    "file:///zapp/project/lib/classes.dart": classes,
     "package:url_launcher_platform_interface/src/types.dart": types,
     "package:url_launcher_platform_interface/src/url_launcher_platform.dart": url_launcher_platform,
     "package:url_launcher_web/src/shims/dart_ui_real.dart": dart_ui_real,
+    "package:url_launcher/url_launcher.dart": url_launcher,
+    "package:plugin_platform_interface/plugin_platform_interface.dart": plugin_platform_interface,
+    "package:url_launcher_platform_interface/method_channel_url_launcher.dart": method_channel_url_launcher,
     "package:url_launcher/src/legacy_api.dart": legacy_api,
     "package:url_launcher/src/types.dart": types$,
     "package:url_launcher/src/url_launcher_uri.dart": url_launcher_uri,
-    "package:plugin_platform_interface/plugin_platform_interface.dart": plugin_platform_interface,
-    "package:url_launcher_platform_interface/method_channel_url_launcher.dart": method_channel_url_launcher,
     "package:url_launcher/url_launcher_string.dart": url_launcher_string,
     "package:url_launcher/src/type_conversion.dart": type_conversion,
     "package:url_launcher/src/url_launcher_string.dart": url_launcher_string$
   }, {
-  }, '{"version":3,"sourceRoot":"","sources":["/zapp/project/.zapp_entry.dart","/zapp/project/lib/main.dart","/zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart","/zapp/project/lib/app_Widget.dart","/zapp/pub/.pub_cache/hosted/pub.dev/plugin_platform_interface-2.1.6/lib/plugin_platform_interface.dart","/zapp/pub/.pub_cache/hosted/pub.dev/url_launcher_platform_interface-2.2.0/lib/src/url_launcher_platform.dart","/zapp/pub/.pub_cache/hosted/pub.dev/url_launcher_web-2.0.19/lib/url_launcher_web.dart","/zapp/project/lib/app_controller.dart","/zapp/project/lib/empresas_page.dart","/zapp/project/lib/historia_page.dart","/zapp/project/lib/home_Page.dart","/zapp/project/lib/jogo_Page.dart","/zapp/project/lib/links_Page.dart","/zapp/pub/.pub_cache/hosted/pub.dev/url_launcher_platform_interface-2.2.0/lib/link.dart","/zapp/pub/.pub_cache/hosted/pub.dev/url_launcher_web-2.0.19/lib/src/link.dart","/zapp/pub/.pub_cache/hosted/pub.dev/url_launcher_platform_interface-2.2.0/lib/src/types.dart","/zapp/pub/.pub_cache/hosted/pub.dev/url_launcher-6.1.11/lib/src/legacy_api.dart","/zapp/pub/.pub_cache/hosted/pub.dev/url_launcher-6.1.11/lib/src/types.dart","/zapp/pub/.pub_cache/hosted/pub.dev/url_launcher-6.1.11/lib/src/url_launcher_uri.dart","/zapp/pub/.pub_cache/hosted/pub.dev/url_launcher_platform_interface-2.2.0/lib/method_channel_url_launcher.dart","/zapp/pub/.pub_cache/hosted/pub.dev/url_launcher-6.1.11/lib/src/type_conversion.dart","/zapp/pub/.pub_cache/hosted/pub.dev/url_launcher-6.1.11/lib/src/url_launcher_string.dart"],"names":[],"mappings":"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","file":"main.js"}');
+  }, '{"version":3,"sourceRoot":"","sources":["/zapp/project/.zapp_entry.dart","/zapp/project/lib/main.dart","/zapp/project/.dart_tool/dartpad/web_plugin_registrant.dart","/zapp/project/lib/app_Widget.dart","/zapp/pub/.pub_cache/hosted/pub.dev/plugin_platform_interface-2.1.6/lib/plugin_platform_interface.dart","/zapp/pub/.pub_cache/hosted/pub.dev/url_launcher_platform_interface-2.2.0/lib/src/url_launcher_platform.dart","/zapp/pub/.pub_cache/hosted/pub.dev/url_launcher_web-2.0.19/lib/url_launcher_web.dart","/zapp/project/lib/app_controller.dart","/zapp/project/lib/empresas_page.dart","/zapp/project/lib/historia_page.dart","/zapp/project/lib/home_Page.dart","/zapp/project/lib/jogo_Page.dart","/zapp/project/lib/links_Page.dart","/zapp/pub/.pub_cache/hosted/pub.dev/url_launcher_platform_interface-2.2.0/lib/link.dart","/zapp/pub/.pub_cache/hosted/pub.dev/url_launcher_web-2.0.19/lib/src/link.dart","/zapp/project/lib/classes.dart","/zapp/pub/.pub_cache/hosted/pub.dev/url_launcher_platform_interface-2.2.0/lib/src/types.dart","/zapp/pub/.pub_cache/hosted/pub.dev/url_launcher_platform_interface-2.2.0/lib/method_channel_url_launcher.dart","/zapp/pub/.pub_cache/hosted/pub.dev/url_launcher-6.1.11/lib/src/legacy_api.dart","/zapp/pub/.pub_cache/hosted/pub.dev/url_launcher-6.1.11/lib/src/types.dart","/zapp/pub/.pub_cache/hosted/pub.dev/url_launcher-6.1.11/lib/src/url_launcher_uri.dart","/zapp/pub/.pub_cache/hosted/pub.dev/url_launcher-6.1.11/lib/src/type_conversion.dart","/zapp/pub/.pub_cache/hosted/pub.dev/url_launcher-6.1.11/lib/src/url_launcher_string.dart"],"names":[],"mappings":"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","file":"main.js"}');
   // Exports:
   return {
     zapp__project__$46zapp_entry: $46zapp_entry,
@@ -2235,15 +2504,16 @@ define('zapp_user_main', ['dart_sdk', 'flutter_sdk'], (function load__zapp_user_
     url_launcher_platform_interface: url_launcher_platform_interface,
     src__link: link$,
     src__shims__dart_ui: dart_ui,
-    url_launcher: url_launcher,
+    zapp__project__lib__classes: classes,
     src__types: types,
     src__url_launcher_platform: url_launcher_platform,
     src__shims__dart_ui_real: dart_ui_real,
+    url_launcher: url_launcher,
+    plugin_platform_interface: plugin_platform_interface,
+    method_channel_url_launcher: method_channel_url_launcher,
     src__legacy_api: legacy_api,
     src__types: types$,
     src__url_launcher_uri: url_launcher_uri,
-    plugin_platform_interface: plugin_platform_interface,
-    method_channel_url_launcher: method_channel_url_launcher,
     url_launcher_string: url_launcher_string,
     src__type_conversion: type_conversion,
     src__url_launcher_string: url_launcher_string$
