@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'classes.dart';
 
 class JogoPage extends StatefulWidget {
@@ -16,8 +15,7 @@ class JogoPageState extends State<JogoPage> {
       appBar: AppBar(
         title: Row(
           children: [
-            Icon(Icons.sports_esports,
-                color: Color.fromARGB(255, 241, 203, 252)),
+            Icon(Icons.sports_esports, color: Color.fromARGB(255, 241, 203, 252)),
             SizedBox(width: 8),
             Text(
               'Jogos',
@@ -43,13 +41,7 @@ class JogoPageState extends State<JogoPage> {
           child: ListView.builder(
             itemCount: jogos.length,
             itemBuilder: (context, index) {
-              return JogoWidget(
-                nome: jogos[index].nome,
-                img: jogos[index].img,
-                descricao: jogos[index].descricao,
-                ano: jogos[index].ano,
-                participacao: jogos[index].participacao,
-              );
+              return JogoWidget(jogo: jogos[index]);
             },
           ),
         ),
@@ -59,19 +51,9 @@ class JogoPageState extends State<JogoPage> {
 }
 
 class JogoWidget extends StatelessWidget {
-  final String nome;
-  final String img;
-  final String descricao;
-  final int ano;
-  final String participacao;
+  final Jogo jogo;
 
-  JogoWidget({
-    required this.nome,
-    required this.img,
-    required this.descricao,
-    required this.ano,
-    required this.participacao,
-  });
+  JogoWidget({required this.jogo});
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +63,7 @@ class JogoWidget extends StatelessWidget {
         SizedBox(
           height: 700, // Altura fixa para o widget do jogo
           child: Image.asset(
-            img,
+            jogo.img,
             fit: BoxFit.cover,
           ),
         ),
@@ -96,7 +78,7 @@ class JogoWidget extends StatelessWidget {
               children: [
                 Center(
                   child: Text(
-                    nome,
+                    jogo.nome,
                     style: const TextStyle(
                       fontSize: 30,
                       fontWeight: FontWeight.bold,
@@ -106,13 +88,13 @@ class JogoWidget extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 TextTitulo(texto: "Lançamento:", tipo: true),
-                TextTitulo(texto: "$ano", tipo: false),
+                TextTitulo(texto: "${jogo.ano}", tipo: false),
                 const SizedBox(height: 10),
                 TextTitulo(texto: "Participação:", tipo: true),
-                TextTitulo(texto: participacao, tipo: false),
+                TextTitulo(texto: jogo.participacao, tipo: false),
                 const SizedBox(height: 10),
                 TextTitulo(texto: "Descrição:", tipo: true),
-                TextTitulo(texto: descricao, tipo: false),
+                TextTitulo(texto: jogo.descricao, tipo: false),
                 const SizedBox(height: 10), // Um espaço extra abaixo da descrição
               ],
             ),
@@ -122,8 +104,6 @@ class JogoWidget extends StatelessWidget {
     );
   }
 }
-
-
 
 class TextTitulo extends StatelessWidget {
   final String texto;
@@ -141,18 +121,12 @@ class TextTitulo extends StatelessWidget {
       style: TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.bold,
-        color: tipo
-            ? Color.fromARGB(255, 221, 199, 244)
-            : Color.fromARGB(255, 255, 255, 255),
-        height: 2, // Aumente este valor para mais espaçamento entre linhas
+        color: tipo ? Color.fromARGB(255, 221, 199, 244) : Color.fromARGB(255, 255, 255, 255),
+        height: 2, 
       ),
     );
   }
 }
-
-
-
-
 List<Jogo> jogos = [
   Jogo(
     nome: "Ōkami",
@@ -192,7 +166,7 @@ List<Jogo> jogos = [
   ),
   Jogo(
     nome: "Ultra Street Fighter IV",
-    img: "assets/img/ultra.jfif",
+    img: "assets/img/streetiv.jpg",
     descricao:
         "Ultra Street Fighter IV é uma atualização de um dos títulos mais amados da série, introduzindo novos personagens, cenários e mecânicas, mantendo o equilíbrio entre os lutadores existentes.",
     ano: 2014,
@@ -201,7 +175,7 @@ List<Jogo> jogos = [
   ),
   Jogo(
     nome: "The Evil Within",
-    img: "assets/img/evil.jpg",
+    img: "assets/img/theevil.png",
     descricao:
         "The Evil Within é um survival horror que segue o detetive Sebastian Castellanos, preso em um mundo distorcido e aterrorizante, povoado por criaturas grotescas. O design visual combina elementos de horror psicológico e ação intensa.",
     ano: 2014,
@@ -210,7 +184,7 @@ List<Jogo> jogos = [
   ),
   Jogo(
     nome: "Street Fighter V",
-    img: "assets/img/streetV.jpg",
+    img: "assets/img/streetv.png",
     descricao:
         "Street Fighter V traz novos e antigos personagens de volta à arena de luta, apresentando gráficos atualizados e um modo história expandido, garantindo que cada personagem tenha um design visual único.",
     ano: 2016,
@@ -219,7 +193,7 @@ List<Jogo> jogos = [
   ),
   Jogo(
     nome: "The Evil Within 2",
-    img: "assets/img/evil2.jpg",
+    img: "assets/img/theevil2.jpg",
     descricao:
         "No sequel The Evil Within 2, o jogo explora temas de perda e redenção em um mundo ainda mais distorcido. A atmosfera e a paleta de cores acentuam o horror psicológico da narrativa.",
     ano: 2017,
@@ -243,5 +217,12 @@ List<Jogo> jogos = [
     ano: 2022,
     participacao:
         "Como consultora de arte, Ikumi contribuiu para o design visual do jogo, assegurando uma estética coesa que reflete a intensidade da ação.",
+  ),
+  Jogo(
+    nome: "Kemuri",
+    img: "assets/img/unseenjogo.png", 
+    descricao: "Kemuri é um jogo envolvente de ação e aventura ambientado em um mundo místico envolto em névoa e sombras. O jogador assume o papel de um guerreiro que utiliza técnicas de fumaça para atravessar obstáculos e derrotar inimigos sombrios.",
+    ano: 2024,
+    participacao: "Ikumi Nakamura liderou a criação da arte conceitual e definiu o estilo visual único de Kemuri, com uma atmosfera misteriosa e detalhada.",
   ),
 ];

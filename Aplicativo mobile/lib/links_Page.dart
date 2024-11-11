@@ -31,8 +31,8 @@ class LinkPageState extends State<LinkPage> {
       body: Stack(children: [
         SizedBox(
             height: MediaQuery.of(context).size.height,
-            child: Image.asset('assets/img/ikumi.jpg', fit: BoxFit.cover)),
-        Container(color: Color.fromARGB(1, 88, 42, 114).withOpacity(1)),
+            child: Image.asset('assets/img/ikumitop.jpg', fit: BoxFit.cover)),
+        Container(color: Color.fromARGB(1, 88, 42, 114).withOpacity(0.5)),
         Container(
           padding: EdgeInsets.all(16.0),
           width: double.infinity,
@@ -132,4 +132,23 @@ List<Link> links = [
     url: 'https://www.unseen-tokyo.com/',
     tipo: true,
   ),
+  Link(
+    titulo: 'Linkedin Unseen',
+    img: 'assets/img/linke.png',
+    url: 'https://www.linkedin.com/company/unseentokyo/',
+    tipo: true,
+  ),
+  Link(
+    titulo: 'Youtube Unseen',
+    img: 'assets/img/you.png',
+    url: 'https://www.youtube.com/@UNSEENTOKYO/videos',
+    tipo: true,
+  ),
+  Link(
+    titulo: 'Loja Kemuri',
+    img: 'assets/img/kemuri.png',
+    url: 'https://kmrstore.com/',
+    tipo: true,
+  ),
+  
 ];

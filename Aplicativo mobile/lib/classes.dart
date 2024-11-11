@@ -46,6 +46,7 @@ class Empresa {
   final String logo;
   final String descricao;
   final String jogo;
+  final String img;
 
   Empresa({
     required this.nome,
@@ -53,6 +54,7 @@ class Empresa {
     required this.logo,
     required this.descricao,
     required this.jogo,
+    required this.img,
   });
 }
 
